@@ -9,9 +9,16 @@ export LESS_TERMCAP_ue=$'\e[0m'        # reset underline
 export MANPAGER="less -R"
 export MANROFFOPT="-P -c"
 
-# Enables colors and changes prompt:
+# Enables colors
 autoload -Uz colors && colors
-PROMPT='%B%F{cyan}[%n@%m]%f%b %U%F{magenta}%~%f%u %B%F{yellow}󱞩%f%b '
+
+# Shows Git info
+autoload -Uz vcs_info
+precmd() { vcs_info }
+zstyle ':vcs_info:git:*' formats ' %b '
+
+# Changes prompt
+PROMPT='%U%F{magenta}%~%f%u %B%F{blue}${vcs_info_msg_0_}%f%F{yellow}󱞩%f%b '
 RPROMPT='%F{cyan}[%t]%f'
 
 # Basic auto/tab complete:
