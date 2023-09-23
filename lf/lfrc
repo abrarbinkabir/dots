@@ -15,7 +15,6 @@ set ratios 1:1:2 # sets ratio for the panes
 # Opening files/folders
 cmd open ${{
     case $(file --mime-type "$f" -bL) in
-        text/*|application/json) $EDITOR "$f";;
         *) xdg-open "$f" ;;
     esac
 }}
@@ -239,4 +238,5 @@ map gD cd ~/Documents
 map gd cd ~/Downloads
 map gp cd ~/Pictures
 map gc cd ~/.config
+map gf cd ~/Documents/dotfiles
 map gt cd ~/.local/share/Trash/files

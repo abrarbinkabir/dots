@@ -15,10 +15,12 @@ autoload -Uz colors && colors
 # Shows Git info
 autoload -Uz vcs_info
 precmd() { vcs_info }
+precmd_functions+=( precmd_vcs_info )
+setopt prompt_subst
 zstyle ':vcs_info:git:*' formats ' %b '
 
 # Changes prompt
-PROMPT='%U%F{magenta}%~%f%u %B%F{blue}${vcs_info_msg_0_}%f%F{yellow}󱞩%f%b '
+PROMPT='%U%F{cyan}%~%f%u %B%F{magenta}${vcs_info_msg_0_}%f%F{yellow}󱞩%f%b '
 RPROMPT='%F{cyan}[%t]%f'
 
 # Basic auto/tab complete:
