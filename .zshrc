@@ -37,6 +37,7 @@ alias ll="ls -lah --color=auto"
 alias ls="ls --color=auto"
 alias con="cd ~/.config/ && ls"
 alias doc="cd ~/Documents/ && ls"
+alias dot="cd ~/Documents/dotfiles/.config/ && ls"
 alias dl="cd ~/Downloads && ls"
 alias pic="cd ~/Pictures/ && ls"
 alias diff='diff --color=auto'
