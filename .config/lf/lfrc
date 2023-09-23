@@ -1,0 +1,242 @@
+# Basic Settings
+set ignorecase true
+set icons
+set drawbox # draws border around panes
+set nopreview # turns off file preview
+set shell zsh
+set shellopts '-euy'
+set ifs "\n"
+set filesep "\n"
+set info size 
+set ratios 1:1:2 # sets ratio for the panes
+
+# Custom commands for....
+
+# Opening files/folders
+cmd open ${{
+    case $(file --mime-type "$f" -bL) in
+        text/*|application/json) $EDITOR "$f";;
+        *) xdg-open "$f" ;;
+    esac
+}}
+
+# Making folder
+cmd mkdir ${{
+  printf "Directory Name: "
+  read ans
+  mkdir $ans
+}}
+
+# Making file and opening with vim
+cmd mkfile ${{
+  clear
+  printf "File Name: "
+  read ans
+  vim $ans
+}}
+
+# Setting wallpaper for home and lockscreen
+cmd setwallpaper ${{
+    clear
+    cp "$f" ~/.config/Wallpaper.png
+    feh --bg-scale "$f"
+    betterlockscreen -u "$f"
+}}
+
+# Changing permission for file/s 
+cmd chmod ${{
+  clear
+  printf "Set permissions: "
+  read ans
+
+  for file in "$fx"
+  do
+    chmod $ans $file
+  done
+
+  lf -remote 'send reload'
+}}
+
+# Moving file/s with fzf
+cmd copyto ${{
+	clear
+	set -f
+	base="/home/abrar/"
+	res="$(find ~/Documents/ ~/Downloads/ ~/Pictures/ ! -path '*/.*' ! -path '/home/abrar/Documents/90. Archives*' -type d | cut -d '/' -f4- |fzf -e -i --reverse --header='Copy to')"
+	file="$base$res"
+	for x in $fx; do
+		cp -ivr "$x" $file
+	done &&
+	notify-send -a "File Operation" -i file "File(s) copied to $file"
+}}
+
+# Moving file/s with fzf
+cmd moveto ${{
+	clear
+	set -f
+	base="/home/abrar/"
+	res="$(find ~/Documents/ ~/Downloads/ ~/Pictures/ ! -path '*/.*' ! -path '/home/abrar/Documents/90. Archives*' -type d | cut -d '/' -f4- |fzf -e -i --reverse --header='Move to')"
+	file="$base$res"
+	for x in $fx; do
+		mv -iv "$x" $file
+	done &&
+	notify-send -a "File Operation" -i file "File(s) moved to $file"
+}}
+
+# Renaming files in bulk
+cmd bulk-rename ${{
+    old="$(mktemp)"
+    new="$(mktemp)"
+    if [ -n "$fs" ]; then
+        fs="$(basename -a $fs)"
+    else
+        fs="$(ls)"
+    fi
+    printf '%s\n' "$fs" >"$old"
+    printf '%s\n' "$fs" >"$new"
+    $EDITOR "$new"
+    [ "$(wc -l < "$new")" -ne "$(wc -l < "$old")" ] && exit
+    paste "$old" "$new" | while IFS= read -r names; do
+        src="$(printf '%s' "$names" | cut -f1)"
+        dst="$(printf '%s' "$names" | cut -f2)"
+        if [ "$src" = "$dst" ] || [ -e "$dst" ]; then
+            continue
+        fi
+        mv -- "$src" "$dst"
+    done
+    rm -- "$old" "$new"
+    lf -remote "send $id unselect"
+}}
+
+# Trashing files
+cmd trash ${{
+  files=$(printf "$fx" | tr '\n' ';')
+  while [ "$files" ]; do
+    # extract the substring from start of string up to delimiter.
+    # this is the first "element" of the string.
+    file=${files%%;*}
+
+    trash-put "$(basename "$file")"
+    # if there's only one element left, set `files` to an empty string.
+    # this causes us to exit this `while` loop.
+    # else, we delete the first "element" of the string from files, and move onto the next.
+    if [ "$files" = "$file" ]; then
+      files=''
+    else
+      files="${files#*;}"
+    fi
+  done
+}}
+
+# Clearing trash
+cmd clear_trash %trash-empty
+
+# Restoring trash
+cmd restore_trash ${{
+  trash-restore
+}}
+
+# Deleting selected file/s
+cmd delete ${{
+    clear
+	set -f
+	printf "%s\n" "$fx" "Are you sure to delete?[y/n]"
+	read ans
+	[ $ans = "y" ] && rm -rf -- $fx
+}}
+
+# Extracting selected file
+cmd extract ${{
+	clear
+    set -f
+    case $f in
+        *.tar.bz|*.tar.bz2|*.tbz|*.tbz2) tar xjvf $f;;
+        *.tar.gz|*.tgz) tar xzvf $f;;
+        *.tar.xz|*.txz) tar xJvf $f;;
+        *.zip)
+        file=$(basename -- "$f")
+        filename="${file%.*}"
+        mkdir -p "$filename"
+        unzip "$f" -d "$filename";;
+        *.rar) unrar x $f;;
+        *.7z) 7z x $f;;
+    esac
+}}
+
+# Compressing current file or selected files with zip
+cmd zip ${{
+    set -u
+    mkdir "$1"
+    cp -r $fx "$1"
+    zip -r "$1.zip" "$1"
+    rm -rf "$1"
+}}
+
+# Finding folders
+cmd fzf_jump ${{
+	base="/home/abrar/"
+    res="$(find ~/Documents/ ~/Downloads/ ~/Pictures/ ! -path '*/.*' ! -path '/home/abrar/Documents/90. Archives*' -type d | cut -d '/' -f4- |fzf -e -i --reverse --header='Search folders')"
+    file="$base$res"
+    lf -remote "send $id cd '$file'"
+}}
+map <c-f> :fzf_jump
+
+# Finding config files
+cmd fzf_jump_config ${{
+	base="/home/abrar/.config/"
+    res="$(find ~/.config/ -maxdepth 2| cut -d '/' -f5- |fzf -e -i --reverse --header='Search config folders')"
+    file="$base$res"
+    if [ -n "$file" ]; then
+        if [ -d "$file" ]; then
+            lf -remote "send $id cd '$file'"
+        else
+            xdg-open "$file"
+        fi
+        
+    fi
+}}
+map <c-c> :fzf_jump_config
+
+
+
+# Bindings for....
+map c
+map d
+map m
+map e
+map ex extract
+map ez zip
+map r
+
+map i rename
+map I :rename; cmd-home
+map A :rename; cmd-end
+#map c :rename; cmd-delete-home
+#map C :rename; cmd-end; cmd-delete-home
+
+# Basic Functions
+map mf mkfile
+map md mkdir
+map bg setwallpaper
+map ch chmod
+map p paste
+map x cut
+map y copy
+map <enter> open
+map <delete> trash
+#map ct clear_trash
+map rt restore_trash
+map D delete
+map R reload
+map br bulk-rename
+map C clear
+map mt moveto
+map ct copyto
+map Y $printf "%s" "$fx" | xclip -selection clipboard
+
+# Movement
+map gD cd ~/Documents
+map gd cd ~/Downloads
+map gp cd ~/Pictures
+map gc cd ~/.config
+map gt cd ~/.local/share/Trash/files

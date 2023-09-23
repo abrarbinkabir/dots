@@ -1,0 +1,17 @@
+[Added Associations]
+text/x-python=org.gnome.gedit.desktop;
+image/png=org.gnome.eog.desktop;
+application/x-shellscript=org.gnome.gedit.desktop;
+text/plain=org.gnome.gedit.desktop;
+application/pdf=org.pwmt.zathura.desktop;atril.desktop;org.gnome.Evince.desktop;
+image/svg+xml=org.inkscape.Inkscape.desktop;
+application/postscript=org.inkscape.Inkscape.desktop;
+image/x-eps=org.inkscape.Inkscape.desktop;
+text/x-csrc=org.gnome.gedit.desktop;
+application/x-executable=org.gnome.gedit.desktop;
+
+[Default Applications]
+image/png=nsxiv.desktop
+image/jpg=nsxiv.desktop
+application/x-executable=org.gnome.gedit.desktop
+application/pdf=org.pwmt.zathura.desktop
