@@ -1,0 +1,12 @@
+-f "bestvideo[ext=mp4][height<=1080][height>=720]+bestaudio[ext=m4a]/best[height=720][ext=mp4]"
+-o /home/abrar/No\ Sync/%(title)s.%(ext)s
+--no-part
+--no-mtime
+--write-subs
+--write-auto-subs
+--sub-langs en
+--embed-thumbnail
+--embed-chapters
+-4
+--socket-timeout 300
+

@@ -218,27 +218,6 @@ Screen(
                  update_interval=3.0,
                  mouse_callbacks = {'Button1': lazy.spawn('alacritty -e btop')},
                  ),
-                 widget.Net(
-                 format ='󰒢 {total}',
-                 interface = 'enp34s0',
-                 prefix='k',
-                 foreground=theme["peach"],
-                 update_interval=3,
-                 ),
-                 widget.DF(
-                 update_interval = 600,
-                 foreground = theme["flamingo"],
-                 partition = '/',
-                 format = '{uf} GB',
-                 fmt = '󰋊 {}',
-                 visible_on_warn = False,
-                 ),
-                 widget.OpenWeather(
-                 location='Dhaka',
-                 format = ' {main_temp}°',
-                 foreground=theme["lavender"],
-                 update_interval=600,
-                 ),
                 widget.Clock(
                 foreground = theme["mauve"],
                 format="%I:%M %p",

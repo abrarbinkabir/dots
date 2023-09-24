@@ -12,13 +12,6 @@ set ratios 1:1:2 # sets ratio for the panes
 
 # Custom commands for....
 
-# Opening files/folders
-cmd open ${{
-    case $(file --mime-type "$f" -bL) in
-        *) xdg-open "$f" ;;
-    esac
-}}
-
 # Making folder
 cmd mkdir ${{
   printf "Directory Name: "
