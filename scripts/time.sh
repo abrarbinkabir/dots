@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Imports current theme
-source ~/.config/scripts/bs_time.sh
+source ~/.config/scripts/bs-time.sh
 source "$HOME"/.config/rofi/applets/type-1/theme.bash
 theme="$type/$style"
 

@@ -20,4 +20,4 @@ ln -s $HOME/Documents/dotfiles/.profile ~/
 ln -s $HOME/Documents/dotfiles/.Xresources ~/
 ln -s $HOME/Documents/dotfiles/.zshrc ~/
 ln -s $HOME/Documents/dotfiles/mimeapps.list ~/.config/
-ln -s $HOME/Documents/dotfiles/Wallpaper.png ~/.config
+ln -s $HOME/Documents/dotfiles/wallpaper.png ~/.config

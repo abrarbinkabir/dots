@@ -1,3 +1,4 @@
 qtile/__pycache__/
 mpd/database
 mpd/sticker.sql
+ncmpcpp/error.log

@@ -286,7 +286,8 @@ floating_layout = layout.Floating(
         Match(wm_class="confirmreset"),
         Match(wm_class="megasync"), # megasync
         Match(wm_class="nsxiv"), # neo simple x image viewer
-        #Match(wm_class="org.pwmt.zathura"), # zathura
+        Match(wm_class="gnome-font-viewer"), # font-viewer
+        Match(wm_class="pavucontrol"), # pulseaudio volume control
         #Match(wm_class="zathura"), #zathura
         ]
 )
@@ -313,14 +314,14 @@ def autostart():
 def assign_app_group(client):
     d = {}
     d[group_names[0]] = ["Firefox", "firefox", "Navigator", "Browser"]
-    d[group_names[1]] = ["atril", "Atril", "org.pwmt.zathura", "zathura", "Zathura",]
+    d[group_names[1]] = [ "org.pwmt.zathura", "zathura", "Zathura", "atril", "Atril", ]
     d[group_names[2]] = ["gedit", "Gedit", "obsidian", "libreoffice", "libreoffice-writer", "soffice",]
     d[group_names[3]] = ["thunar", "Thunar",]
     d[group_names[4]] = ["gl", "mpv",]
-    d[group_names[5]] = []
-    d[group_names[6]] = ["inkscape", "org.inkscape.Inkscape", "Inkscape",]
-    d[group_names[7]] = ["eog", "Eog",]
-    allowToBeInGroup = ["alacritty", "Alacritty", "nsxiv", "nSxiv",]
+    d[group_names[5]] = ["inkscape", "org.inkscape.Inkscape", "Inkscape",]
+    d[group_names[6]] = []
+    d[group_names[7]] = []
+    allowToBeInGroup = ["alacritty", "Alacritty", "nsxiv", "nSxiv", "megasync", "MEGAsync", "xarchiver", "Xarchiver", "gnome-font-viewer", "pavucontrol",]
     wm_class = client.window.get_wm_class()
     if len(wm_class) >= 1:
         wm_class = wm_class[0]

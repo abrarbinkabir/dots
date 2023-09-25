@@ -23,7 +23,7 @@ ncmpcpp_directory = ~/.config/ncmpcpp
 #
 ##### connection settings #####
 #
-#mpd_host = localhost
+mpd_host = localhost
 #
 mpd_port = 6600
 #
@@ -31,7 +31,7 @@ mpd_port = 6600
 #
 ## Needed for tag editor and file operations to work.
 ##
-mpd_music_dir = '~/Documents/60.\ Audio/'
+mpd_music_dir = '~/Documents/60-media/'
 #
 #mpd_crossfade_time = 5
 #
