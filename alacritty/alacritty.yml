@@ -71,10 +71,10 @@ colors:
         black: "#45475A" # surface1
         red: "#F38BA8" # red
         green: "#A6E3A1" # green
-        yellow: "#fab387" # yellow
-        blue: "#89B4FA" # blue
-        magenta: "#cba6f7" # pink
-        cyan: "#B4BEFE" # lavendar
+        yellow: "#fab387" # peach
+        blue: "#89b4fa" # blue
+        magenta: "#f5c2e7" # pink
+        cyan: "#B4BEFE" # lavender
         white: "#BAC2DE" # subtext1
 
     # Bright colors
@@ -82,9 +82,9 @@ colors:
         black: "#585B70" # surface2
         red: "#F38BA8" # red
         green: "#A6E3A1" # green
-        yellow: "#fab387" # yellow
-        blue: "#89B4FA" # blue
-        magenta: "#cba6f7" # pink
+        yellow: "#fab387" # peach
+        blue: "#89b4fa" # blue
+        magenta: "#f5c2e7" # pink
         cyan: "#b4befe" # lavender
         white: "#A6ADC8" # subtext0
 
@@ -93,9 +93,9 @@ colors:
         black: "#45475A" # surface1
         red: "#F38BA8" # red
         green: "#A6E3A1" # green
-        yellow: "#fab387" # yellow
-        blue: "#89B4FA" # blue
-        magenta: "#cba6f7" # pink
+        yellow: "#fab387" # peach
+        blue: "#89b4fa" # blue
+        magenta: "#f5c2e7" # pink
         cyan: "#b4befe" # lavender
         white: "#BAC2DE" # subtext1
 

@@ -30,7 +30,7 @@ cmd mkfile ${{
 # Setting wallpaper for home and lockscreen
 cmd setwallpaper ${{
     clear
-    cp "$f" ~/.config/Wallpaper.png
+    cp "$f" ~/.config/wallpaper.png
     feh --bg-scale "$f"
     betterlockscreen -u "$f"
 }}
@@ -54,12 +54,12 @@ cmd copyto ${{
 	clear
 	set -f
 	base="/home/abrar/"
-	res="$(find ~/Documents/ ~/Downloads/ ~/Pictures/ ! -path '*/.*' ! -path '/home/abrar/Documents/90. Archives*' -type d | cut -d '/' -f4- |fzf -e -i --reverse --header='Copy to')"
+	res="$(find ~/Documents/ ~/Downloads/ ~/Pictures/ ! -path '*/.*' ! -path '/home/abrar/Documents/90-archives*' -type d | cut -d '/' -f4- |fzf -e -i --reverse --header='Copy to')"
 	file="$base$res"
 	for x in $fx; do
 		cp -ivr "$x" $file
 	done &&
-	notify-send -a "File Operation" -i file "File(s) copied to $file"
+	notify-send -a "File Operation" -i bell "File(s) copied to $file"
 }}
 
 # Moving file/s with fzf
@@ -67,12 +67,12 @@ cmd moveto ${{
 	clear
 	set -f
 	base="/home/abrar/"
-	res="$(find ~/Documents/ ~/Downloads/ ~/Pictures/ ! -path '*/.*' ! -path '/home/abrar/Documents/90. Archives*' -type d | cut -d '/' -f4- |fzf -e -i --reverse --header='Move to')"
+	res="$(find ~/Documents/ ~/Downloads/ ~/Pictures/ ! -path '*/.*' -type d | cut -d '/' -f4- |fzf -e -i --reverse --header='Move to')"
 	file="$base$res"
 	for x in $fx; do
 		mv -iv "$x" $file
 	done &&
-	notify-send -a "File Operation" -i file "File(s) moved to $file"
+	notify-send -a "File Operation" -i bell "File(s) moved to $file"
 }}
 
 # Renaming files in bulk
@@ -167,29 +167,11 @@ cmd zip ${{
 # Finding folders
 cmd fzf_jump ${{
 	base="/home/abrar/"
-    res="$(find ~/Documents/ ~/Downloads/ ~/Pictures/ ! -path '*/.*' ! -path '/home/abrar/Documents/90. Archives*' -type d | cut -d '/' -f4- |fzf -e -i --reverse --header='Search folders')"
+    res="$(find ~/Documents/ ~/Downloads/ ! -path '*/.*' ! -path '/home/abrar/Documents/90-archives*' -type d | cut -d '/' -f4- |fzf -e -i --reverse --header='Search folders')"
     file="$base$res"
     lf -remote "send $id cd '$file'"
 }}
 map <c-f> :fzf_jump
-
-# Finding config files
-cmd fzf_jump_config ${{
-	base="/home/abrar/.config/"
-    res="$(find ~/.config/ -maxdepth 2| cut -d '/' -f5- |fzf -e -i --reverse --header='Search config folders')"
-    file="$base$res"
-    if [ -n "$file" ]; then
-        if [ -d "$file" ]; then
-            lf -remote "send $id cd '$file'"
-        else
-            xdg-open "$file"
-        fi
-        
-    fi
-}}
-map <c-c> :fzf_jump_config
-
-
 
 # Bindings for....
 map c
@@ -232,4 +214,5 @@ map gd cd ~/Downloads
 map gp cd ~/Pictures
 map gc cd ~/.config
 map gf cd ~/Documents/dotfiles
+map ga cd ~/Documents/90-archives
 map gt cd ~/.local/share/Trash/files

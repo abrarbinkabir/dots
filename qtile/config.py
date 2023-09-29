@@ -149,10 +149,10 @@ layouts = [
            fontsize = 10,
            margin = 7,
            single_margin = 7,
-           border_focus="#CBA6F7",
-		   border_normal="#F5E0DC",
-           border_width = 2,
-           single_border_width = 2,
+           border_focus="#a6e3a1",
+		   border_normal="#fab387",
+           border_width = 3,
+           single_border_width = 3,
           ),
 ]
 
@@ -206,14 +206,14 @@ Screen(
                  mouse_callbacks = {'Button3': lazy.spawn('pavucontrol')},
                 ),
                 widget.Memory(
-                    format = ' {MemUsed:.2f} GiB',
+                    format = ' {MemUsed:.1f} GiB',
                     measure_mem='G',
                     foreground=theme["yellow"],
                     update_interval=3.0,
                     mouse_callbacks = {'Button1': lazy.spawn('alacritty -e btop')},
                 ),
                 widget.CPU(
-                 format = ' {load_percent:.2f}%',
+                 format = ' {load_percent:.1f}%',
                  foreground = theme["green"],
                  update_interval=3.0,
                  mouse_callbacks = {'Button1': lazy.spawn('alacritty -e btop')},
@@ -222,6 +222,12 @@ Screen(
                 foreground = theme["mauve"],
                 format="%I:%M %p",
                 fmt = ' {}',
+                mouse_callbacks={"Button1": lazy.spawn(expanduser("~/.config/scripts/time.sh"))}
+                ),
+                widget.Clock(
+                foreground = theme["flamingo"],
+                format="%a, %b %d",
+                fmt = ' {}',
                 mouse_callbacks={"Button1": lazy.spawn(expanduser("~/.config/scripts/time.sh"))}
                 ),
                 widget.TextBox(
@@ -246,13 +252,9 @@ Screen(
                 ],
             28,
             background=theme["background"],
-            # border_width=[2, 0, 2, 0],  # Draw top and bottom borders
-            # border_color=["ff00ff", "000000", "ff00ff", "000000"]  # Borders are magenta
+            #border_width=[2, 0, 2, 0],  # Draw top and bottom borders
+            #border_color=["ff00ff", "000000", "ff00ff", "000000"]  # Borders are magenta
         ),
-        # You can uncomment this variable if you see that on X11 floating resize/moving is laggy
-        # By default we handle these events delayed to already improve performance, however your system might still be struggling
-        # This variable is set to None (no cap) by default, but you can set it to 60 to indicate that you limit it to 60 events per second
-        # x11_drag_polling_rate = 60,
     ),
 ]
 
@@ -288,6 +290,8 @@ floating_layout = layout.Floating(
         Match(wm_class="nsxiv"), # neo simple x image viewer
         Match(wm_class="gnome-font-viewer"), # font-viewer
         Match(wm_class="pavucontrol"), # pulseaudio volume control
+        Match(wm_class="gl"),
+        Match(wm_class="mpv"),
         #Match(wm_class="zathura"), #zathura
         ]
 )
@@ -317,11 +321,11 @@ def assign_app_group(client):
     d[group_names[1]] = [ "org.pwmt.zathura", "zathura", "Zathura", "atril", "Atril", ]
     d[group_names[2]] = ["gedit", "Gedit", "obsidian", "libreoffice", "libreoffice-writer", "soffice",]
     d[group_names[3]] = ["thunar", "Thunar",]
-    d[group_names[4]] = ["gl", "mpv",]
-    d[group_names[5]] = ["inkscape", "org.inkscape.Inkscape", "Inkscape",]
+    d[group_names[4]] = ["inkscape", "org.inkscape.Inkscape", "Inkscape",]
+    d[group_names[5]] = []
     d[group_names[6]] = []
     d[group_names[7]] = []
-    allowToBeInGroup = ["alacritty", "Alacritty", "nsxiv", "nSxiv", "megasync", "MEGAsync", "xarchiver", "Xarchiver", "gnome-font-viewer", "pavucontrol",]
+    allowToBeInGroup = ["alacritty", "Alacritty", "nsxiv", "nSxiv", "megasync", "MEGAsync", "xarchiver", "Xarchiver", "gnome-font-viewer", "pavucontrol", "gl","mpv",]
     wm_class = client.window.get_wm_class()
     if len(wm_class) >= 1:
         wm_class = wm_class[0]

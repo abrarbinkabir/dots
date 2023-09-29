@@ -12,5 +12,5 @@ rofi_cmd() {
 # Removes /home/abrar from the path >>
 # Pipes into Rofi dmenu >>
 # Opens with the default application
-xdg-open "$(find ~/Documents/ ~/Downloads/ ~/Pictures/ ! -path '*/.*' ! -path '/home/abrar/Documents/90. Archives*' | cut -d '/' -f4- | rofi_cmd )"
+xdg-open "$(find ~/Documents/ ~/Downloads/ ! -path '*/.*' ! -path '/home/abrar/Documents/90-archives*' | cut -d '/' -f4- | rofi_cmd )"
 
