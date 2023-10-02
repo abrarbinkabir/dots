@@ -206,14 +206,14 @@ Screen(
                  mouse_callbacks = {'Button3': lazy.spawn('pavucontrol')},
                 ),
                 widget.Memory(
-                    format = ' {MemUsed:.1f} GiB',
+                    format = ' {MemUsed:.2f} GiB',
                     measure_mem='G',
                     foreground=theme["yellow"],
                     update_interval=3.0,
                     mouse_callbacks = {'Button1': lazy.spawn('alacritty -e btop')},
                 ),
                 widget.CPU(
-                 format = ' {load_percent:.1f}%',
+                 format = ' {load_percent:.2f}%',
                  foreground = theme["green"],
                  update_interval=3.0,
                  mouse_callbacks = {'Button1': lazy.spawn('alacritty -e btop')},

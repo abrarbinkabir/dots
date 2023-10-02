@@ -1,12 +1,12 @@
 [Default Applications]
-text/plain=org.gnome.gedit.desktop
-text/html=org.gnome.gedit.desktop
-text/x-script.python=org.gnome.gedit.desktop
-inode/x-empty=org.gnome.gedit.desktop
-text/xml=org.gnome.gedit.desktop
-application/json=org.gnome.gedit.desktop
-text/x-shellscript=org.gnome.gedit.desktop
-text/vcard=org.gnome.gedit.desktop
+text/plain=nvim.desktop
+text/html=nvim.desktop
+text/x-script.python=nvim.desktop
+inode/x-empty=nvim.desktop
+text/xml=nvim.desktop
+application/json=nvim.desktop
+text/x-shellscript=nvim.desktop
+text/vcard=nvim.desktop
 
 application/pdf=org.pwmt.zathura.desktop
 application/epub+zip=org.pwmt.zathura.desktop
@@ -43,6 +43,6 @@ application/x-tar=xarchiver.desktop
 application/vnd.rar=xarchiver.desktop
 application/octet-stream=xarchiver.desktop
 font/sfnt=org.gnome.font-viewer.desktop
-inode/directory=thunar.desktop
+inode/directory=lf.desktop
 
 

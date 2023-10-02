@@ -52,6 +52,17 @@ alias pic="cd ~/Pictures/ && ls"
 alias diff='diff --color=auto'
 alias grep='grep --color=auto'
 
+function fd {
+    base="/home/abrar/"
+    res="$(find ~/Documents/ ~/Downloads/ ! -path '*/.*' ! -path '/home/abrar/Documents/90-archives*' | cut -d '/' -f4- |fzf -e -i --reverse --header='Search files and folders')"
+    file="$base$res"
+    case $(file --mime-type "$file" -bL) in
+        text/*|application/json) $EDITOR "$file";;
+        inode/directory) cd "$file";;
+        *) xdg-open "$file" ;;
+     esac
+;}
+
 # Plugins
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh 2>/dev/null
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
