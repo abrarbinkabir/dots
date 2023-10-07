@@ -7,6 +7,9 @@ from libqtile import hook
 from os.path import expanduser
 import os
 import subprocess
+# import asyncio
+# import pulsectl_asyncio
+
 
 theme = {
     "background": "1e1e2e",
@@ -151,8 +154,8 @@ layouts = [
            single_margin = 7,
            border_focus="#a6e3a1",
 		   border_normal="#fab387",
-           border_width = 3,
-           single_border_width = 3,
+           border_width = 2,
+           single_border_width = 2,
           ),
 ]
 

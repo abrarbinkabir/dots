@@ -67,9 +67,11 @@ alias yt="yt-dlp"
 alias yta="yt-dlp -f 'bestaudio[ext=m4a]'"
 alias ytp="yt-dlp -o '/home/abrar/no-sync/%(playlist)s/%(playlist_index)s-%(title)s.%(ext)s'"
 
-alias sy="sudo pacman -Syyu"
-alias ss="pacman -Ss"
-alias ei="pacman -Qet"
+alias Sy="sudo pacman -Syyu"
+alias Ss="pacman -Ss"
+alias S="sudo pacman -S"
+alias Qet="pacman -Qet"
+alias Rs="sudo pacman -Rns"
 
 # Plugins
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh 2>/dev/null
