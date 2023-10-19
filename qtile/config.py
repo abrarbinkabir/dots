@@ -201,13 +201,13 @@ Screen(
                 #mouse_callbacks = {'Button3': lazy.spawn(expanduser("~/.config/scripts/mpd.sh"))},                
                 #),
                 widget.Spacer(),
-                widget.PulseVolume(
-                 channel= 'Master',
-                 foreground = theme["pink"],
-                 fmt = ' {}',
-                 step=5,
-                 mouse_callbacks = {'Button3': lazy.spawn('pavucontrol')},
-                ),
+#                widget.PulseVolume(
+#                channel= 'Master',
+#                 foreground = theme["pink"],
+#                 fmt = ' {}',
+#                 step=5,
+#                 mouse_callbacks = {'Button3': lazy.spawn('pavucontrol')},
+#                ),
                 widget.Memory(
                     format = ' {MemUsed:.2f} GiB',
                     measure_mem='G',
@@ -315,6 +315,12 @@ wl_input_rules = None
 def autostart():
     home = os.path.expanduser('~')
     subprocess.call([home + '/.config/qtile/autostart.sh'])
+
+@hook.subscribe.startup_once
+def autostart_once():
+    home = os.path.expanduser('~')
+    subprocess.call([home + '/.config/qtile/autostart_once.sh'])
+
 
 # Hook for opening windows on certain workspaces
 @hook.subscribe.client_new
