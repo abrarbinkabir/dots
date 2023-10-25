@@ -46,6 +46,7 @@ keys = [
     Key([mod], "l", lazy.layout.right(), desc="Moves focus to right"),
     Key([mod], "j", lazy.layout.down(), desc="Moves focus down"),
     Key([mod], "k", lazy.layout.up(), desc="Moves focus up"),
+    Key([mod], "space", lazy.layout.next(), desc="Moves window focus to other window"),
     
     # Changing the position and order of the windows
     Key([mod, "shift"], "h", lazy.layout.shuffle_left(), desc="Moves window to the left"),
@@ -56,11 +57,11 @@ keys = [
     
     # Resizing windows
 	Key([mod], "g", lazy.layout.grow(), desc="Makes the focused window bigger depending on it's position"),
-	Key([mod], "s", lazy.layout.shrink(), desc="Makes the focused window smaller depending on it's position"),
+	Key([mod], "m", lazy.layout.shrink(), desc="Makes the focused window smaller depending on it's position"),
 	Key([mod], "r", lazy.layout.reset(), desc="Resets all windows to their default sizes"),
 	Key([mod], "n", lazy.layout.normalize(), desc="Restores all secondary windows to their default size"),
-    Key([mod], "m", lazy.window.toggle_minimize(), desc="Toggle minimization on focused window"),
-    Key([mod], "space", lazy.window.toggle_floating()),
+	Key([mod], "o", lazy.layout.maximize(), desc="Toggles a focused window between its minimum and maximum sizes"),
+	Key([mod], "space", lazy.window.toggle_floating()),
 	
 	# Launching apps
     Key([mod], "Return", lazy.spawn(terminal), desc="Launches terminal"),
@@ -72,14 +73,14 @@ keys = [
     Key([mod, "shift"], "r", lazy.reload_config(), desc="Reloads the Qtile config"),
     Key([mod, "control"], "q", lazy.shutdown(), desc="Shuts down Qtile/Logs out"),
     Key(["mod1"], "l", lazy.spawn("betterlockscreen -l"), desc="Locks the system"),
-    Key(["mod1"], "s", lazy.spawn("systemctl suspend"), desc="Suspends the system"),
+    Key([mod], "s", lazy.spawn("systemctl suspend"), desc="Suspends the system"),
     
     # Running Rofi scripts
-    Key(["mod1"], "a", lazy.spawn(expanduser("~/.config/rofi/launcher.sh"), shell=True), desc="Runs main Rofi menu"),
-    Key(["mod1"], "p", lazy.spawn(expanduser("~/.config/rofi/applets/powermenu.sh"), shell=True), desc="Runs Rofi powermenu applet"),
+    Key([mod], "d", lazy.spawn(expanduser("~/.config/rofi/launcher.sh"), shell=True), desc="Runs main Rofi menu"),
+    Key([mod], "p", lazy.spawn(expanduser("~/.config/rofi/applets/powermenu.sh"), shell=True), desc="Runs Rofi powermenu applet"),
     Key(["mod1"], "space", lazy.spawn(expanduser("~/.config/rofi/documents.sh"), shell=True), desc="Runs Rofi file search"),
     Key(["mod1"], "c", lazy.spawn("clipmenu"), desc="Runs Rofi clipboard applet"),
-#    Key(["mod1"], "s", lazy.spawn(expanduser("~/.config/rofi/applets/screenshot.sh"), shell=True), desc="Runs Rofi screenshot applet"),
+    Key(["mod1"], "s", lazy.spawn(expanduser("~/.config/rofi/applets/screenshot.sh"), shell=True), desc="Runs Rofi screenshot applet"),
     Key(["mod1"], "t", lazy.spawn(expanduser("~/.config/scripts/mpd.sh"), shell=True), desc="Runs Rofi mpd applet"),
     
     # Taking Screenshot using Maim
@@ -89,9 +90,9 @@ keys = [
 
     
     # Changing volume
-    Key(["mod1"], "F1", lazy.spawn(expanduser("~/.config/scripts/volume.sh up"), shell=True), desc="Increases volume by 5%"),
-    Key(["mod1"], "F2", lazy.spawn(expanduser("~/.config/scripts/volume.sh down"), shell=True), desc="Decreases volume by 5%"),
-    Key(["mod1"], "F3", lazy.spawn(expanduser("~/.config/scripts/volume.sh mute"), shell=True), desc="Toggles mute"),    
+    Key([mod], "F1", lazy.spawn(expanduser("~/.config/scripts/volume.sh up"), shell=True), desc="Increases volume by 5%"),
+    Key([mod], "F2", lazy.spawn(expanduser("~/.config/scripts/volume.sh down"), shell=True), desc="Decreases volume by 5%"),
+    Key([mod], "F3", lazy.spawn(expanduser("~/.config/scripts/volume.sh mute"), shell=True), desc="Toggles mute"),    
 ]
 
 # Definition of groups

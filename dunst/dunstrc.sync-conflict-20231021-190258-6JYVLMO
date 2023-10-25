@@ -38,8 +38,8 @@
 	show_indicators = yes
 	enable_recursive_icon_lookup = false
 	icon_position = left
-	min_icon_size = 36
-	max_icon_size = 36
+	min_icon_size = 8
+	max_icon_size = 28
 	icon_path = /home/abrar/.local/share/dunst/
 	sticky_history = yes
 	history_length = 20

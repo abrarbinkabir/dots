@@ -21,7 +21,7 @@ zstyle ':vcs_info:git:*' formats ' %b '
 
 # Changes prompt
 PROMPT='%U%F{cyan}%~%f%u %B%F{magenta}${vcs_info_msg_0_}%f%F{yellow}󱞩%f%b '
-RPROMPT='%F{cyan}%*%f'
+RPROMPT='%F{cyan}[%t]%f'
 
 # Basic auto/tab complete:
 autoload -Uz compinit
@@ -58,7 +58,7 @@ function fd {
     file="$base$res"
     case $(file --mime-type "$file" -bL) in
         text/*|application/json) $EDITOR "$file";;
-        inode/directory) cd "$file" && ls;;
+        inode/directory) cd "$file";;
         *) xdg-open "$file" ;;
      esac
 ;}
@@ -67,11 +67,11 @@ alias yt="yt-dlp"
 alias yta="yt-dlp -f 'bestaudio[ext=m4a]'"
 alias ytp="yt-dlp -o '/home/abrar/no-sync/%(playlist)s/%(playlist_index)s-%(title)s.%(ext)s'"
 
-alias Syu="sudo pacman -Syyu"
+alias Sy="sudo pacman -Syyu"
 alias Ss="pacman -Ss"
 alias S="sudo pacman -S"
 alias Qet="pacman -Qet"
-alias Rns="sudo pacman -Rns"
+alias Rs="sudo pacman -Rns"
 
 # Plugins
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh 2>/dev/null
