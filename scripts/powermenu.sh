@@ -1,20 +1,19 @@
 #!/usr/bin/env bash
 
-# Imports current theme
-source "$HOME"/.config/rofi/applets/type-1/theme.bash
-theme="$type/$style"
+# Specifies Theme
+theme="$HOME"/.config/rofi/applet-config.rasi
 
 # Message to show uptime
 # Gets the uptime >>
 # Replaces 'up ' with ''
-mesg="Uptime : `uptime -p | sed -e 's/up //g'`"
+mesg=" Uptime: `uptime -p | sed -e 's/up //g'`"
 
 # Options
-option_1="Shut Down"
-option_2="Log Out"
-option_3="Restart"
-option_4="Suspend"
-option_5="Lock"
+option_1=" Shut Down"
+option_2=" Log Out"
+option_3=" Restart"
+option_4=" Suspend"
+option_5=" Lock"
 yes='Yes'
 no='No'
 
@@ -37,7 +36,7 @@ confirm_cmd() {
    rofi -theme-str 'window {location: center; anchor: center; fullscreen: false; width: 350px;}' \
 		-theme-str 'mainbox {orientation: vertical; children: [ "message", "listview" ];}' \
 		-theme-str 'listview {columns: 2; lines: 1;}' \
-		-theme-str 'element-text {font: "Inter SemiBold 12"; horizontal-align: 0.5;}' \
+		-theme-str 'element-text {font: "JetBrainsMono Nerd Font Propo Regular 12"; horizontal-align: 0.5;}' \
 		-theme-str 'textbox {horizontal-align: 0.5;}' \
 		-dmenu \
 		-p 'Confirmation' \

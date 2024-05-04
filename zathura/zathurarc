@@ -1,4 +1,4 @@
-set n-completion-items		10
+set n-completion-items			10
 set completion-group-bg         "#181825"
 set completion-group-fg         "#F1F4FF"
 set completion-bg               "#181825"
@@ -11,7 +11,7 @@ set notification-error-fg       "#F38BA8"
 set notification-warning-bg     "#1E1E2E"
 set notification-warning-fg     "#F38BA8"
 set notification-bg             "#1E1E2E"
-set notification-fg             "#F38BA8"
+set notification-fg             "#A6E3A1"
 
 set index-bg                    "#F1F4FF"
 set index-fg                    "#1E1E2E"
@@ -27,25 +27,23 @@ set statusbar-h-padding			10
 set statusbar-v-padding			10
 
 
-set highlight-color             "#B4BEFE"
-set highlight-fg                "#FFFFFF"
-set highlight-active-color      "#A6E3A1"
-set highlight-transparency	0.5
+set highlight-color             "rgba(180, 190, 254, 0.5)"
+set highlight-fg                "rgba(30, 30, 46, 1)"
+set highlight-active-color      "rgba(166, 227, 161, 0.5)"
 
 set default-bg                  "#1E1E2E"
 set default-fg                  "#F1F4FF"
-set font 			'Inter 10'
+set font 						'JetBrainsMono Nerd Font Propo 10'
 
-set page-padding			3
-set statusbar-basename			true
+set page-padding				3
 set statusbar-page-percent		true
 set statusbar-home-tilde		true
 set selection-clipboard 		clipboard
 
+set database					"sqlite"
+
 map u scroll half-up
 map d scroll half-down
-map r reload
-map R rotate
 map p adjust_window best-fit
 map w adjust_window width
 unmap q

@@ -1,33 +1,33 @@
 [global]
 	monitor = 0
-	follow = none
-	width = 350
-	height = 300
-	origin = top-right
-	offset = 20x40
-	scale = 0
-	notification_limit = 20
-	progress_bar = true
-	progress_bar_height = 10
-	progress_bar_frame_width = 2
+	follow = none 
+	width = 400 
+	height = 300 
+	origin = top-right 
+	offset = 20x40 
+	scale = 0 
+	notification_limit = 20 
+	progress_bar = true 
+	progress_bar_height = 10 
+	progress_bar_frame_width = 2 
 	progress_bar_min_width = 150
 	progress_bar_max_width = 300
 	progress_bar_corner_radius = 0
 	icon_corner_radius = 0
-	indicate_hidden = yes
-	transparency = 0
-	separator_height = 2
-	padding = 12
-	horizontal_padding = 15
-	text_icon_padding = 15
-	frame_width = 2
-	frame_color = "#B4BEFE"
-	gap_size = 0
-	separator_color = "#B4BEFE"
+	indicate_hidden = yes 
+	transparency = 0 
+	separator_height = 2 
+	padding = 12 # padding between text and separator 
+	horizontal_padding = 15 
+	text_icon_padding = 15  
+	frame_width = 3 
+	frame_color = "#8aadf4" 
+	gap_size = 0 
+	separator_color = "#8aadf4" 
 	sort = yes
-	font = Inter 10
+	font = "JetBrainsMono Nerd Font Propo 11"
 	line_height = 0
-	format = "<span size='10pt' weight='bold'>%a</span>\n%s\n%b" # '%a'-app name, '%s'-summary, '%b'-body 
+	format = "<span size='11pt' weight='semibold'>%a</span>\n%s\n%b" # '%a'-app name, '%s'-summary, '%b'-body 
 	alignment = left
 	vertical_alignment = center
 	show_age_threshold = 60
@@ -62,13 +62,13 @@
 [urgency_low]
 	background = "#1E1E2E" # background color
     foreground = "#F1F4FF" # foreground color
-    highlight = "#B4BEFE"
+    highlight = "#8aadf4" # progress bar color
     timeout = 3
         
 [urgency_normal]
     background = "#1E1E2E" # background color
     foreground = "#F1F4FF" # foreground color
-    highlight = "#B4BEFE"
+    highlight = "#8aadf4" # progress bar color
     timeout = 3
     
         
@@ -76,7 +76,7 @@
 	background = "#F38BA8" # red color
     foreground = "#1E1E2E" # foreground color
     frame_color = "#EBA0AC" # light red color
-    highlight = "#B4BEFE"
+    highlight = "#B4BEFE" # progress bar color
     timeout = 0
     
     

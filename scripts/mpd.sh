@@ -1,8 +1,7 @@
 #!/usr/bin/env bash
 
-# Import Current Theme
-source "$HOME"/.config/rofi/applets/type-1/theme.bash
-theme="$type/$style"
+# Specifies Theme
+theme="$HOME"/.config/rofi/applet-config.rasi
 
 # Theme Elements
 get_status(){
@@ -13,25 +12,23 @@ get_status
 if [[ -z "$status" ]]; then
 	mesg="MPD is Offline"
 else
-	mesg="Now Playing: $(mpc -f '%title%' current)"
+	mesg="Track Controls"
 fi
 
 if [[ ${status} == "playing" ]]; then
-		option_1="Pause"
+		option_1=" Pause"
 	else
-		option_1="Play"
+		option_1=" Play"
 	fi
-	option_2="Stop"
-	option_3="Next"
-	option_4="Previous"
-	option_5="Repeat"
-	option_6="Random"
+	option_2=" Stop"
+	option_3=" Next"
+	option_4=" Previous"
+	option_5=" Repeat"
+	option_6=" Random"
 
 # Rofi CMD
 rofi_cmd() {
 	rofi -theme-str 'listview {columns: 1; lines: 6;}' \
-		-theme-str 'window {width: 500px;}' \
-		-theme-str 'textbox {font: "Inter Medium 11";}' \
 		-dmenu \
 		-mesg "$mesg" \
 		-markup-rows \

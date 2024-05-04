@@ -6,6 +6,7 @@ export BROWSER="firefox"
 export DATE=$(date +%Y%m%d)
 export DT=$(date +%m%d)
 export LS_COLORS
+export CM_LAUNCHER=rofi
 export CM_HISTLENGTH=7
 export CM_MAX_CLIPS=20
 export PATH=/home/abrar/.config:$PATH

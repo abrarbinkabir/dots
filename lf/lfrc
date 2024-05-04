@@ -21,6 +21,7 @@ cmd open ${{
 
 # Making folder
 cmd mkdir ${{
+  clear  
   printf "Directory Name: "
   read ans
   mkdir $ans
@@ -61,7 +62,7 @@ cmd copyto ${{
 	clear
 	set -f
 	base="/home/abrar/"
-	res="$(find ~/Documents/ ~/Downloads/ ~/Pictures/ ! -path '*/.*' ! -path '/home/abrar/Documents/90-archives*' -type d | cut -d '/' -f4- |fzf -e -i --reverse --header='Copy to')"
+	res="$(find ~/Documents/ ~/Downloads/ ~/Pictures/ ! -path '*/.*' ! -path '/home/abrar/Documents/archives*' -type d | cut -d '/' -f4- |fzf -e -i --reverse --header='Copy to')"
 	file="$base$res"
 	for x in $fx; do
 		cp -ivr "$x" $file
@@ -74,7 +75,7 @@ cmd moveto ${{
 	clear
 	set -f
 	base="/home/abrar/"
-	res="$(find ~/Documents/ ~/Downloads/ ~/Pictures/ ! -path '*/.*' -type d | cut -d '/' -f4- |fzf -e -i --reverse --header='Move to')"
+	res="$(find ~/Documents/ ~/Downloads/ ~/Pictures/ ! -path '*/.*' ! -path '/home/abrar/Documents/archives*' -type d | cut -d '/' -f4- |fzf -e -i --reverse --header='Move to')"
 	file="$base$res"
 	for x in $fx; do
 		mv -iv "$x" $file
@@ -132,6 +133,7 @@ cmd clear_trash %trash-empty
 
 # Restoring trash
 cmd restore_trash ${{
+  clear
   trash-restore
 }}
 
@@ -164,6 +166,7 @@ cmd extract ${{
 
 # Compressing current file or selected files with zip
 cmd zip ${{
+    clear
     set -u
     mkdir "$1"
     cp -r $fx "$1"
@@ -174,7 +177,7 @@ cmd zip ${{
 # Finding folders
 cmd fzf_jump ${{
 	base="/home/abrar/"
-    res="$(find ~/Documents/ ~/Downloads/ ! -path '*/.*' ! -path '/home/abrar/Documents/90-archives*' -type d | cut -d '/' -f4- |fzf -e -i --reverse --header='Search folders')"
+    res="$(find ~/Documents/ ~/Downloads/ ! -path '*/.*' ! -path '/home/abrar/Documents/archives*' -type d | cut -d '/' -f4- |fzf -e -i --reverse --header='Search folders')"
     file="$base$res"
     lf -remote "send $id cd '$file'"
 }}
@@ -221,5 +224,5 @@ map gd cd ~/Downloads
 map gp cd ~/Pictures
 map gc cd ~/.config
 map gf cd ~/Documents/dotfiles
-map ga cd ~/Documents/90-archives
+map ga cd ~/Documents/archives
 map gt cd ~/.local/share/Trash/files

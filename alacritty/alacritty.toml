@@ -1,0 +1,124 @@
+live_config_reload = true
+
+[colors]
+draw_bold_text_with_bright_colors = true
+
+[[colors.indexed_colors]]
+color = "#FAB387"
+index = 16
+
+[[colors.indexed_colors]]
+color = "#F5E0DC"
+index = 17
+
+[colors.bright]
+black = "#585B70"
+blue = "#89b4fa"
+cyan = "#b4befe"
+green = "#A6E3A1"
+magenta = "#f5c2e7"
+red = "#F38BA8"
+white = "#A6ADC8"
+yellow = "#fab387"
+
+[colors.cursor]
+cursor = "#F5E0DC"
+text = "#181825"
+
+[colors.dim]
+black = "#45475A"
+blue = "#89b4fa"
+cyan = "#b4befe"
+green = "#A6E3A1"
+magenta = "#f5c2e7"
+red = "#F38BA8"
+white = "#BAC2DE"
+yellow = "#fab387"
+
+[colors.normal]
+black = "#45475A"
+blue = "#89b4fa"
+cyan = "#B4BEFE"
+green = "#A6E3A1"
+magenta = "#f5c2e7"
+red = "#F38BA8"
+white = "#BAC2DE"
+yellow = "#fab387"
+
+[colors.primary]
+background = "#1E1E2E"
+bright_foreground = "#F1F4FF"
+dim_foreground = "#F1F4FF"
+foreground = "#F1F4FF"
+
+[colors.selection]
+background = "#F5E0DC"
+text = "#1E1E2E"
+
+[cursor]
+blink_interval = 750
+
+[cursor.style]
+blinking = "On"
+shape = "Beam"
+
+[font]
+size = 12.0
+
+[font.bold]
+family = "JetBrainsMono Nerd Font Propo"
+style = "Bold"
+
+[font.italic]
+family = "JetBrainsMono Nerd Font Propo"
+style = "Italic"
+
+[font.normal]
+family = "JetBrainsMono Nerd Font Propo"
+style = "Regular"
+
+[[keyboard.bindings]]
+action = "Paste"
+key = "V"
+mode = "~Vi"
+mods = "Control|Shift"
+
+[[keyboard.bindings]]
+action = "Copy"
+key = "C"
+mods = "Control|Shift"
+
+[[keyboard.bindings]]
+action = "ResetFontSize"
+key = "Key0"
+mods = "Control"
+
+[[keyboard.bindings]]
+action = "IncreaseFontSize"
+key = "Equals"
+mods = "Control"
+
+[[keyboard.bindings]]
+action = "DecreaseFontSize"
+key = "Minus"
+mods = "Control"
+
+[scrolling]
+history = 10000
+multiplier = 10
+
+[selection]
+save_to_clipboard = false
+semantic_escape_chars = ",│`|:\"' ()[]{}<>\t"
+
+[window]
+opacity = 1.0
+title = "Alacritty"
+
+[window.class]
+general = "Alacritty"
+instance = "Alacritty"
+
+[window.padding]
+x = 20
+y = 20

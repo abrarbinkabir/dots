@@ -1,17 +1,16 @@
- /*****----- Configuration -----*****/
+/*****----- Configuration -----*****/
 configuration {
     show-icons:                 false;
 }
 
 /*****----- Global Properties -----*****/
 * {
-	background: 				 #1E1E2EFF;
-	background-alt: 			 #313244FF; /* surface0 color */
-	foreground: 				 #F1F4FFFF;
-	red:						 #F38BA8FF;
-	primary: 					 #B4BEFEFF; /* lavender color */
-	disabled: 					 #6c7086FF; /* overlay0 color */
-	font: "Inter SemiBold 11";
+	background: 				 #1e1e2e;
+	background-alt: 			 #313244; /* surface0 color */
+	foreground: 				 #f1f4ff;
+	red:						 #f38ba8;
+	primary: 					 #cba6f7; /* mauve color */
+	font: "JetBrainsMono Nerd Font Propo Medium 12";
 }
 
 /*****----- Main Window -----*****/
@@ -20,12 +19,12 @@ window {
     location:                    center;
     anchor:                      center;
     fullscreen:                  false;
-    width:                       400px;
+    width:                       450px;
     x-offset:                    0px;
     y-offset:                    0px;
     margin:                      0px;
     padding:                     0px;
-    border:                      1px solid;
+    border:                      3px solid;
     border-radius:               0px;
     border-color:                @primary;
     cursor:                      "default";
@@ -37,9 +36,9 @@ mainbox {
     enabled:                     true;
     spacing:                     10px;
     margin:                      0px;
-    padding:                     30px;
+    padding:                     40px;
     background-color:            transparent;
-    children:                    [ "message", "listview" ];
+    children:                    ["message", "listview" ];
 }
 
 /*****----- Message -----*****/
@@ -50,12 +49,12 @@ message {
     border:                      0px solid;
     border-radius:               0px;
     border-color:                @primary;
-    background-color:            @background-alt;
-    text-color:                  @foreground;
+    background-color:            @primary;
+    text-color:                  @background;
 }
 
 textbox {
-	font:			             "Inter SemiBold 12";
+	font:			             "JetBrainsMono Nerd Font Propo SemiBold 12";
     background-color:            inherit;
     text-color:                  inherit;
     vertical-align:              0.5;
@@ -66,11 +65,11 @@ textbox {
 listview {
     enabled:                     true;
     columns:                     1;
-    lines:                       6;
+    lines:                       5;
     cycle:                       true;
     scrollbar:                   false;
     layout:                      vertical;
-    spacing:                     5px;
+    spacing:                     10px;
     background-color:            transparent;
     cursor:                      "default";
 }
@@ -78,7 +77,7 @@ listview {
 /*****----- Elements -----*****/
 element {
     enabled:                     true;
-    padding:                     10px;
+    padding:                     10px 20px;
     border:                      0px solid;
     border-radius:               0px;
     border-color:                @primary;
@@ -97,25 +96,27 @@ element-text {
 
 element normal.normal,
 element alternate.normal {
-    background-color:            var(background);
-    text-color:                  var(foreground);
+    background-color:            @background-alt;
+    text-color:                  @foreground;
+}
+
+element selected.normal {
+    border:                      2px;
+    border-color:                @primary;
+    background-color:            @background-alt;
+    text-color:                  @primary;
 }
 
 element normal.urgent,
 element alternate.urgent,
 element selected.active {
-    background-color:            var(red);
-    text-color:                  var(foreground);
+    background-color:            @red;
+    text-color:                  @foreground;
 }
 
 element normal.active,
 element alternate.active,
 element selected.urgent {
-    background-color:            var(red);
-    text-color:                  var(foreground);
-}
-
-element selected.normal {
-    background-color:            var(primary);
-    text-color:                  var(background);
+    background-color:           @red;
+    text-color:                 @foreground;
 }

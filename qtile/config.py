@@ -1,14 +1,12 @@
 # Import necessary libraries and modules
-from libqtile import bar, layout, widget
+from libqtile import bar, layout, widget, hook
 from libqtile.config import Click, Drag, Group, Key, Match, Screen, ScratchPad, DropDown
 from libqtile.lazy import lazy
 from libqtile.utils import guess_terminal
-from libqtile import hook
 from os.path import expanduser
 import os
 import subprocess
-# import asyncio
-# import pulsectl_asyncio
+import pulsectl_asyncio
 
 
 theme = {
@@ -64,8 +62,8 @@ keys = [
 	
 	# Launching apps
     Key([mod], "Return", lazy.spawn(terminal), desc="Launches terminal"),
-    Key([mod], "a", lazy.spawn(browser), desc="Launches Firefox"),
-    Key([mod], "f", lazy.spawn(filemanager), desc="Launches Thunar"),
+    Key([mod], "a", lazy.spawn(browser), desc="Launches browser"),
+    Key([mod], "f", lazy.spawn(filemanager), desc="Launches filemanager"),
     
     # Controlling the system
     Key([mod], "q", lazy.window.kill(), desc="Kills the focused window"),
@@ -75,17 +73,20 @@ keys = [
     Key(["mod1"], "s", lazy.spawn("systemctl suspend"), desc="Suspends the system"),
     
     # Running Rofi scripts
-    Key(["mod1"], "a", lazy.spawn(expanduser("~/.config/rofi/launcher.sh"), shell=True), desc="Runs main Rofi menu"),
-    Key(["mod1"], "p", lazy.spawn(expanduser("~/.config/rofi/applets/powermenu.sh"), shell=True), desc="Runs Rofi powermenu applet"),
-    Key(["mod1"], "space", lazy.spawn(expanduser("~/.config/rofi/documents.sh"), shell=True), desc="Runs Rofi file search"),
+    Key(["mod1"], "a", lazy.spawn(expanduser("~/.config/scripts/launcher.sh"), shell=True), desc="Runs Rofi applications menu applet"),
+    Key(["mod1"], "p", lazy.spawn(expanduser("~/.config/scripts/powermenu.sh"), shell=True), desc="Runs Rofi powermenu applet"),
+    Key(["mod1"], "space", lazy.spawn(expanduser("~/.config/scripts/documents.sh"), shell=True), desc="Runs Rofi file search applet"),
     Key(["mod1"], "c", lazy.spawn("clipmenu"), desc="Runs Rofi clipboard applet"),
-#    Key(["mod1"], "s", lazy.spawn(expanduser("~/.config/rofi/applets/screenshot.sh"), shell=True), desc="Runs Rofi screenshot applet"),
+    Key(["mod1"], "o", lazy.spawn(expanduser("~/.config/scripts/screenshot.sh"), shell=True), desc="Runs Rofi screenshot applet"),
+    Key(["mod1"], "d", lazy.spawn(expanduser("~/.config/scripts/date-time.sh"), shell=True), desc="Runs rofi date-time applet"),
     Key(["mod1"], "t", lazy.spawn(expanduser("~/.config/scripts/mpd.sh"), shell=True), desc="Runs Rofi mpd applet"),
-    
+    Key(["mod1"], "b", lazy.spawn(expanduser("~/.config/scripts/backup.sh"), shell=True), desc="Runs rofi backup applet"),
+
+
     # Taking Screenshot using Maim
-    Key([], "Print", lazy.spawn(expanduser("~/.config/scripts/screenshot.sh window"), shell=True), desc="Takes screenshot of the focused window"),
-    Key(["shift"], "Print", lazy.spawn(expanduser("~/.config/scripts/screenshot.sh full"), shell=True), desc="Takes fullscreen screenshot"),
-    Key(["mod1"], "Print", lazy.spawn(expanduser("~/.config/scripts/screenshot.sh area"), shell=True), desc="Takes screenshot of the selection"),
+    Key([], "Print", lazy.spawn(expanduser("~/.config/scripts/screenshot-opts.sh window"), shell=True), desc="Takes screenshot of the focused window"),
+    Key(["shift"], "Print", lazy.spawn(expanduser("~/.config/scripts/screenshot-opts.sh full"), shell=True), desc="Takes fullscreen screenshot"),
+    Key(["mod1"], "Print", lazy.spawn(expanduser("~/.config/scripts/screenshot-opts.sh area"), shell=True), desc="Takes screenshot of the selection"),
 
     
     # Changing volume
@@ -129,19 +130,22 @@ for i in groups:
 # Definition of scratchpads
 groups.append(ScratchPad("0", [
 	# Alacritty scratchpad
-    DropDown("term", "alacritty", width=0.8, height=0.8, x=0.1, y=0.1, opacity=1, on_focus_lost_hide=False),
+    DropDown("alacritty", "alacritty", width=0.8, height=0.8, x=0.1, y=0.1, opacity=1, on_focus_lost_hide=False),
     # LF file browser scratchpad
-    DropDown("files", "alacritty '-e' 'lf'", width=0.8, height=0.8, x=0.1, y=0.1, opacity=1, on_focus_lost_hide=False),
+    DropDown("lf", "alacritty '-e' 'lf'", width=0.8, height=0.8, x=0.1, y=0.1, opacity=1, on_focus_lost_hide=False),
+    # Thunar scratchpad
+    DropDown("thunar", "thunar", width=0.9, height=0.9, x=0.05, y=0.05, opacity=1, on_focus_lost_hide=False),
     # ncmpcpp scratchpad
-    DropDown("audio", "alacritty '-e' 'ncmpcpp'", width=0.6, height=0.6, x=0.2, y=0.2, opacity=1, on_focus_lost_hide=False),
+    DropDown("ncmpcpp", "alacritty '-e' 'ncmpcpp'", width=0.6, height=0.6, x=0.2, y=0.2, opacity=1, on_focus_lost_hide=False),
         
 ]))
 
 # Keybindings for scratchpads
 keys.extend([
-    Key([], "F1", lazy.group['0'].dropdown_toggle('term')),
-    Key([], "F3", lazy.group['0'].dropdown_toggle('files')),
-    Key([], "F4", lazy.group['0'].dropdown_toggle('audio')),
+    Key([], "F1", lazy.group['0'].dropdown_toggle('alacritty')),
+    Key([], "F3", lazy.group['0'].dropdown_toggle('lf')),
+    Key([], "F4", lazy.group['0'].dropdown_toggle('thunar')),
+    Key([], "F5", lazy.group['0'].dropdown_toggle('ncmpcpp')),
     ])
 
 # Definition of layouts
@@ -150,11 +154,9 @@ layouts = [
            font = "Inter",
            fontsize = 10,
            margin = 7,
-           single_margin = 7,
-           border_focus="#a6e3a1",
-		   border_normal="#fab387",
-           border_width = 2,
-           single_border_width = 2,
+           border_width = 0,
+           single_border_width = None,
+           single_margin = None,
           ),
 ]
 
@@ -163,7 +165,7 @@ layouts = [
 widget_defaults = dict(
     font='JetBrainsMono Nerd Font Propo SemiBold',
     fontsize=14,
-    padding=7,
+    padding=8,
 )
 screens = [
 Screen(
@@ -173,7 +175,7 @@ Screen(
                     padding=8,
                     foreground=theme["background"],
                     background=theme["lavender"], 
-                    mouse_callbacks={"Button1": lazy.spawn(expanduser("~/.config/rofi/launcher.sh"))}
+                    mouse_callbacks={"Button1": lazy.spawn(expanduser("~/.config/scripts/launcher.sh"))}
                 ),
                 widget.Spacer(length=7),
                 widget.GroupBox(
@@ -189,55 +191,54 @@ Screen(
 				disable_drag=True,
                 ),
                 widget.Spacer(),
-                #widget.Mpd2(
-                #status_format='{play_status} {artist}/{title}',
-                #foreground=theme["rosewater"],
-                #play_states={'pause': '󰐊', 'play': '󰏤', 'stop': '󰓛'},
-                #mouse_buttons={1: 'toggle', 2: 'stop', 4: 'previous', 5: 'next'},
-                #idle_format='{play_status} {idle_message}', 
-                #idle_message='MPD not playing',
-                #no_connection='No connection',
-                #mouse_callbacks = {'Button3': lazy.spawn(expanduser("~/.config/scripts/mpd.sh"))},                
-                #),
                 widget.Spacer(),
-#                widget.PulseVolume(
-#                channel= 'Master',
-#                 foreground = theme["pink"],
-#                 fmt = ' {}',
-#                 step=5,
-#                 mouse_callbacks = {'Button3': lazy.spawn('pavucontrol')},
-#                ),
+                widget.CheckUpdates(
+                colour_have_updates= theme["red"],
+                colour_no_updates= theme["green"],
+                display_format="{updates}",
+                fmt= " {}",
+                distro="Arch",
+                no_update_string="0",
+                execute= "alacritty -e sudo pacman -Syu",
+                update_interval="3600",
+                ),
+                widget.OpenWeather(
+                location='Dhaka',
+                format=' {temp:.1f}°{units_temperature}',
+                foreground=theme["pink"],
+                update_interval= 900,
+                ),
+                widget.PulseVolume(
+                channel= 'Master',
+                foreground = theme["mauve"],
+                fmt = ' {}',
+				step=5,
+                mouse_callbacks = {'Button3': lazy.spawn('pavucontrol')},
+                ),
                 widget.Memory(
-                    format = ' {MemUsed:.2f} GiB',
+                    format = ' {MemUsed:.2f} GiB',
                     measure_mem='G',
                     foreground=theme["yellow"],
-                    update_interval=3.0,
+                    update_interval=5.0,
                     mouse_callbacks = {'Button1': lazy.spawn('alacritty -e btop')},
                 ),
                 widget.CPU(
                  format = ' {load_percent:.2f}%',
-                 foreground = theme["green"],
-                 update_interval=3.0,
+                 foreground = theme["peach"],
+                 update_interval=5.0,
                  mouse_callbacks = {'Button1': lazy.spawn('alacritty -e btop')},
                  ),
                 widget.Clock(
                 foreground = theme["mauve"],
-                format="%I:%M %p",
-                fmt = ' {}',
-                mouse_callbacks={"Button1": lazy.spawn(expanduser("~/.config/scripts/time.sh"))}
+                format=" %I:%M %p",
+                mouse_callbacks={"Button1": lazy.spawn(expanduser("~/.config/scripts/date-time.sh"))}
                 ),
                 widget.Clock(
                 foreground = theme["flamingo"],
-                format="%a, %b %d",
-                fmt = ' {}',
-                mouse_callbacks={"Button1": lazy.spawn(expanduser("~/.config/scripts/time.sh"))}
+                format=" %a, %b %d",
+                update_interval= 60,
+                mouse_callbacks={"Button1": lazy.spawn(expanduser("~/.config/scripts/date-time.sh"))}
                 ),
-                widget.TextBox(
-                    text="󰝚",
-                    padding=5,
-                    foreground=theme["lavender"],
-                    mouse_callbacks={"Button1": lazy.spawn(expanduser("~/.config/scripts/mpd.sh"))}
-               ),
                 widget.Systray(
                 icon_size=18,
                 padding=7,
@@ -248,7 +249,7 @@ Screen(
                     padding=8,
                     foreground=theme["background"],
                     background=theme["lavender"], 
-                    mouse_callbacks={"Button1": lazy.spawn(expanduser("~/.config/rofi/applets/powermenu.sh"))}
+                    mouse_callbacks={"Button1": lazy.spawn(expanduser("~/.config/scripts/powermenu.sh"))}
                ),
                 
                 ],
@@ -259,7 +260,6 @@ Screen(
         ),
     ),
 ]
-
 # Mouse behavior
 mouse = [
     Drag([mod], "Button1", lazy.window.set_position_floating(), start=lazy.window.get_position()),
@@ -294,6 +294,12 @@ floating_layout = layout.Floating(
         Match(wm_class="pavucontrol"), # pulseaudio volume control
         Match(wm_class="gl"),
         Match(wm_class="mpv"),
+        Match(wm_class="gpartedbin"),
+        Match(wm_class="GParted"),
+        Match(wm_class="lxappearance"),
+        Match(wm_class="Lxappearance"),
+        Match(wm_class="Xarchiver"),
+        Match(wm_class="xarchiver"),
         #Match(wm_class="zathura"), #zathura
         ]
 )
@@ -322,30 +328,21 @@ def autostart_once():
 
 
 # Hook for opening windows on certain workspaces
-@hook.subscribe.client_new
-def assign_app_group(client):
-    d = {}
-    d[group_names[0]] = ["Firefox", "firefox", "Navigator", "Browser"]
-    d[group_names[1]] = [ "org.pwmt.zathura", "zathura", "Zathura", "atril", "Atril", ]
-    d[group_names[2]] = ["gedit", "Gedit", "obsidian", "libreoffice", "libreoffice-writer", "soffice",]
-    d[group_names[3]] = ["thunar", "Thunar",]
-    d[group_names[4]] = ["inkscape", "org.inkscape.Inkscape", "Inkscape",]
-    d[group_names[5]] = []
-    d[group_names[6]] = []
-    d[group_names[7]] = []
-    allowToBeInGroup = ["alacritty", "Alacritty", "nsxiv", "nSxiv", "megasync", "MEGAsync", "xarchiver", "Xarchiver", "gnome-font-viewer", "pavucontrol", "gl","mpv",]
-    wm_class = client.window.get_wm_class()
-    if len(wm_class) >= 1:
-        wm_class = wm_class[0]
-        if wm_class not in allowToBeInGroup:
-            for i in range(len(d)):
-                if wm_class in list(d.values())[i]:
-                    group = list(d.keys())[i]
-                    client.togroup(group)
-                    client.group.cmd_toscreen(toggle=False)
-                    break
-                else:
-                    client.togroup("9")
-                    client.group.cmd_toscreen(toggle=False)
+#@hook.subscribe.client_new
+#def assign_app_group(client):
+#   d = {}
+#    d[group_names[0]] = ["Firefox", "firefox", "Navigator", "Browser"]
+#    wm_class = client.window.get_wm_class()
+#    if len(wm_class) >= 1:
+#        wm_class = wm_class[0]
+        # if wm_class not in allowToBeInGroup:
+#        for i in range(len(d)):
+#               if wm_class in list(d.values())[i]:
+#                    group = list(d.keys())[i]
+#                    client.togroup(group)
+#                    client.group.cmd_toscreen(toggle=False)
+#                    break
+#                else:
+#                    client.togroup(qtile.currentGroup)
 main = None
 wmname = "LG3D"
