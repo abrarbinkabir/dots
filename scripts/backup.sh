@@ -28,9 +28,6 @@ chosen="$(run_rofi)"
 case ${chosen} in
     $option_1)
 		pacman -Qet > ~/backups/packages/pkg-${dt}.md && notify-send -u normal -a "Pacman" -i bell -t 2000 "Backed up packages list successfully!"
-        if [ $(ls -l | wc -l) -gt 4 ] ; then
-            ls -t | tail -n 1 | xargs rm
-        fi
         ;;
 	$option_2)
 		cd ~/Documents/dotfiles && git add -A && git commit -m "Minor changes" && git push origin main
