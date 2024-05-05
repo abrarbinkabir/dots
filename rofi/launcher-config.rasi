@@ -13,7 +13,7 @@ configuration {
     background-alt: #e6e9ef; /* mantle color */
     foreground:     #4c4f69;
     foreground-alt: #9ca0b0; /* overlay 0 color */
-    primary:        #8839ef; /* mauve color */
+    primary:        #179299; /* teal color */
     font: "JetBrainsMono Nerd Font Propo Regular 13";
 }
 

@@ -24,8 +24,7 @@ option_4=" Week No: $weeknum"
 
 # Rofi CMD
 rofi_cmd() {
-   rofi -theme-str '* {primary: #dd7878;}'\
-		-theme-str 'listview {columns: 1; lines: 4;}' \
+   rofi -theme-str 'listview {columns: 1; lines: 4;}' \
 		-dmenu \
 		-mesg "$mesg" \
 		-markup-rows \

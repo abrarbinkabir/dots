@@ -17,8 +17,7 @@ option_5="󰘔 Capture Window"
 
 # Rofi CMD
 rofi_cmd() {
-	rofi -theme-str '* {primary: #04a5e5;}'\
-		-dmenu \
+	rofi -dmenu \
 		-mesg "$mesg" \
 		-markup-rows \
 		-theme ${theme}
@@ -30,7 +29,7 @@ run_rofi() {
 }
 
 # Sets the file name format
-time=`date '+%d-%m-%H-%M-%S'` # date-month-hours(24 hrs format)-minutes-seconds
+time=`date '+%Y%m%d%H%M%S'` # date-month-hours(24 hrs format)-minutes-seconds
 dir="/home/abrar/Pictures/"  # screenshot folder
 file="${time}.png"  # file name
 
@@ -38,7 +37,7 @@ file="${time}.png"  # file name
 notify_view() {
 	notify_cmd_shot='dunstify -u normal -a Maim -i bell --replace=699'
 	if [[ -e "$dir/$file" ]]; then
-		${notify_cmd_shot} "Screenshot saved as "$file""
+		${notify_cmd_shot} "Screenshot saved successfully!"
 	else
 		${notify_cmd_shot} "Failed to capture screenshot"
 	fi
@@ -52,7 +51,7 @@ copy_shot () {
 # Does countdown and sends notification on countdown
 countdown () {
 	for sec in `seq $1 -1 1`; do
-		dunstify -u normal -a Maim --replace=701 -i screenshot -t 1100 "Taking shot in : $sec seconds"
+		dunstify -u normal -a Maim --replace=701 -i bell -t 1100 "Taking shot in : $sec seconds"
 		sleep 1
 	done
 }

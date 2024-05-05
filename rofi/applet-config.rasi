@@ -9,7 +9,7 @@ configuration {
     background-alt: #e6e9ef; /* mantle color */
     foreground:     #4c4f69;
     foreground-alt: #9ca0b0; /* overlay 0 color */
-    primary:        #d20f39; /* red color */
+    primary:        #179299; /* teal color */
 	red:			#d20f39;
 	font: "JetBrainsMono Nerd Font Propo Medium 12";
 }

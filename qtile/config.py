@@ -27,7 +27,7 @@ theme = {
     "blue":       "#1e66f5",
     "lavender":   "#7287fd",
     "text":       "#4c4f69",
-    "overlay1":   "#8c8fa1",
+    "overlay0":   "#9ca0b0",
     }
 
 mod = "mod4" # super button
@@ -154,11 +154,11 @@ layouts = [
            font = "Inter",
            fontsize = 10,
            margin = 7,
-           border_width = 3,
+           border_width = 2,
            single_border_width = None,
            single_margin = None,
 		   border_normal="#bcc0cc",
-		   border_focus="#7287fd",
+		   border_focus="#179299",
           ),
 ]
 
@@ -176,7 +176,7 @@ Screen(
                     text="",
                     padding=8,
                     foreground=theme["background"],
-                    background=theme["lavender"], 
+                    background=theme["teal"], 
                     mouse_callbacks={"Button1": lazy.spawn(expanduser("~/.config/scripts/launcher.sh"))}
                 ),
                 widget.Spacer(length=7),
@@ -185,18 +185,18 @@ Screen(
                 fontsize=14,
                 padding=8,
                 highlight_method = "line",
-                highlight_color=theme["lavender"],
+                highlight_color=theme["teal"],
                 block_highlight_text_color=theme["background"],
                 borderwidth = 0,
 				active = theme["foreground"],
-				inactive = theme["overlay1"],
+				inactive = theme["overlay0"],
 				disable_drag=True,
                 ),
                 widget.Spacer(),
                 widget.Spacer(),
                 widget.CheckUpdates(
                 colour_have_updates= theme["red"],
-                colour_no_updates= theme["green"],
+                colour_no_updates= theme["text"],
                 display_format="{updates}",
                 fmt= " {}",
                 distro="Arch",
@@ -204,15 +204,9 @@ Screen(
                 execute= "alacritty -e sudo pacman -Syu",
                 update_interval="3600",
                 ),
-                widget.OpenWeather(
-                location='Dhaka',
-                format=' {temp:.1f}°{units_temperature}',
-                foreground=theme["pink"],
-                update_interval= 900,
-                ),
                 widget.PulseVolume(
                 channel= 'Master',
-                foreground = theme["mauve"],
+                foreground = theme["text"],
                 fmt = ' {}',
 				step=5,
                 mouse_callbacks = {'Button3': lazy.spawn('pavucontrol')},
@@ -220,23 +214,23 @@ Screen(
                 widget.Memory(
                     format = ' {MemUsed:.2f} GiB',
                     measure_mem='G',
-                    foreground=theme["yellow"],
+                    foreground=theme["text"],
                     update_interval=5.0,
                     mouse_callbacks = {'Button1': lazy.spawn('alacritty -e btop')},
                 ),
                 widget.CPU(
                  format = ' {load_percent:.2f}%',
-                 foreground = theme["peach"],
+                 foreground = theme["text"],
                  update_interval=5.0,
                  mouse_callbacks = {'Button1': lazy.spawn('alacritty -e btop')},
                  ),
                 widget.Clock(
-                foreground = theme["mauve"],
+                foreground = theme["text"],
                 format=" %I:%M %p",
                 mouse_callbacks={"Button1": lazy.spawn(expanduser("~/.config/scripts/date-time.sh"))}
                 ),
                 widget.Clock(
-                foreground = theme["flamingo"],
+                foreground = theme["text"],
                 format=" %a, %b %d",
                 update_interval= 60,
                 mouse_callbacks={"Button1": lazy.spawn(expanduser("~/.config/scripts/date-time.sh"))}
@@ -250,15 +244,15 @@ Screen(
                     text="",
                     padding=8,
                     foreground=theme["background"],
-                    background=theme["lavender"], 
+                    background=theme["teal"], 
                     mouse_callbacks={"Button1": lazy.spawn(expanduser("~/.config/scripts/powermenu.sh"))}
                ),
                 
                 ],
             28,
             background=theme["background"],
-            #border_width=[2, 0, 2, 0],  # Draw top and bottom borders
-            #border_color=["ff00ff", "000000", "ff00ff", "000000"]  # Borders are magenta
+            border_width=[0, 0, 2, 0],  # Draw top and bottom borders
+            border_color=["000000", "000000", "#ccd0da", "000000"]  # Borders are surface 0
         ),
     ),
 ]
@@ -277,7 +271,7 @@ cursor_warp = False
 
 floating_layout = layout.Floating(
 	border_width=2,
-	border_focus="#7287fd",
+	border_focus="#179299",
 	border_normal="#bcc0cc",
     float_rules=[
         *layout.Floating.default_float_rules, 
@@ -302,7 +296,6 @@ floating_layout = layout.Floating(
         Match(wm_class="Lxappearance"),
         Match(wm_class="Xarchiver"),
         Match(wm_class="xarchiver"),
-        #Match(wm_class="zathura"), #zathura
         ]
 )
 

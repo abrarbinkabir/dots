@@ -1,39 +1,39 @@
 set n-completion-items			10
-set completion-group-bg         "#181825"
-set completion-group-fg         "#F1F4FF"
-set completion-bg               "#181825"
-set completion-fg               "#F1F4FF"
-set completion-highlight-bg     "#B4BEFE"
-set completion-highlight-fg     "#1E1E2E"
+set completion-group-bg         "#e6e9ef"
+set completion-group-fg         "#4c4f69"
+set completion-bg               "#e6e9ef"
+set completion-fg               "#4c4f69"
+set completion-highlight-bg     "#179299"
+set completion-highlight-fg     "#eff1f5"
 
-set notification-error-bg       "#1E1E2E"
-set notification-error-fg       "#F38BA8"
-set notification-warning-bg     "#1E1E2E"
-set notification-warning-fg     "#F38BA8"
-set notification-bg             "#1E1E2E"
-set notification-fg             "#A6E3A1"
+set notification-error-bg       "#eff1f5"
+set notification-error-fg       "#d20f39"
+set notification-warning-bg     "#eff1f5"
+set notification-warning-fg     "#d20f39"
+set notification-bg             "#eff1f5"
+set notification-fg             "#179299"
 
-set index-bg                    "#F1F4FF"
-set index-fg                    "#1E1E2E"
-set index-active-bg             "#B4BEFE"
-set index-active-fg             "#1E1E2E"
+set index-bg                    "#eff1f5"
+set index-fg                    "#4c4f69"
+set index-active-bg             "#dce0e8"
+set index-active-fg             "#179299"
 
-set inputbar-bg                 "#1E1E2E"
-set inputbar-fg                 "#F1F4FF"
+set inputbar-bg                 "#eff1f5"
+set inputbar-fg                 "#4c4f69"
 
-set statusbar-bg                "#B4BEFE"
-set statusbar-fg                "#1E1E2E"
+set statusbar-bg                "#dce0e8"
+set statusbar-fg                "#4c4f69"
 set statusbar-h-padding			10
 set statusbar-v-padding			10
 
 
-set highlight-color             "rgba(180, 190, 254, 0.5)"
-set highlight-fg                "rgba(30, 30, 46, 1)"
-set highlight-active-color      "rgba(166, 227, 161, 0.5)"
+set highlight-color             "rgba(23, 146, 153, 0.4)"
+set highlight-fg                "rgba(76, 79, 105, 1)"
+set highlight-active-color      "rgba(210, 15, 57, 0.4)"
 
-set default-bg                  "#1E1E2E"
-set default-fg                  "#F1F4FF"
-set font 						'JetBrainsMono Nerd Font Propo 10'
+set default-bg                  "#eff1f5"
+set default-fg                  "#4c4f69"
+set font 						"JetBrainsMono Nerd Font Propo Medium 10"
 
 set page-padding				3
 set statusbar-page-percent		true
@@ -44,7 +44,7 @@ set database					"sqlite"
 
 map u scroll half-up
 map d scroll half-down
-map p adjust_window best-fit
+map f adjust_window best-fit
 map w adjust_window width
 unmap q
 unmap [normal] a

@@ -4,8 +4,7 @@
 theme="$HOME"/.config/rofi/config.rasi
 
 rofi_cmd() {
-		rofi -theme-str '* {primary: #179299;}'\
-		-theme-str "window {width: 1000px;}" \
+		rofi -theme-str "window {width: 1000px;}" \
 		-dmenu -i \
 		-p "Search Files" \
 		-markup-rows \

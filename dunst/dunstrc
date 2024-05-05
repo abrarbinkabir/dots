@@ -4,7 +4,7 @@
 	width = 400 
 	height = 300 
 	origin = top-right 
-	offset = 20x40 
+	offset = 35x50 
 	scale = 0 
 	notification_limit = 20 
 	progress_bar = true 
@@ -20,10 +20,10 @@
 	padding = 12 # padding between text and separator 
 	horizontal_padding = 15 
 	text_icon_padding = 15  
-	frame_width = 3 
-	frame_color = "#8aadf4" 
+	frame_width = 2
+	frame_color = "#179299" 
 	gap_size = 0 
-	separator_color = "#8aadf4" 
+	separator_color = "#179299" 
 	sort = yes
 	font = "JetBrainsMono Nerd Font Propo 11"
 	line_height = 0
@@ -60,23 +60,23 @@
     per_monitor_dpi = false
     
 [urgency_low]
-	background = "#1E1E2E" # background color
-    foreground = "#F1F4FF" # foreground color
-    highlight = "#8aadf4" # progress bar color
+	background = "#eff1f5" # background color
+    foreground = "#4c4f69" # foreground color
+    highlight = "#179299" # progress bar color
     timeout = 3
         
 [urgency_normal]
-    background = "#1E1E2E" # background color
-    foreground = "#F1F4FF" # foreground color
-    highlight = "#8aadf4" # progress bar color
+    background = "#eff1f5" # background color
+    foreground = "#4c4f69" # foreground color
+    highlight = "#179299" # progress bar color
     timeout = 3
     
         
 [urgency_critical]
-	background = "#F38BA8" # red color
-    foreground = "#1E1E2E" # foreground color
-    frame_color = "#EBA0AC" # light red color
-    highlight = "#B4BEFE" # progress bar color
+	background = "#eff1f5" # background color
+    foreground = "#4c4f69" # foreground color
+    frame_color = "#d20f39" # red color
+    highlight = "#179299" # progress bar color
     timeout = 0
     
     

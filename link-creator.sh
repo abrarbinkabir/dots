@@ -1,6 +1,7 @@
 #!/bin/bash
 ln -s $HOME/Documents/dotfiles/alacritty ~/.config/
 ln -s $HOME/Documents/dotfiles/betterlockscreen ~/.config/
+ln -s $HOME/Documents/dotfiles/btop ~/.config/
 ln -s $HOME/Documents/dotfiles/dunst ~/.config/
 ln -s $HOME/Documents/dotfiles/lf ~/.config/
 ln -s $HOME/Documents/dotfiles/mpd ~/.config/

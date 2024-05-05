@@ -9,7 +9,7 @@ file="${time}.png"  # file name
 notify_view() {
 	notify_cmd_shot='dunstify -u normal -a Maim -i bell --replace=699'
 	if [[ -e "$dir/$file" ]]; then
-		${notify_cmd_shot} "Screenshot saved as "$file""
+		${notify_cmd_shot} "Screenshot saved successfully!"
 	else
 		${notify_cmd_shot} "Failed to capture screenshot"
 	fi
