@@ -44,6 +44,6 @@ application/vnd.rar=xarchiver.desktop
 application/octet-stream=xarchiver.desktop
 
 font/sfnt=org.gnome.font-viewer.desktop
-inode/directory=lf.desktop
+inode/directory=thunar.desktop
 
 

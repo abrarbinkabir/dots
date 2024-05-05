@@ -17,7 +17,8 @@ option_5="󰘔 Capture Window"
 
 # Rofi CMD
 rofi_cmd() {
-	rofi -dmenu \
+	rofi -theme-str '* {primary: #04a5e5;}'\
+		-dmenu \
 		-mesg "$mesg" \
 		-markup-rows \
 		-theme ${theme}

@@ -10,24 +10,24 @@ import pulsectl_asyncio
 
 
 theme = {
-    "background": "1e1e2e",
-    "foreground": "f1f4ff",
-    "rosewater":  "f5e0dc",
-    "flamingo":   "f2cdcd",
-    "pink":       "f5c2e7",
-    "mauve":      "cba6f7",
-    "red":        "f38ba8",
-    "maroon":     "eba0ac",
-    "peach":      "fab387",
-    "yellow":     "f9e2af",
-    "green":      "a6e3a1",
-    "teal":       "94e2d5",
-    "sky":        "89dceb",
-    "sapphire":   "74c7ec",
-    "blue":       "89b4fa",
-    "lavender":   "b4befe",
-    "text":       "cdd6f4",
-    "overlay1":   "7f849c",
+    "background": "#eff1f5",
+    "foreground": "#4c4f69",
+    "rosewater":  "#dc8a78",
+    "flamingo":   "#dd7878",
+    "pink":       "#ea76cb",
+    "mauve":      "#8839ef",
+    "red":        "#d20f39",
+    "maroon":     "#e64553",
+    "peach":      "#fe640b",
+    "yellow":     "#df8e1d",
+    "green":      "#40a02b",
+    "teal":       "#179299",
+    "sky":        "#04a5e5",
+    "sapphire":   "#209fb5",
+    "blue":       "#1e66f5",
+    "lavender":   "#7287fd",
+    "text":       "#4c4f69",
+    "overlay1":   "#8c8fa1",
     }
 
 mod = "mod4" # super button
@@ -154,9 +154,11 @@ layouts = [
            font = "Inter",
            fontsize = 10,
            margin = 7,
-           border_width = 0,
+           border_width = 3,
            single_border_width = None,
            single_margin = None,
+		   border_normal="#bcc0cc",
+		   border_focus="#7287fd",
           ),
 ]
 
@@ -275,8 +277,8 @@ cursor_warp = False
 
 floating_layout = layout.Floating(
 	border_width=2,
-	border_focus="#CBA6F7",
-	border_normal="#F5E0DC",
+	border_focus="#7287fd",
+	border_normal="#bcc0cc",
     float_rules=[
         *layout.Floating.default_float_rules, 
         

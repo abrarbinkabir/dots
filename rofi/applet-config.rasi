@@ -5,11 +5,12 @@ configuration {
 
 /*****----- Global Properties -----*****/
 * {
-	background: 				 #1e1e2e;
-	background-alt: 			 #313244; /* surface0 color */
-	foreground: 				 #f1f4ff;
-	red:						 #f38ba8;
-	primary: 					 #cba6f7; /* mauve color */
+	background:     #eff1f5;
+    background-alt: #e6e9ef; /* mantle color */
+    foreground:     #4c4f69;
+    foreground-alt: #9ca0b0; /* overlay 0 color */
+    primary:        #d20f39; /* red color */
+	red:			#d20f39;
 	font: "JetBrainsMono Nerd Font Propo Medium 12";
 }
 

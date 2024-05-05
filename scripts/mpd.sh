@@ -28,7 +28,8 @@ if [[ ${status} == "playing" ]]; then
 
 # Rofi CMD
 rofi_cmd() {
-	rofi -theme-str 'listview {columns: 1; lines: 6;}' \
+	rofi -theme-str '* {primary: #40a02b;}'\
+		-theme-str 'listview {columns: 1; lines: 6;}' \
 		-dmenu \
 		-mesg "$mesg" \
 		-markup-rows \

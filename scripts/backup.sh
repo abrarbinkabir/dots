@@ -9,7 +9,8 @@ option_1=" Pacman Package List"
 
 # Rofi CMD
 rofi_cmd() {
-	rofi -theme-str 'listview {columns: 1; lines: 1;}' \
+   rofi -theme-str '* {primary: #7287fd;}'\
+		-theme-str 'listview {columns: 1; lines: 1;}' \
 		-theme-str 'window {width: 400px;}' \
 		-dmenu \
 		-mesg "$mesg" \

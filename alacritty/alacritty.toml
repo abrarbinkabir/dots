@@ -3,57 +3,81 @@ live_config_reload = true
 [colors]
 draw_bold_text_with_bright_colors = true
 
-[[colors.indexed_colors]]
-color = "#FAB387"
-index = 16
-
-[[colors.indexed_colors]]
-color = "#F5E0DC"
-index = 17
-
-[colors.bright]
-black = "#585B70"
-blue = "#89b4fa"
-cyan = "#b4befe"
-green = "#A6E3A1"
-magenta = "#f5c2e7"
-red = "#F38BA8"
-white = "#A6ADC8"
-yellow = "#fab387"
+[colors.primary]
+background = "#eff1f5"
+foreground = "#4c4f69"
+dim_foreground = "#8c8fa1"
+bright_foreground = "#4c4f69"
 
 [colors.cursor]
-cursor = "#F5E0DC"
-text = "#181825"
+text = "#eff1f5"
+cursor = "#dc8a78"
 
-[colors.dim]
-black = "#45475A"
-blue = "#89b4fa"
-cyan = "#b4befe"
-green = "#A6E3A1"
-magenta = "#f5c2e7"
-red = "#F38BA8"
-white = "#BAC2DE"
-yellow = "#fab387"
+[colors.vi_mode_cursor]
+text = "#eff1f5"
+cursor = "#7287fd"
 
-[colors.normal]
-black = "#45475A"
-blue = "#89b4fa"
-cyan = "#B4BEFE"
-green = "#A6E3A1"
-magenta = "#f5c2e7"
-red = "#F38BA8"
-white = "#BAC2DE"
-yellow = "#fab387"
+[colors.search.matches]
+foreground = "#eff1f5"
+background = "#6c6f85"
 
-[colors.primary]
-background = "#1E1E2E"
-bright_foreground = "#F1F4FF"
-dim_foreground = "#F1F4FF"
-foreground = "#F1F4FF"
+[colors.search.focused_match]
+foreground = "#eff1f5"
+background = "#40a02b"
+
+[colors.footer_bar]
+foreground = "#eff1f5"
+background = "#6c6f85"
+
+[colors.hints.start]
+foreground = "#eff1f5"
+background = "#df8e1d"
+
+[colors.hints.end]
+foreground = "#eff1f5"
+background = "#6c6f85"
 
 [colors.selection]
-background = "#F5E0DC"
-text = "#1E1E2E"
+text = "#eff1f5"
+background = "#dc8a78"
+
+[colors.normal]
+black = "#bcc0cc"
+red = "#d20f39"
+green = "#40a02b"
+yellow = "#df8e1d"
+blue = "#1e66f5"
+magenta = "#ea76cb"
+cyan = "#179299"
+white = "#5c5f77"
+
+[colors.bright]
+black = "#acb0be"
+red = "#d20f39"
+green = "#40a02b"
+yellow = "#df8e1d"
+blue = "#1e66f5"
+magenta = "#ea76cb"
+cyan = "#179299"
+white = "#6c6f85"
+
+[colors.dim]
+black = "#bcc0cc"
+red = "#d20f39"
+green = "#40a02b"
+yellow = "#df8e1d"
+blue = "#1e66f5"
+magenta = "#ea76cb"
+cyan = "#179299"
+white = "#5c5f77"
+
+[[colors.indexed_colors]]
+index = 16
+color = "#fe640b"
+
+[[colors.indexed_colors]]
+index = 17
+color = "#dc8a78"
 
 [cursor]
 blink_interval = 750

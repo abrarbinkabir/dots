@@ -12,12 +12,7 @@ set ratios 1:1:2 # sets ratio for the panes
 
 # Custom commands for....
 
-cmd open ${{
-    case $(file --mime-type "$f" -bL) in
-        text/*|application/json) $EDITOR "$f";;
-        *) xdg-open "$f" ;;
-    esac
-}}
+cmd open ${{xdg-open "$f"}}
 
 # Making folder
 cmd mkdir ${{

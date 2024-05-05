@@ -9,11 +9,11 @@ configuration {
 /*****----- Global Properties -----*****/
 
 * {
-    background:     #1e1e2e;
-    background-alt: #313244;
-    foreground:     #f1f4ff;
-    foreground-alt: #7f849c; /* surface 0 */
-    primary:        #89b4fa; /* blue */
+    background:     #eff1f5;
+    background-alt: #e6e9ef; /* mantle color */
+    foreground:     #4c4f69;
+    foreground-alt: #9ca0b0; /* overlay 0 color */
+    primary:        #209fb5; /* sapphire color */
     font: "JetBrainsMono Nerd Font Propo Regular 13";
 }
 
@@ -123,7 +123,7 @@ element {
     enabled:                     true;
     spacing:                     10px;
     margin:                      0px;
-    padding:                     7px 20px;
+    padding:                     10px 20px;
     border:                      0px solid;
     border-radius:               0px;
     border-color:                @primary;
