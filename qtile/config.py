@@ -154,7 +154,7 @@ layouts = [
            font = "Inter",
            fontsize = 10,
            margin = 7,
-           border_width = 2,
+           border_width = 1,
            single_border_width = None,
            single_margin = None,
 		   border_normal="#bcc0cc",
@@ -270,7 +270,7 @@ bring_front_click = True
 cursor_warp = False
 
 floating_layout = layout.Floating(
-	border_width=2,
+	border_width=1,
 	border_focus="#179299",
 	border_normal="#bcc0cc",
     float_rules=[

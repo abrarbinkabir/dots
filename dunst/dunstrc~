@@ -22,7 +22,7 @@
 	text_icon_padding = 15  
 	frame_width = 2
 	frame_color = "#179299" 
-	gap_size = 0
+	gap_size = 10
 	separator_color = "#179299" 
 	sort = yes
 	font = "JetBrainsMono Nerd Font Propo 11"
