@@ -19,9 +19,9 @@ precmd_functions+=( precmd_vcs_info )
 setopt prompt_subst
 zstyle ':vcs_info:git:*' formats ' %b '
 
-# Changes prompt
-PROMPT='%U%F{cyan}%~%f%u %B%F{magenta}${vcs_info_msg_0_}%f%F{yellow}󱞩%f%b '
-RPROMPT='%F{cyan}%*%f'
+# Changes zsh prompt
+PROMPT='%B%F{cyan}%U%~%u%f %F{yellow}${vcs_info_msg_0_}%f%F{cyan}%f%b '
+RPROMPT='%B%F{cyan}%*%f%b'
 
 # Basic auto/tab complete:
 autoload -Uz compinit
@@ -53,6 +53,7 @@ alias diff='diff --color=auto'
 alias grep='grep --color=auto'
 alias dt="date +%Y%m%d"
 
+# Function for searching files and folders using fzf
 function fd {
     base="/home/abrar/"
     res="$(find ~/Documents/ ~/Downloads/ ! -path '*/.*' ! -path '/home/abrar/Documents/archives*' | sort | cut -d '/' -f4- |fzf -e -i --reverse --header='Search files and folders')"
@@ -64,17 +65,19 @@ function fd {
      esac
 ;}
 
+# yt-dlp aliases
 alias yt="yt-dlp"
 alias yta="yt-dlp -f 'bestaudio[ext=m4a]'"
 alias ytp="yt-dlp -o '/home/abrar/no-sync/%(playlist)s/%(playlist_index)s-%(title)s.%(ext)s'"
 
+# Pacman aliases
 alias Syu="sudo pacman -Syyu"
 alias Ss="pacman -Ss"
 alias S="sudo pacman -S"
 alias Qet="pacman -Qet"
 alias Rns="sudo pacman -Rns"
 
-# Plugins
+# Zsh plugins
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh 2>/dev/null
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
 source /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh 2>/dev/null

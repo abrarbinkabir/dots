@@ -215,13 +215,13 @@ Screen(
                     format = ' {MemUsed:.2f} GiB',
                     measure_mem='G',
                     foreground=theme["text"],
-                    update_interval=5.0,
+                    update_interval=3.0,
                     mouse_callbacks = {'Button1': lazy.spawn('alacritty -e btop')},
                 ),
                 widget.CPU(
                  format = ' {load_percent:.2f}%',
                  foreground = theme["text"],
-                 update_interval=5.0,
+                 update_interval=3.0,
                  mouse_callbacks = {'Button1': lazy.spawn('alacritty -e btop')},
                  ),
                 widget.Clock(

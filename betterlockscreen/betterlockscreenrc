@@ -11,7 +11,7 @@ wallpaper_cmd="feh --bg-fill"
 quiet=false
 
 # default theme
-loginbox=179299FF # background color
+loginbox=179299ff # background color
 loginshadow=00000000
 locktext="Type password to unlock..."
 font="JetBrainsMono Nerd Font Propo:Medium"
