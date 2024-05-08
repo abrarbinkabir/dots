@@ -20,7 +20,7 @@ setopt prompt_subst
 zstyle ':vcs_info:git:*' formats ' %b '
 
 # Changes zsh prompt
-PROMPT='%B%F{cyan}%U%~%u%f %F{yellow}${vcs_info_msg_0_}%f%F{cyan}%f%b '
+PROMPT='%B%F{cyan}%U%~%u%f %F{yellow}${vcs_info_msg_0_}%f%F{cyan}󱞩%f%b '
 RPROMPT='%B%F{cyan}%*%f%b'
 
 # Basic auto/tab complete:

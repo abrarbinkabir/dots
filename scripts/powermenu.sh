@@ -6,7 +6,7 @@ theme="$HOME"/.config/rofi/applet-config.rasi
 # Message to show uptime
 # Gets the uptime >>
 # Replaces 'up ' with ''
-mesg="Uptime: `uptime -p | sed -e 's/up //g' -e 's/ hour,/h/g' -e 's/ minutes/m/g'`"
+mesg="Uptime: `uptime -p | sed -e 's/up //g' -e 's/\shour[s]\?,/h/g' -e 's/\sminute[s]\?/m/g'`"
 
 # Options
 option_1=" Shut Down"

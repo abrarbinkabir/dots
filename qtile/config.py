@@ -50,15 +50,15 @@ keys = [
     Key([mod, "shift"], "l", lazy.layout.shuffle_right(), desc="Moves window to the right"),
     Key([mod, "shift"], "j", lazy.layout.shuffle_down(), desc="Moves window down"),
     Key([mod, "shift"], "k", lazy.layout.shuffle_up(), desc="Moves window up"),
-    Key([mod, "shift"], "space", lazy.layout.flip(), desc="Switches which horizontal side the main pane will occupy"),
+    Key([mod, "shift"], "space", lazy.layout.flip(), desc="Flips side of the main pane horizontally"),
     
     # Resizing windows
-	Key([mod], "g", lazy.layout.grow(), desc="Makes the focused window bigger depending on it's position"),
-	Key([mod], "s", lazy.layout.shrink(), desc="Makes the focused window smaller depending on it's position"),
-	Key([mod], "r", lazy.layout.reset(), desc="Resets all windows to their default sizes"),
+	Key([mod], "g", lazy.layout.grow(), desc="Expands the focused window"),
+	Key([mod], "s", lazy.layout.shrink(), desc="Shrinks the focused window"),
+	Key([mod], "r", lazy.layout.reset(), desc="Resets all windows to their default size"),
 	Key([mod], "n", lazy.layout.normalize(), desc="Restores all secondary windows to their default size"),
-    Key([mod], "m", lazy.window.toggle_minimize(), desc="Toggle minimization on focused window"),
-    Key([mod], "space", lazy.window.toggle_floating()),
+    Key([mod], "m", lazy.window.toggle_minimize(), desc="Toggles minimization on focused window"),
+    Key([mod], "space", lazy.window.toggle_floating(), desc="Toggles floating layout"),
 	
 	# Launching apps
     Key([mod], "Return", lazy.spawn(terminal), desc="Launches terminal"),
@@ -92,7 +92,7 @@ keys = [
     # Changing volume
     Key(["mod1"], "F1", lazy.spawn(expanduser("~/.config/scripts/volume.sh up"), shell=True), desc="Increases volume by 5%"),
     Key(["mod1"], "F2", lazy.spawn(expanduser("~/.config/scripts/volume.sh down"), shell=True), desc="Decreases volume by 5%"),
-    Key(["mod1"], "F3", lazy.spawn(expanduser("~/.config/scripts/volume.sh mute"), shell=True), desc="Toggles mute"),    
+    Key(["mod1"], "F3", lazy.spawn(expanduser("~/.config/scripts/volume.sh mute"), shell=True), desc="Toggles mute state"),    
 ]
 
 # Definition of groups
@@ -202,7 +202,7 @@ Screen(
                 distro="Arch",
                 no_update_string="0",
                 execute= "alacritty -e sudo pacman -Syu",
-                update_interval="3600",
+                update_interval=3600,
                 ),
                 widget.PulseVolume(
                 channel= 'Master',
@@ -215,13 +215,13 @@ Screen(
                     format = ' {MemUsed:.2f} GiB',
                     measure_mem='G',
                     foreground=theme["text"],
-                    update_interval=3.0,
+                    update_interval=5.0,
                     mouse_callbacks = {'Button1': lazy.spawn('alacritty -e btop')},
                 ),
                 widget.CPU(
                  format = ' {load_percent:.2f}%',
                  foreground = theme["text"],
-                 update_interval=3.0,
+                 update_interval=5.0,
                  mouse_callbacks = {'Button1': lazy.spawn('alacritty -e btop')},
                  ),
                 widget.Clock(
@@ -285,7 +285,7 @@ floating_layout = layout.Floating(
         Match(title="pinentry"),
         Match(wm_class="confirmreset"),
         Match(wm_class="megasync"), # megasync
-        Match(wm_class="nsxiv"), # neo simple x image viewer
+        #Match(wm_class="nsxiv"), # neo simple x image viewer
         Match(wm_class="gnome-font-viewer"), # font-viewer
         Match(wm_class="pavucontrol"), # pulseaudio volume control
         Match(wm_class="gl"),
