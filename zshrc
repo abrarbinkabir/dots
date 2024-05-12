@@ -44,11 +44,11 @@ bindkey '^[[B' history-substring-search-down
 # Aliases
 alias ll="ls -lah --color=auto"
 alias ls="ls --color=auto"
-alias con="cd ~/.config/ && ls"
-alias doc="cd ~/Documents/ && ls"
-alias dot="cd ~/Documents/dotfiles/ && ls"
-alias dl="cd ~/Downloads && ls"
-alias pic="cd ~/Pictures/ && ls"
+alias con="cd ~/.config/"
+alias doc="cd ~/Documents/"
+alias dot="cd ~/Documents/dotfiles/"
+alias dl="cd ~/Downloads/"
+alias pic="cd ~/Pictures/"
 alias diff='diff --color=auto'
 alias grep='grep --color=auto'
 alias dt="date +%Y%m%d"

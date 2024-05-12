@@ -17,8 +17,8 @@ ln -s $HOME/Documents/dotfiles/scripts ~/.config/
 ln -s $HOME/Documents/dotfiles/yt-dlp ~/.config/
 ln -s $HOME/Documents/dotfiles/zathura ~/.config/
 
-ln -s $HOME/Documents/dotfiles/.profile ~/
-ln -s $HOME/Documents/dotfiles/.Xresources ~/
-ln -s $HOME/Documents/dotfiles/.zshrc ~/
+ln -s $HOME/Documents/dotfiles/profile ~/.profile
+ln -s $HOME/Documents/dotfiles/Xresources ~/.Xresources
+ln -s $HOME/Documents/dotfiles/zshrc ~/.zshrc
 ln -s $HOME/Documents/dotfiles/mimeapps.list ~/.config/
 ln -s $HOME/Documents/dotfiles/wallpaper.png ~/.config/

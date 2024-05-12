@@ -81,6 +81,7 @@ keys = [
     Key(["mod1"], "d", lazy.spawn(expanduser("~/.config/scripts/date-time.sh"), shell=True), desc="Runs rofi date-time applet"),
     Key(["mod1"], "t", lazy.spawn(expanduser("~/.config/scripts/mpd.sh"), shell=True), desc="Runs Rofi mpd applet"),
     Key(["mod1"], "b", lazy.spawn(expanduser("~/.config/scripts/backup.sh"), shell=True), desc="Runs rofi backup applet"),
+	Key(["mod1"], "w", lazy.spawn(expanduser("~/.config/scripts/arch-wiki.sh"), shell=True), desc="Runs rofi arch-wiki applet"),
 
 
     # Taking Screenshot using Maim
