@@ -8,6 +8,8 @@ export LESS_TERMCAP_se=$'\e[0m'        # reset reverse video
 export LESS_TERMCAP_ue=$'\e[0m'        # reset underline
 export MANPAGER="less -R"
 export MANROFFOPT="-P -c"
+export PATH=/home/abrar/.config:$PATH
+export PATH=/home/abrar/Documents/dotfiles/scripts:$PATH
 
 # Enables colors
 autoload -Uz colors && colors

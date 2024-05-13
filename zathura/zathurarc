@@ -42,12 +42,13 @@ set selection-clipboard 		clipboard
 
 set database					"sqlite"
 
+map a toggle_page_mode toggle
 map u scroll half-up
 map d scroll half-down
 map f adjust_window best-fit
 map w adjust_window width
 unmap q
-unmap [normal] a
+#unmap [normal] a
 unmap [normal] s
 unmap [normal] <C-u>
 unmap [normal] <C-d>

@@ -76,6 +76,7 @@ keys = [
     Key(["mod1"], "a", lazy.spawn(expanduser("~/.config/scripts/launcher.sh"), shell=True), desc="Runs Rofi applications menu applet"),
     Key(["mod1"], "p", lazy.spawn(expanduser("~/.config/scripts/powermenu.sh"), shell=True), desc="Runs Rofi powermenu applet"),
     Key(["mod1"], "space", lazy.spawn(expanduser("~/.config/scripts/documents.sh"), shell=True), desc="Runs Rofi file search applet"),
+	Key(["mod1"], "f", lazy.spawn(expanduser("~/.config/scripts/directories.sh"), shell=True), desc="Runs Rofi folder search applet"),
     Key(["mod1"], "c", lazy.spawn("clipmenu"), desc="Runs Rofi clipboard applet"),
     Key(["mod1"], "o", lazy.spawn(expanduser("~/.config/scripts/screenshot.sh"), shell=True), desc="Runs Rofi screenshot applet"),
     Key(["mod1"], "d", lazy.spawn(expanduser("~/.config/scripts/date-time.sh"), shell=True), desc="Runs rofi date-time applet"),

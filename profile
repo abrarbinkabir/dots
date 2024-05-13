@@ -9,7 +9,7 @@ export LS_COLORS
 export CM_LAUNCHER=rofi
 export CM_HISTLENGTH=7
 export CM_MAX_CLIPS=30
-export PATH=/home/abrar/.config:$PATH
+
 
 # Normal Colors
 # Foreground color codes
