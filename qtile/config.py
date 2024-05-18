@@ -195,17 +195,6 @@ Screen(
 				disable_drag=True,
                 ),
                 widget.Spacer(),
-                widget.Spacer(),
-                widget.CheckUpdates(
-                colour_have_updates= theme["red"],
-                colour_no_updates= theme["text"],
-                display_format="{updates}",
-                fmt= " {}",
-                distro="Arch",
-                no_update_string="0",
-                execute= "alacritty -e sudo pacman -Syu",
-                update_interval=3600,
-                ),
                 widget.PulseVolume(
                 channel= 'Master',
                 foreground = theme["text"],
