@@ -1,7 +1,7 @@
 [global]
 	monitor = 0
 	follow = none 
-	width = 350
+	width = 300
 	height = 300 
 	origin = top-right 
 	offset = 35x50 
@@ -11,15 +11,15 @@
 	progress_bar_height = 10 
 	progress_bar_frame_width = 2 
 	progress_bar_min_width = 150
-	progress_bar_max_width = 300
+	progress_bar_max_width = 250
 	progress_bar_corner_radius = 0
 	icon_corner_radius = 0
 	indicate_hidden = yes 
 	transparency = 0 
 	separator_height = 2 
 	padding = 12 # padding between text and separator 
-	horizontal_padding = 30 
-	text_icon_padding = 15  
+	horizontal_padding = 20 
+	text_icon_padding = 10  
 	frame_width = 2
 	frame_color = "#179299" 
 	gap_size = 0
@@ -38,8 +38,8 @@
 	show_indicators = yes
 	enable_recursive_icon_lookup = false
 	icon_position = left
-	min_icon_size = 36
-	max_icon_size = 36
+	min_icon_size = 32
+    max_icon_size = 32
 	icon_path = /home/abrar/.local/share/dunst/
 	sticky_history = yes
 	history_length = 20

@@ -27,9 +27,9 @@ run_rofi() {
 chosen="$(run_rofi)"
 case ${chosen} in
     $option_1)
-		pacman -Qe > ~/backups/packages/pkg-${dt}.md && notify-send -u normal -a "Pacman" -i bell -t 2000 "Backup successful!"
+		pacman -Qe > ~/backups/packages/pkg-${dt}.md && notify-send -u normal -a "Package List" -i bell -t 2000 "Backup successful!"
         ;;
 	$option_2)
-		cd ~/Documents/dotfiles && git add -A && git commit -m "Minor changes" && git push origin main && notify-send -u normal -a "Github" -i bell -t 2000 "Backup successful!"
+		cd ~/Documents/dotfiles && git add -A && git commit -m "Minor changes" && git push origin main && notify-send -u normal -a "Dotfiles" -i bell -t 2000 "Pushed successfully!"
 		;;
 esac
