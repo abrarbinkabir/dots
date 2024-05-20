@@ -42,7 +42,7 @@ run_rofi() {
 
 repeat_mode(){
 	repeat=$(mpc status | awk '/repeat/ {print $4}')
-	notify-send -u normal -a "Music Player Daemon" -i bell -t 1500 "Repeat mode turned $repeat"
+	notify-send -u normal -a "Music Player Daemon" -i bell -t 1500 "Repeat mode turned"\n "$repeat"
 }
 
 random_mode(){

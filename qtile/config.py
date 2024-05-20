@@ -132,13 +132,13 @@ for i in groups:
 # Definition of scratchpads
 groups.append(ScratchPad("0", [
 	# Alacritty scratchpad
-    DropDown("alacritty", "alacritty", width=0.8, height=0.8, x=0.1, y=0.1, opacity=1, on_focus_lost_hide=False),
+    DropDown("alacritty", "alacritty", width=0.6, height=0.7, x=0.2, y=0.1, opacity=1, on_focus_lost_hide=False),
     # LF file browser scratchpad
     DropDown("lf", "alacritty '-e' 'lf'", width=0.8, height=0.8, x=0.1, y=0.1, opacity=1, on_focus_lost_hide=False),
     # Thunar scratchpad
     DropDown("thunar", "thunar", width=0.9, height=0.9, x=0.05, y=0.05, opacity=1, on_focus_lost_hide=False),
     # ncmpcpp scratchpad
-    DropDown("ncmpcpp", "alacritty '-e' 'ncmpcpp'", width=0.6, height=0.6, x=0.2, y=0.2, opacity=1, on_focus_lost_hide=False),
+    DropDown("ncmpcpp", "alacritty '-e' 'ncmpcpp'", width=0.6, height=0.6, x=0.2, y=0.1, opacity=1, on_focus_lost_hide=False),
         
 ]))
 
@@ -155,7 +155,7 @@ layouts = [
     layout.MonadTall(
            font = "Inter",
            fontsize = 10,
-           margin = 7,
+           margin = 3,
            border_width = 1,
            single_border_width = None,
            single_margin = None,
@@ -174,15 +174,7 @@ widget_defaults = dict(
 screens = [
 Screen(
         top=bar.Bar(
-            [	widget.TextBox(
-                    text="",
-                    padding=8,
-                    foreground=theme["background"],
-                    background=theme["teal"], 
-                    mouse_callbacks={"Button1": lazy.spawn(expanduser("~/.config/scripts/launcher.sh"))}
-                ),
-                widget.Spacer(length=7),
-                widget.GroupBox(
+            [	widget.GroupBox(
                 font= 'JetBrainsMono Nerd Font Propo',
                 fontsize=14,
                 padding=8,
@@ -229,20 +221,10 @@ Screen(
                 widget.Systray(
                 icon_size=18,
                 padding=7,
-                ),
-                widget.Spacer(length=7),
-                widget.TextBox(
-                    text="",
-                    padding=8,
-                    foreground=theme["background"],
-                    background=theme["teal"], 
-                    mouse_callbacks={"Button1": lazy.spawn(expanduser("~/.config/scripts/powermenu.sh"))}
-               ),
-                
-                ],
-            28,
+                ),],
+            26,
             background=theme["background"],
-            border_width=[0, 0, 2, 0],  # Draw top and bottom borders
+            border_width=[0, 0, 1, 0],  # Draw top and bottom borders
             border_color=["000000", "000000", "#ccd0da", "000000"]  # Borders are surface 0
         ),
     ),
