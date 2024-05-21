@@ -1,11 +1,11 @@
 [Default Applications]
 
-text/plain=org.gnome.gedit.desktop
-text/x-script.python=org.gnome.gedit.desktop
-inode/x-empty=org.gnome.gedit.desktop
-application/json=org.gnome.gedit.desktop
-text/x-shellscript=org.gnome.gedit.desktop
-text/vcard=org.gnome.gedit.desktop
+text/plain=micro.desktop
+text/x-script.python=micro.desktop
+inode/x-empty=micro.desktop
+application/json=micro.desktop
+text/x-shellscript=micro.desktop
+text/vcard=micro.desktop
 
 application/pdf=org.pwmt.zathura.desktop
 application/epub+zip=org.pwmt.zathura.desktop
