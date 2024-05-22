@@ -23,8 +23,8 @@ set inputbar-fg                 "#4c4f69"
 
 set statusbar-bg                "rgba(23, 146, 153, 1)"
 set statusbar-fg                "#eff1f5"
-set statusbar-h-padding			10
-set statusbar-v-padding			10
+set statusbar-h-padding			12
+set statusbar-v-padding			5
 
 
 set highlight-color             "rgba(23, 146, 153, 0.4)"
