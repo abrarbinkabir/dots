@@ -55,11 +55,12 @@ keys = [
     # Resizing windows
     Key([mod], "g", lazy.layout.grow(), desc="Expands the focused window"),
     Key([mod], "s", lazy.layout.shrink(), desc="Shrinks the focused window"),
-    Key([mod], "r", lazy.layout.reset(), desc="Resets all windows to their default size"),Key([mod], "n", lazy.layout.normalize(), desc="Restores all secondary windows to their default size"),
+    Key([mod], "r", lazy.layout.reset(), desc="Resets all windows to their default size"),
+    Key([mod], "n", lazy.layout.normalize(), desc="Restores all secondary windows to their default size"),
     Key([mod], "m", lazy.window.toggle_minimize(), desc="Toggles minimization on focused window"),
     Key([mod], "space", lazy.window.toggle_floating(), desc="Toggles floating layout"),
 
-	# Launching apps
+    # Launching apps
     Key([mod], "Return", lazy.spawn(terminal), desc="Launches terminal"),
     Key([mod], "a", lazy.spawn(browser), desc="Launches browser"),
     Key([mod], "f", lazy.spawn(filemanager), desc="Launches filemanager"),
