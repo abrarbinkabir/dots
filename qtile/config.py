@@ -53,13 +53,13 @@ keys = [
     Key([mod, "shift"], "space", lazy.layout.flip(), desc="Flips side of the main pane horizontally"),
     
     # Resizing windows
-	Key([mod], "g", lazy.layout.grow(), desc="Expands the focused window"),
+    Key([mod], "g", lazy.layout.grow(), desc="Expands the focused window"),
 	Key([mod], "s", lazy.layout.shrink(), desc="Shrinks the focused window"),
 	Key([mod], "r", lazy.layout.reset(), desc="Resets all windows to their default size"),
 	Key([mod], "n", lazy.layout.normalize(), desc="Restores all secondary windows to their default size"),
-    Key([mod], "m", lazy.window.toggle_minimize(), desc="Toggles minimization on focused window"),
-    Key([mod], "space", lazy.window.toggle_floating(), desc="Toggles floating layout"),
-	
+	Key([mod], "m", lazy.window.toggle_minimize(), desc="Toggles minimization on focused window"),
+	Key([mod], "space", lazy.window.toggle_floating(), desc="Toggles floating layout"),
+
 	# Launching apps
     Key([mod], "Return", lazy.spawn(terminal), desc="Launches terminal"),
     Key([mod], "a", lazy.spawn(browser), desc="Launches browser"),
@@ -76,13 +76,13 @@ keys = [
     Key(["mod1"], "a", lazy.spawn(expanduser("~/.config/scripts/launcher.sh"), shell=True), desc="Runs Rofi applications menu applet"),
     Key(["mod1"], "p", lazy.spawn(expanduser("~/.config/scripts/powermenu.sh"), shell=True), desc="Runs Rofi powermenu applet"),
     Key(["mod1"], "space", lazy.spawn(expanduser("~/.config/scripts/documents.sh"), shell=True), desc="Runs Rofi file search applet"),
-	Key(["mod1"], "f", lazy.spawn(expanduser("~/.config/scripts/directories.sh"), shell=True), desc="Runs Rofi folder search applet"),
+    Key(["mod1"], "f", lazy.spawn(expanduser("~/.config/scripts/directories.sh"), shell=True), desc="Runs Rofi folder search applet"),
     Key(["mod1"], "c", lazy.spawn("clipmenu"), desc="Runs Rofi clipboard applet"),
     Key(["mod1"], "o", lazy.spawn(expanduser("~/.config/scripts/screenshot.sh"), shell=True), desc="Runs Rofi screenshot applet"),
     Key(["mod1"], "d", lazy.spawn(expanduser("~/.config/scripts/date-time.sh"), shell=True), desc="Runs rofi date-time applet"),
     Key(["mod1"], "t", lazy.spawn(expanduser("~/.config/scripts/mpd.sh"), shell=True), desc="Runs Rofi mpd applet"),
     Key(["mod1"], "b", lazy.spawn(expanduser("~/.config/scripts/backup.sh"), shell=True), desc="Runs rofi backup applet"),
-	Key(["mod1"], "w", lazy.spawn(expanduser("~/.config/scripts/arch-wiki.sh"), shell=True), desc="Runs rofi arch-wiki applet"),
+    Key(["mod1"], "w", lazy.spawn(expanduser("~/.config/scripts/arch-wiki.sh"), shell=True), desc="Runs rofi arch-wiki applet"),
 
 
     # Taking Screenshot using Maim
@@ -131,7 +131,7 @@ for i in groups:
 
 # Scratchpads configuration
 groups.append(ScratchPad("0", [
-	# Alacritty scratchpad
+    # Alacritty scratchpad
     DropDown("alacritty", "alacritty", width=0.6, height=0.7, x=0.2, y=0.1, opacity=1, on_focus_lost_hide=False),
     # Thunar scratchpad
     DropDown("thunar", "thunar", width=0.9, height=0.9, x=0.05, y=0.05, opacity=1, on_focus_lost_hide=False),
@@ -174,7 +174,7 @@ widget_defaults = dict(
 screens = [
 Screen(
         top=bar.Bar(
-        [	widget.GroupBox(
+        [   widget.GroupBox(
             font= 'JetBrainsMono Nerd Font Propo',
             fontsize=14,
             padding=8,
