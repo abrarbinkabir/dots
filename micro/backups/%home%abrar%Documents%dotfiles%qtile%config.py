@@ -84,13 +84,11 @@ keys = [
     Key(["mod1"], "b", lazy.spawn(expanduser("~/.config/scripts/backup.sh"), shell=True), desc="Runs rofi backup applet"),
     Key(["mod1"], "w", lazy.spawn(expanduser("~/.config/scripts/arch-wiki.sh"), shell=True), desc="Runs rofi arch-wiki applet"),
 
-
     # Taking Screenshot using Maim
     Key([], "Print", lazy.spawn(expanduser("~/.config/scripts/screenshot-opts.sh window"), shell=True), desc="Takes screenshot of the focused window"),
     Key(["shift"], "Print", lazy.spawn(expanduser("~/.config/scripts/screenshot-opts.sh full"), shell=True), desc="Takes fullscreen screenshot"),
     Key(["mod1"], "Print", lazy.spawn(expanduser("~/.config/scripts/screenshot-opts.sh area"), shell=True), desc="Takes screenshot of the selection"),
 
-    
     # Changing volume
     Key(["mod1"], "F1", lazy.spawn(expanduser("~/.config/scripts/volume.sh up"), shell=True), desc="Increases volume by 5%"),
     Key(["mod1"], "F2", lazy.spawn(expanduser("~/.config/scripts/volume.sh down"), shell=True), desc="Decreases volume by 5%"),
