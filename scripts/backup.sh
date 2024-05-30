@@ -35,7 +35,7 @@ case ${chosen} in
     	if [ $? -eq 0 ] ; then
 			notify-send -u normal -a "Package List" -i bell -t 3000 "Backup successful!"
 		else
-			notify-send -u normal -a "Package List" -i bell -t 3000 "Backup unsuccessful!"
+			notify-send -u critical -a "Package List" -i bell -t 3000 "Backup unsuccessful!"
 		fi
         ;;
 	$option_2)
