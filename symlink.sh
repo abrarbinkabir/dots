@@ -11,6 +11,7 @@ ln -sf $HOME/dots/mpv ~/.config/
 ln -sf $HOME/dots/ncmpcpp ~/.config/
 ln -sf $HOME/dots/nsxiv ~/.config/
 ln -sf $HOME/dots/nvim ~/.config/
+ln -sf $HOME/dots/pandoc ~/.config/
 ln -sf $HOME/dots/picom ~/.config/
 ln -sf $HOME/dots/qtile ~/.config/
 ln -sf $HOME/dots/redshift ~/.config/

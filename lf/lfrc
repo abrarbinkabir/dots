@@ -56,9 +56,8 @@ cmd chmod ${{
 cmd copyto ${{
 	clear
 	set -f
-	base="/home/abrar/"
 	res="$(find ~/Documents/ ~/Downloads/ ~/Pictures/ ~/dots/ ! -path '*/.*' ! -path '/home/abrar/Documents/archives*' -type d | cut -d '/' -f4- |fzf -e -i --reverse --header='Copy to')"
-	file="$base$res"
+	file="$HOME/$res"
 	for x in $fx; do
 		cp -ivr "$x" $file
 	done &&
@@ -69,9 +68,8 @@ cmd copyto ${{
 cmd moveto ${{
 	clear
 	set -f
-	base="/home/abrar/"
 	res="$(find ~/Documents/ ~/Downloads/ ~/Pictures/ ~/dots/ ! -path '*/.*' ! -path '/home/abrar/Documents/archives*' -type d | cut -d '/' -f4- |fzf -e -i --reverse --header='Move to')"
-	file="$base$res"
+	file="$HOME/$res"
 	for x in $fx; do
 		mv -iv "$x" $file
 	done &&
@@ -171,9 +169,8 @@ cmd zip ${{
 
 # Finding folders
 cmd fzf_jump ${{
-	base="/home/abrar/"
-    res="$(find ~/Documents/ ~/Downloads/ ~/Pictures/ ~/dots/ ! -path '*/.*' ! -path '/home/abrar/Documents/archives*' -type d | cut -d '/' -f4- |fzf -e -i --reverse --header='Search folders')"
-    file="$base$res"
+	res="$(find ~/Documents/ ~/Downloads/ ~/Pictures/ ~/dots/ ! -path '*/.*' ! -path '/home/abrar/Documents/archives*' -type d | cut -d '/' -f4- |fzf -e -i --reverse --header='Search folders')"
+    file="$HOME/$res"
     lf -remote "send $id cd '$file'"
 }}
 map <c-f> :fzf_jump

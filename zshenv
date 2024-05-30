@@ -1,8 +1,6 @@
 export EDITOR="micro"
 export TERMINAL="alacritty"
 export BROWSER="firefox"
-export DATE=$(date +%Y%m%d)
-export DT=$(date +%m%d)
 export "MICRO_TRUECOLOR=1"
 
 # Exports LESS Colors

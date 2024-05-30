@@ -28,10 +28,10 @@ run_rofi() {
 chosen="$(run_rofi)"
 case ${chosen} in
     $option_1)
-    	pacman -Qen > ~/dots/misc/npkglist-${dt}.md &&
-    	find ~/dots/misc/ -type f -iname 'npkglist*' -exec ls -r {} + | tail -n +4 | xargs -I {} mv {} ~/.local/share/Trash/files/ &&
-    	pacman -Qem > ~/dots/misc/fpkglist-${dt}.md &&
-    	find ~/dots/misc/ -type f -iname 'fpkglist*' -exec ls -r {} + | tail -n +4 | xargs -I {} mv {} ~/.local/share/Trash/files/
+    	pacman -Qen > "$HOME/dots/misc/npkglist-${dt}.md" &&
+    	find "$HOME/dots/misc/" -type f -iname 'npkglist*' -exec ls -r {} + | tail -n +4 | xargs -I {} mv {} ~/.local/share/Trash/files/ &&
+    	pacman -Qem > "$HOME/dots/misc/fpkglist-${dt}.md" &&
+    	find "$HOME/dots/misc/" -type f -iname 'fpkglist*' -exec ls -r {} + | tail -n +4 | xargs -I {} mv {} ~/.local/share/Trash/files/
     	if [ $? -eq 0 ] ; then
 			notify-send -u normal -a "Package List" -i bell -t 3000 "Backup successful!"
 		else
@@ -39,11 +39,11 @@ case ${chosen} in
 		fi
         ;;
 	$option_2)
-		cd ~/dots && git add -A && git commit -m "Minor changes" && git push origin main
+		cd "$HOME/dots" && git add -A && git commit -m "Minor changes" && git push origin main
 	if [ $? -eq 0 ] ; then
 		notify-send -u normal -a "Dotfiles" -i bell -t 3000 "Pushed successfully!"
 	else
-		notify-send -u normal -a "Dotfiles" -i bell -t 3000 "Push unsuccessful!"
+		notify-send -u critical -a "Dotfiles" -i bell -t 3000 "Push unsuccessful!"
 	fi
     ;;
 esac
