@@ -1,14 +1,14 @@
 #!/usr/bin/env bash
 
 # Specifies Theme
-theme="$HOME"/.config/rofi/config.rasi
+theme="$HOME/.config/rofi/config.rasi"
 
 rofi_cmd() {
 		rofi -theme-str "window {width: 900px;}" \
 		-dmenu -i \
 		-p "Folders" \
 		-markup-rows \
-		-theme ${theme}
+		-theme "$theme"
 		}
 
 
@@ -17,7 +17,7 @@ rofi_cmd() {
 # Removes $HOME from the path >>
 # Pipes into Rofi dmenu >>
 # Opens with the default application
-selection=`find ~/Documents/ ~/Downloads/ ~/Pictures/ ~/dots/ ! -path '*/.*' ! -path '~/Documents/archives*' -type d | sort | cut -d '/' -f 4- | rofi_cmd`
+selection=`find ~/Documents/ ~/Downloads/ ~/Pictures/ ~/dots/ ! -path '*/.*' ! -path '/home/abrar/Documents/archives*' -type d | sort | cut -d '/' -f 4- | rofi_cmd`
 
 # if $selection exists then opens it with xdg-open
 if [ -z $selection] ; then

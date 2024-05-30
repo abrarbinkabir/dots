@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Specifies theme
-theme="$HOME"/.config/rofi/applet-config.rasi
+theme="$HOME/.config/rofi/applet-config.rasi"
 mesg="Backup" 
 dt="$(date +%Y%m%d)"
 
@@ -16,7 +16,7 @@ rofi_cmd() {
 		-dmenu \
 		-mesg "$mesg" \
 		-markup-rows \
-		-theme ${theme}
+		-theme "$theme"
 }
 
 # Passes options to rofi dmenu

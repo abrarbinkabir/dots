@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Specifies Theme
-theme="$HOME"/.config/rofi/applet-config.rasi
+theme="$HOME/.config/rofi/applet-config.rasi"
 
 # Message to show uptime
 # Gets the uptime >>
@@ -23,7 +23,7 @@ rofi_cmd() {
 		-dmenu \
 		-mesg "$mesg" \
 		-markup-rows \
-		-theme ${theme}
+		-theme "$theme"
 }
 
 # Passes variables to rofi dmenu
@@ -41,7 +41,7 @@ confirm_cmd() {
 		-dmenu \
 		-p 'Confirmation' \
 		-mesg 'Are you Sure?' \
-		-theme ${theme}
+		-theme "$theme"
 }
 
 # Asks for confirmation

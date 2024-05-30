@@ -1,14 +1,14 @@
 #!/usr/bin/env bash
 
 # Specifies Theme
-theme="$HOME"/.config/rofi/config.rasi
+theme="$HOME/.config/rofi/config.rasi"
 
 rofi_cmd() {
 		rofi -theme-str "window {width: 1000px;}" \
 		-dmenu -i \
 		-p "Files" \
 		-markup-rows \
-		-theme ${theme}
+		-theme "$theme"
 		}
 
 # Finds files from Documents, Downloads and Pictures folder >>

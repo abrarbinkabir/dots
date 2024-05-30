@@ -8,3 +8,4 @@ mpd/database
 mpd/sticker.sql
 ncmpcpp/error.log
 qtile/__pycache__/
+scripts/countdown.sh

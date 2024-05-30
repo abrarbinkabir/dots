@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Specifies Theme
-theme="$HOME"/.config/rofi/applet-config.rasi
+theme="$HOME/.config/rofi/applet-config.rasi"
 
 # Theme Elements
 get_status(){
@@ -32,7 +32,7 @@ rofi_cmd() {
 		-dmenu \
 		-mesg "$mesg" \
 		-markup-rows \
-		-theme ${theme}
+		-theme "$theme"
 }
 
 # Pass variables to rofi dmenu

@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
 # Sets the file name format
-time=`date '+%Y%m%d%H%M%S'` # date-month-hours(24 hrs format)-minutes-seconds
-dir="/home/abrar/Pictures/"  # screenshot folder
+time=$(date '+%Y%m%d%H%M%S') # date-month-hours(24 hrs format)-minutes-seconds
+dir="$HOME/Pictures"  # screenshot folder
 file="${time}.png"  # file name
 
 # Sends notification whether screenshot is taken or not
@@ -17,7 +17,7 @@ notify_view() {
 
 # Copies the screenshot to clipboard
 copy_shot () {
-	tee ~/Pictures/"$file" | xclip -selection clipboard -t image/png
+	tee "$dir/$file" | xclip -selection clipboard -t image/png
 }
 
 # Takes action depending on parameter
