@@ -1,5 +1,5 @@
 -f "bestvideo[ext=mp4][height<=1080][height>=720]+bestaudio[ext=m4a]/best[height<=720][ext=mp4]"
--o /home/abrar/no-sync/%(title)s.%(ext)s
+-o ~/no-sync/%(title)s.%(ext)s
 --no-part
 --no-mtime
 --write-subs

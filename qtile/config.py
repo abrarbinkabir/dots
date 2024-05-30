@@ -1,4 +1,4 @@
-# Importing necessary libraries and modules
+# Imports necessary libraries and modules
 from libqtile import bar, layout, widget, hook
 from libqtile.config import Click, Drag, Group, Key, Match, Screen, ScratchPad, DropDown
 from libqtile.lazy import lazy
@@ -8,7 +8,7 @@ import os
 import subprocess
 import pulsectl_asyncio
 
-# Theme
+# Defines theme
 theme = {
     "background": "#eff1f5",
     "foreground": "#4c4f69",
@@ -30,14 +30,15 @@ theme = {
     "overlay0":   "#9ca0b0",
     }
 
-mod = "mod4" # super button
+# Sets super button
+mod = "mod4" 
 
-# Variables for commonly used apps
+# Defines variables for commonly used apps
 terminal = "alacritty"
 browser = "firefox"
 filemanager = "thunar"
 
-# Keybindings for ...
+# Sets keybindings for ...
 keys = [
     # Switching focus between windows
     Key([mod], "h", lazy.layout.left(), desc="Moves focus to left"),
@@ -75,14 +76,16 @@ keys = [
     # Running Rofi scripts
     Key(["mod1"], "a", lazy.spawn(expanduser("~/.config/scripts/launcher.sh"), shell=True), desc="Runs Rofi applications menu applet"),
     Key(["mod1"], "p", lazy.spawn(expanduser("~/.config/scripts/powermenu.sh"), shell=True), desc="Runs Rofi powermenu applet"),
-    Key(["mod1"], "space", lazy.spawn(expanduser("~/.config/scripts/documents.sh"), shell=True), desc="Runs Rofi file search applet"),
-    Key(["mod1"], "f", lazy.spawn(expanduser("~/.config/scripts/directories.sh"), shell=True), desc="Runs Rofi folder search applet"),
+    Key(["mod1"], "space", lazy.spawn(expanduser("~/.config/scripts/files.sh"), shell=True), desc="Runs Rofi file search applet"),
+    Key(["mod1"], "f", lazy.spawn(expanduser("~/.config/scripts/folders.sh"), shell=True), desc="Runs Rofi folder search applet"),
     Key(["mod1"], "c", lazy.spawn("clipmenu"), desc="Runs Rofi clipboard applet"),
     Key(["mod1"], "o", lazy.spawn(expanduser("~/.config/scripts/screenshot.sh"), shell=True), desc="Runs Rofi screenshot applet"),
-    Key(["mod1"], "d", lazy.spawn(expanduser("~/.config/scripts/date-time.sh"), shell=True), desc="Runs rofi date-time applet"),
+    Key(["mod1"], "d", lazy.spawn(expanduser("~/.config/scripts/datetime.sh"), shell=True), desc="Runs rofi date-time applet"),
     Key(["mod1"], "t", lazy.spawn(expanduser("~/.config/scripts/mpd.sh"), shell=True), desc="Runs Rofi mpd applet"),
     Key(["mod1"], "b", lazy.spawn(expanduser("~/.config/scripts/backup.sh"), shell=True), desc="Runs rofi backup applet"),
-    Key(["mod1"], "w", lazy.spawn(expanduser("~/.config/scripts/arch-wiki.sh"), shell=True), desc="Runs rofi arch-wiki applet"),
+    Key(["mod1"], "w", lazy.spawn(expanduser("~/.config/scripts/archwiki.sh"), shell=True), desc="Runs rofi arch-wiki applet"),
+    Key(["mod1"], "m", lazy.spawn(expanduser("~/.config/scripts/man.sh"), shell=True), desc="Runs rofi man page applet"),
+    Key(["mod1"], "y", lazy.spawn(expanduser("~/.config/scripts/yt2mpv.sh"), shell=True), desc="Runs rofi youtube to mpv applet"),
 
     # Taking Screenshot using Maim
     Key([], "Print", lazy.spawn(expanduser("~/.config/scripts/screenshot-opts.sh window"), shell=True), desc="Takes screenshot of the focused window"),
@@ -95,7 +98,7 @@ keys = [
     Key(["mod1"], "F3", lazy.spawn(expanduser("~/.config/scripts/volume.sh mute"), shell=True), desc="Toggles mute state"),    
 ]
 
-# Configuration for groups
+# Configures the groups
 groups = []
 group_names = ["1", "2", "3", "4", "5", "6", "7", "8", "9",]
 group_layouts = ["monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall"]
@@ -127,20 +130,16 @@ for i in groups:
             ]
     )
 
-# Scratchpads configuration
+# Configures scratchpads
 groups.append(ScratchPad("0", [
-    # Alacritty scratchpad
     DropDown("alacritty", "alacritty", width=0.6, height=0.7, x=0.2, y=0.1, opacity=1, on_focus_lost_hide=False),
-    # Thunar scratchpad
     DropDown("thunar", "thunar", width=0.9, height=0.9, x=0.05, y=0.05, opacity=1, on_focus_lost_hide=False),
-    # LF file browser scratchpad
     #DropDown("lf", "alacritty '-e' 'lf'", width=0.8, height=0.8, x=0.1, y=0.1, opacity=1, on_focus_lost_hide=False),
-    # ncmpcpp scratchpad
     DropDown("ncmpcpp", "alacritty '-e' 'ncmpcpp'", width=0.6, height=0.6, x=0.2, y=0.1, opacity=1, on_focus_lost_hide=False),
         
 ]))
 
-# Keybindings for scratchpads
+# Sets keybindings for scratchpads
 keys.extend([
     Key([], "F1", lazy.group['0'].dropdown_toggle('alacritty')),
     Key([], "F3", lazy.group['0'].dropdown_toggle('thunar')),
@@ -148,7 +147,7 @@ keys.extend([
     Key([], "F5", lazy.group['0'].dropdown_toggle('ncmpcpp')),
     ])
 
-# Layouts
+# Configures layout settings
 layouts = [
     layout.MonadTall(
            font = "Inter",
@@ -157,12 +156,12 @@ layouts = [
            border_width = 1,
            single_border_width = None,
            single_margin = None,
-           border_normal="#bcc0cc",
-           border_focus="#179299",
+           border_focus="#179299", #teal
+           border_normal="#bcc0cc", #surface1           
           ),
 ]
 
-# Qtile bar configuration
+# Configures the bar and widgets
 widget_defaults = dict(
     font='JetBrainsMono Nerd Font Propo SemiBold',
     fontsize=14,
@@ -213,14 +212,14 @@ Screen(
             widget.Clock(
             foreground = theme["text"],
             format=" %I:%M %p",
-            mouse_callbacks={"Button1": lazy.spawn(expanduser("~/.config/scripts/date-time.sh"))}
+            mouse_callbacks={"Button1": lazy.spawn(expanduser("~/.config/scripts/datetime.sh"))}
             ),
             
             widget.Clock(
             foreground = theme["text"],
             format=" %a, %b %d",
             update_interval= 60,
-            mouse_callbacks={"Button1": lazy.spawn(expanduser("~/.config/scripts/date-time.sh"))}
+            mouse_callbacks={"Button1": lazy.spawn(expanduser("~/.config/scripts/datetime.sh"))}
             ),
             
             widget.Systray(
@@ -229,27 +228,27 @@ Screen(
             ),],
             26,
             background=theme["background"],
-            border_width=[0, 0, 1, 0],  # Draw top and bottom borders
-            border_color=["000000", "000000", "#ccd0da", "000000"]  # Borders are surface 0
+            border_width=[0, 0, 1, 0],  # Draws bottom border
+            border_color=["000000", "000000", "#ccd0da", "000000"]  # surface0
         ),
     ),
 ]
 
-# Mouse behavior
+# Configures mouse behavior
 mouse = [
     Drag([mod], "Button1", lazy.window.set_position_floating(), start=lazy.window.get_position()),
     Drag([mod], "Button3", lazy.window.set_size_floating(), start=lazy.window.get_size()),
     Click([mod], "Button2", lazy.window.bring_to_front()),
 ]
 
-# Floating layout configuration
+# Configures floating layout
 floating_layout = layout.Floating(
 	border_width=1,
-	border_focus="#179299",
-	border_normal="#bcc0cc",
+	border_focus="#179299", #teal
+	border_normal="#bcc0cc", #surface1
     float_rules=[
         *layout.Floating.default_float_rules, 
-        # Windows to follow layouts
+        # Lists windows to use floating layout
         Match(wm_class="confirmreset"),  # gitk
         Match(wm_class="makebranch"),  # gitk
         Match(wm_class="maketag"),  # gitk
@@ -283,16 +282,11 @@ reconfigure_screens = True
 auto_minimize = True
 wl_input_rules = None
 
-# Hook for running autostart script
+# Defines hook for running autostart script
 @hook.subscribe.startup
 def autostart():
     home = os.path.expanduser('~')
     subprocess.call([home + '/.config/qtile/autostart.sh'])
-
-@hook.subscribe.startup_once
-def autostart_once():
-    home = os.path.expanduser('~')
-    subprocess.call([home + '/.config/qtile/autostart_once.sh'])
 
 # Hook for opening windows on certain workspaces
 #@hook.subscribe.client_new

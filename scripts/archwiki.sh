@@ -1,14 +1,15 @@
-#!/usr/bin/env bash
+ #!/usr/bin/env bash
 
+# Specifies the directory where html wikidocs are stored
 wikidir="/usr/share/doc/arch-wiki/html/en/"
 
-# Specifies Theme
+# Specifies theme path
 theme="$HOME"/.config/rofi/config.rasi
 
 rofi_cmd() {
 		rofi -theme-str "window {width: 800px;}" \
 		-dmenu -i \
-		-p "Search Wiki" \
+		-p "ArchWiki" \
 		-markup-rows \
 		-theme ${theme}
 		}

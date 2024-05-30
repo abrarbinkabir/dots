@@ -1,83 +1,72 @@
 live_config_reload = true
 
-[colors]
-draw_bold_text_with_bright_colors = true
-
 [colors.primary]
-background = "#eff1f5"
-foreground = "#4c4f69"
-dim_foreground = "#8c8fa1"
-bright_foreground = "#4c4f69"
+background = "#eff1f5" # base
+foreground = "#4c4f69" # text
+dim_foreground = "#8c8fa1" # overlay1
+bright_foreground = "#4c4f69" # text
 
 [colors.cursor]
-text = "#eff1f5"
-cursor = "#dc8a78"
+text = "#eff1f5" # base
+cursor = "#179299" # teal
 
 [colors.vi_mode_cursor]
-text = "#eff1f5"
-cursor = "#7287fd"
+text = "#eff1f5" # base
+cursor = "#fe640b" # peach
 
 [colors.search.matches]
-foreground = "#eff1f5"
-background = "#6c6f85"
+foreground = "#179299" # teal
+background = "#eff1f5" # base
 
 [colors.search.focused_match]
-foreground = "#eff1f5"
-background = "#40a02b"
+foreground = "#d20f39" # red
+background = "#eff1f5" # base
 
 [colors.footer_bar]
-foreground = "#eff1f5"
-background = "#6c6f85"
+foreground = "#eff1f5" # base
+background = "#6c6f85" # subtext0
 
 [colors.hints.start]
-foreground = "#eff1f5"
-background = "#df8e1d"
+foreground = "#eff1f5" # base
+background = "#fe640b" # peach
 
 [colors.hints.end]
-foreground = "#eff1f5"
-background = "#6c6f85"
+foreground = "#eff1f5" # base
+background = "#6c6f85" # subtext0
 
 [colors.selection]
-text = "#eff1f5"
-background = "#dc8a78"
+text = "#eff1f5" # base
+background = "#179299" # teal
 
 [colors.normal]
-black = "#bcc0cc"
-red = "#d20f39"
-green = "#40a02b"
-yellow = "#df8e1d"
-blue = "#1e66f5"
-magenta = "#ea76cb"
-cyan = "#179299"
-white = "#5c5f77"
+black = "#bcc0cc" # surface1
+red = "#d20f39" # red
+green = "#40a02b" # green
+yellow = "#fe640b" # peach
+blue = "#1e66f5" # blue
+magenta = "#8839ef" # mauve
+cyan = "#179299" # teal
+white = "#5c5f77" # subtext1
 
 [colors.bright]
-black = "#acb0be"
-red = "#d20f39"
-green = "#40a02b"
-yellow = "#df8e1d"
-blue = "#1e66f5"
-magenta = "#ea76cb"
-cyan = "#179299"
-white = "#6c6f85"
+black = "#acb0be" # surface2
+red = "#d20f39" # red
+green = "#40a02b" # green
+yellow = "#fe640b" # peach
+blue = "#1e66f5" # blue
+magenta = "#8839ef" # mauve
+cyan = "#179299" # teal
+white = "#6c6f85" # subtext0
 
 [colors.dim]
-black = "#bcc0cc"
-red = "#d20f39"
-green = "#40a02b"
-yellow = "#df8e1d"
-blue = "#1e66f5"
-magenta = "#ea76cb"
-cyan = "#179299"
-white = "#5c5f77"
-
-[[colors.indexed_colors]]
-index = 16
-color = "#fe640b"
-
-[[colors.indexed_colors]]
-index = 17
-color = "#dc8a78"
+black = "#bcc0cc" #surface1
+red = "#d20f39" #red
+green = "#40a02b" #green
+yellow = "#fe640b" #peach
+blue = "#1e66f5" #blue
+magenta = "#8839ef" #mauve
+cyan = "#179299" #teal
+white = "#5c5f77" #subtext1
 
 [cursor]
 blink_interval = 750
@@ -91,7 +80,7 @@ size = 12.0
 
 [font.bold]
 family = "JetBrainsMono Nerd Font Propo"
-style = "Bold"
+style = "Medium"
 
 [font.italic]
 family = "JetBrainsMono Nerd Font Propo"

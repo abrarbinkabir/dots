@@ -25,11 +25,11 @@ application/vnd.openxmlformats-officedocument.presentationml.presentation=libreo
 audio/mpeg=mpv.desktop
 audio/x-m4a=mpv.desktop
 
-image/png=org.gnome.eog.desktop
-image/jpeg=org.gnome.eog.desktop
-image/webp=org.gnome.eog.desktop
-image/heic=org.gnome.eog.desktop
-image/gif=org.gnome.eog.desktop
+image/png=nsxiv.desktop
+image/jpeg=nsxiv.desktop
+image/webp=nsxiv.desktop
+image/heic=nsxiv.desktop
+image/gif=nsxiv.desktop
 
 image/svg+xml=org.inkscape.Inkscape.desktop
 

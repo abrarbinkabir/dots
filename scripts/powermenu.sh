@@ -36,7 +36,7 @@ confirm_cmd() {
    rofi -theme-str 'window {location: center; anchor: center; fullscreen: false; width: 350px;}' \
 		-theme-str 'mainbox {orientation: vertical; children: [ "message", "listview" ];}' \
 		-theme-str 'listview {columns: 2; lines: 1;}' \
-		-theme-str 'element-text {font: "JetBrainsMono Nerd Font Propo Regular 12"; horizontal-align: 0.5;}' \
+		-theme-str 'element-text {font: "JetBrainsMono Nerd Font Propo Regular 13"; horizontal-align: 0.5;}' \
 		-theme-str 'textbox {horizontal-align: 0.5;}' \
 		-dmenu \
 		-p 'Confirmation' \
@@ -59,10 +59,15 @@ confirm_run () {
     fi	
 }
 
+uptime=`uptime -p | awk 'BEGIN {$2+($4/60)}'`
+today=`date '+%Y%m%d'`
+yesterday=`date -d "yesterday" '+%Y%m%d'`
+now=`date '+%H'`
+
 # Executes command
 run_cmd() {
 	if [[ "$1" == '--opt1' ]]; then
-		confirm_run 'systemctl poweroff'	
+		confirm_run 'systemctl poweroff'
 	elif [[ "$1" == '--opt2' ]]; then
 		confirm_run 'qtile cmd-obj -o cmd -f shutdown'
 	elif [[ "$1" == '--opt3' ]]; then

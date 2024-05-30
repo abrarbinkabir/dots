@@ -17,13 +17,13 @@
 	indicate_hidden = yes 
 	transparency = 0 
 	separator_height = 2 
-	padding = 12 # padding between text and separator 
+	padding = 12 # sets padding between text and separator 
 	horizontal_padding = 20 
 	text_icon_padding = 10  
 	frame_width = 2
-	frame_color = "#179299" 
+	frame_color = "#179299" # teal
 	gap_size = 0
-	separator_color = "#179299" 
+	separator_color = "#179299" # teal
 	sort = yes
 	font = "JetBrainsMono Nerd Font Propo 11"
 	line_height = 0
@@ -40,7 +40,7 @@
 	icon_position = left
 	min_icon_size = 32
     max_icon_size = 32
-	icon_path = /home/abrar/.local/share/dunst/
+	icon_path = /home/abrar/dots/images/
 	sticky_history = yes
 	history_length = 20
 	dmenu = /usr/bin/dmenu -p dunst:
@@ -60,23 +60,23 @@
     per_monitor_dpi = false
     
 [urgency_low]
-	background = "#eff1f5" # background color
-    foreground = "#4c4f69" # foreground color
-    highlight = "#179299" # progress bar color
+	background = "#eff1f5" # base
+	foreground = "#4c4f69" # text
+    highlight = "#179299" # teal
     timeout = 3
         
 [urgency_normal]
-    background = "#eff1f5" # background color
-    foreground = "#4c4f69" # foreground color
-    highlight = "#179299" # progress bar color
+    background = "#eff1f5" # base
+    foreground = "#4c4f69" # text
+    highlight = "#179299" # teal
     timeout = 3
     
         
 [urgency_critical]
-	background = "#eff1f5" # background color
-    foreground = "#4c4f69" # foreground color
-    frame_color = "#d20f39" # red color
-    highlight = "#179299" # progress bar color
+	background = "#eff1f5" # base
+    foreground = "#4c4f69" # text
+    frame_color = "#d20f39" # red
+    highlight = "#179299" # teal
     timeout = 0
     
     

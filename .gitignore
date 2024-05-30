@@ -1,4 +1,10 @@
-qtile/__pycache__/
+fonts
+images
+micro/backups/
+micro/buffers/
+misc
+mpd/playlists/
 mpd/database
 mpd/sticker.sql
 ncmpcpp/error.log
+qtile/__pycache__/

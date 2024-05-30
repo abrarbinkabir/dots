@@ -3,6 +3,7 @@ ln -sf $HOME/dots/alacritty ~/.config/
 ln -sf $HOME/dots/betterlockscreen ~/.config/
 ln -sf $HOME/dots/btop ~/.config/
 ln -sf $HOME/dots/dunst ~/.config/
+ln -sf $HOME/dots/fontconfig ~/.config/
 ln -sf $HOME/dots/lf ~/.config/
 ln -sf $HOME/dots/micro ~/.config/
 ln -sf $HOME/dots/mpd ~/.config/
@@ -23,6 +24,5 @@ ln -sf $HOME/dots/zshrc ~/.zshrc
 ln -sf $HOME/dots/zprofile ~/.zprofile
 ln -sf $HOME/dots/zshenv ~/.zshenv
 ln -sf $HOME/dots/Xresources ~/.Xresources
-ln -sf $HOME/dots/fonts.conf ~/.fonts.conf
 
 ln -sf $HOME/dots/applications ~/.local/share/

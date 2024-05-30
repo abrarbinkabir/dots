@@ -1,5 +1,5 @@
-Nsxiv.window.background: #1E1E2E
-Nsxiv.window.foreground: #F1F4FF
-Nsxiv.bar.foreground: #1E1E2E
-Nsxiv.bar.background: #B4BEFE
+Nsxiv.window.background: #eff1f5
+Nsxiv.window.foreground: #4c4f69
+Nsxiv.bar.foreground: #eff1f5
+Nsxiv.bar.background: #179299
 Nsxiv.bar.font: JetBrainsMono Nerd Font Propo Medium-10

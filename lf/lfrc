@@ -1,16 +1,16 @@
-# Basic Settings
+# Configures basic Settings
 set ignorecase true
 set icons
-set drawbox # draws border around panes
-set nopreview # turns off file preview
+set drawbox # Draws border around panes
+set nopreview # Turns off file preview
 set shell zsh
 set shellopts '-euy'
 set ifs "\n"
 set filesep "\n"
 set info size 
-set ratios 1:1:2 # sets ratio for the panes
+set ratios 1:1:2 # Sets ratio for the panes
 
-# Custom commands for....
+# Defines custom commands for....
 
 cmd open ${{xdg-open "$f"}}
 
@@ -22,18 +22,18 @@ cmd mkdir ${{
   mkdir $ans
 }}
 
-# Making file and opening with vim
+# Making file and opening with nvim
 cmd mkfile ${{
   clear
   printf "File Name: "
   read ans
-  vim $ans
+  nvim $ans
 }}
 
 # Setting wallpaper for home and lockscreen
 cmd setwallpaper ${{
     clear
-    cp "$f" ~/.config/wallpaper.png
+    cp "$f" ~/dots/images/wallpaper.png
     feh --bg-scale "$f"
     betterlockscreen -u "$f"
 }}
@@ -52,12 +52,12 @@ cmd chmod ${{
   lf -remote 'send reload'
 }}
 
-# Moving file/s with fzf
+# Copying file/s with fzf
 cmd copyto ${{
 	clear
 	set -f
 	base="/home/abrar/"
-	res="$(find ~/Documents/ ~/Downloads/ ~/Pictures/ ! -path '*/.*' ! -path '/home/abrar/Documents/archives*' -type d | cut -d '/' -f4- |fzf -e -i --reverse --header='Copy to')"
+	res="$(find ~/Documents/ ~/Downloads/ ~/Pictures/ ~/dots/ ! -path '*/.*' ! -path '/home/abrar/Documents/archives*' -type d | cut -d '/' -f4- |fzf -e -i --reverse --header='Copy to')"
 	file="$base$res"
 	for x in $fx; do
 		cp -ivr "$x" $file
@@ -70,7 +70,7 @@ cmd moveto ${{
 	clear
 	set -f
 	base="/home/abrar/"
-	res="$(find ~/Documents/ ~/Downloads/ ~/Pictures/ ! -path '*/.*' ! -path '/home/abrar/Documents/archives*' -type d | cut -d '/' -f4- |fzf -e -i --reverse --header='Move to')"
+	res="$(find ~/Documents/ ~/Downloads/ ~/Pictures/ ~/dots/ ! -path '*/.*' ! -path '/home/abrar/Documents/archives*' -type d | cut -d '/' -f4- |fzf -e -i --reverse --header='Move to')"
 	file="$base$res"
 	for x in $fx; do
 		mv -iv "$x" $file
@@ -172,13 +172,13 @@ cmd zip ${{
 # Finding folders
 cmd fzf_jump ${{
 	base="/home/abrar/"
-    res="$(find ~/Documents/ ~/Downloads/ ! -path '*/.*' ! -path '/home/abrar/Documents/archives*' -type d | cut -d '/' -f4- |fzf -e -i --reverse --header='Search folders')"
+    res="$(find ~/Documents/ ~/Downloads/ ~/Pictures/ ~/dots/ ! -path '*/.*' ! -path '/home/abrar/Documents/archives*' -type d | cut -d '/' -f4- |fzf -e -i --reverse --header='Search folders')"
     file="$base$res"
     lf -remote "send $id cd '$file'"
 }}
 map <c-f> :fzf_jump
 
-# Bindings for....
+# Sets keybindings
 map c
 map d
 map m
@@ -186,14 +186,13 @@ map e
 map ex extract
 map ez zip
 map r
-
 map i rename
 map I :rename; cmd-home
 map A :rename; cmd-end
 #map c :rename; cmd-delete-home
 #map C :rename; cmd-end; cmd-delete-home
 
-# Basic Functions
+# Maps functions to keybindings
 map mf mkfile
 map md mkdir
 map bg setwallpaper
@@ -213,7 +212,7 @@ map mt moveto
 map ct copyto
 map Y $printf "%s" "$fx" | xclip -selection clipboard
 
-# Movement
+# Sets shortcuts for frequently visited folders
 map gD cd ~/Documents
 map gd cd ~/Downloads
 map gp cd ~/Pictures

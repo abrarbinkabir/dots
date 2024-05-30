@@ -8,10 +8,10 @@ configuration {
 	background:     #eff1f5;
     background-alt: #e6e9ef; /* mantle color */
     foreground:     #4c4f69;
-    foreground-alt: #9ca0b0; /* overlay 0 color */
+    foreground-alt: #9ca0b0; /* overlay0 color */
     primary:        #179299; /* teal color */
 	red:			#d20f39;
-	font: "JetBrainsMono Nerd Font Propo Medium 12";
+	font: "JetBrainsMono Nerd Font Propo Regular 13";
 }
 
 /*****----- Main Window -----*****/
@@ -55,7 +55,7 @@ message {
 }
 
 textbox {
-	font:			             "JetBrainsMono Nerd Font Propo SemiBold 12";
+	font:			             "JetBrainsMono Nerd Font Propo SemiBold 13";
     background-color:            inherit;
     text-color:                  inherit;
     vertical-align:              0.5;

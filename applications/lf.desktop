@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=lf
+Comment=Launches the lf file manager
+Icon=utilities-terminal
+Exec=alacritty -e lf
+Terminal=false
+Categories=ConsoleOnly;System;FileTools;FileManager
+MimeType=inode/directory;

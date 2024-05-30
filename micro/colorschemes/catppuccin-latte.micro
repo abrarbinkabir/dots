@@ -9,27 +9,27 @@ color-link constant "#FE640B"
 color-link constant.number "#FE640B"
 color-link constant.string "#40A02B"
 
-color-link symbol "#EA76CB"
+color-link symbol "#8839ef"
 color-link symbol.brackets "#DD7878"
 color-link symbol.tag "#1E66F5"
 
 color-link type "#1E66F5"
-color-link type.keyword "#DF8E1D"
+color-link type.keyword "#fe640b"
 
-color-link special "#EA76CB"
+color-link special "#8839ef"
 color-link statement "#8839EF"
-color-link preproc "#EA76CB"
+color-link preproc "#8839efn"
 
 color-link underlined "#04A5E5"
 color-link error "bold #D20F39"
-color-link todo "bold #DF8E1D"
+color-link todo "bold #fe640b"
 
 color-link diff-added "#40A02B"
-color-link diff-modified "#DF8E1D"
+color-link diff-modified "#fe640b"
 color-link diff-deleted "#D20F39"
 
 color-link gutter-error "#D20F39"
-color-link gutter-warning "#DF8E1D"
+color-link gutter-warning "#fe640b"
 
 color-link statusline "#EFF1F5,#179299"
 color-link tabbar "#4C4F69,#DCE0E8"

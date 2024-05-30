@@ -1,9 +1,13 @@
 /*****----- Configuration -----*****/
 configuration {
-    modi:                       "drun";
-    show-icons:                 true;
-    display-drun:               "Applications";
-    drun-display-format:        "{name}";
+    modi:                       "drun,calc,window,emoji";
+    show-icons:                 false;
+    display-drun:               "Apps";
+    display-calc:               "Calculator";
+    display-window:             "Windows";
+    display-emoji:              "Emoji";
+    drun-display-format:        "{name} [<span weight='light' size='small'>({generic})</span>]";
+    window-format:              "{w} · {c} · {t}";
 }
 
 /*****----- Global Properties -----*****/
@@ -12,8 +16,9 @@ configuration {
     background:     #eff1f5;
     background-alt: #e6e9ef; /* mantle color */
     foreground:     #4c4f69;
-    foreground-alt: #9ca0b0; /* overlay 0 color */
+    foreground-alt: #9ca0b0; /* overlay0 color */
     primary:        #179299; /* teal color */
+    red:			#d20f39;
     font: "JetBrainsMono Nerd Font Propo Regular 13";
 }
 
@@ -24,7 +29,7 @@ window {
     location:                    center;
     anchor:                      center;
     fullscreen:                  false;
-    width:                       800px;
+    width:                       600px;
     x-offset:                    0px;
     y-offset:                    0px;
 
@@ -91,7 +96,7 @@ entry {
 /*****----- Listview -----*****/
 listview {
     enabled:                     true;
-    columns:                     2;
+    columns:                     1;
     lines:                       9;
     cycle:                       true;
     dynamic:                     true;
@@ -123,7 +128,7 @@ element {
     enabled:                     true;
     spacing:                     10px;
     margin:                      0px;
-    padding:                     8px 3px;
+    padding:                     10px 20px;
     border:                      0px solid;
     border-radius:               0px;
     border-color:                @primary;
@@ -135,16 +140,36 @@ element normal.normal {
     background-color:            @background-alt;
     text-color:                  @foreground;
 }
+
 element alternate.normal {
     background-color:            @background-alt;
     text-color:                  @foreground;
 }
+
 element selected.normal {
     border:                      2px;
     border-color:                @primary;
     background-color:            @background-alt;
     text-color:                  @primary;
 }
+
+element normal.active {
+    background-color:            @background-alt;
+    text-color:                  @red;
+}
+
+element alternate.active {
+    background-color:            @background-alt;
+    text-color:                  @red;
+}	
+
+element selected.active {
+    border:                      2px;
+    border-color:                @red;
+    background-color:            @background-alt;
+    text-color:                  @red;
+}
+
 element-icon {
     padding:                     0px 0px 0px 10px;
     background-color:            transparent;
