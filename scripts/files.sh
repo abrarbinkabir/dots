@@ -7,6 +7,8 @@ rofi_cmd() {
 		rofi -theme-str "window {width: 1000px;}" \
 		-dmenu -i \
 		-p "Files" \
+		-sort \
+		-sorting-method fzf \		
 		-markup-rows \
 		-theme "$theme"
 		}

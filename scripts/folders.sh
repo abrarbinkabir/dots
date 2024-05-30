@@ -4,9 +4,11 @@
 theme="$HOME/.config/rofi/config.rasi"
 
 rofi_cmd() {
-		rofi -theme-str "window {width: 900px;}" \
+		rofi -theme-str "window {width: 1000px;}" \
 		-dmenu -i \
 		-p "Folders" \
+		-sort \
+		-sorting-method fzf \
 		-markup-rows \
 		-theme "$theme"
 		}

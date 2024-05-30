@@ -4,11 +4,13 @@ theme="$HOME/.config/rofi/config.rasi"
 
 # Rofi CMD
 rofi_cmd() {
-		rofi -dmenu -i \
-		-p "Packages" \
+		rofi -theme-str "window {width: 800px;}" \
+		-dmenu -i \
+		-p "Man Pages" \
+		-sort \
+		-sorting-method fzf \		
 		-markup-rows \
 		-theme "$theme"
 		}
-
-man -k . | awk '{print $1}'| sort | rofi_cmd | xargs alacritty -e man
+apropos -s 1,5,7 . | awk '{print $1}' | sort | uniq | rofi_cmd | xargs alacritty -e man
 

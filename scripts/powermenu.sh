@@ -19,8 +19,7 @@ no='No'
 
 # Rofi CMD
 rofi_cmd() {
-   rofi -theme-str 'listview {columns: 1; lines: 5;}' \
-		-dmenu \
+   rofi -dmenu \
 		-mesg "$mesg" \
 		-markup-rows \
 		-theme "$theme"

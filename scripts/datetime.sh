@@ -36,4 +36,4 @@ run_rofi() {
 	echo -e "$option_1\n$option_2\n$option_3\n$option_4" | rofi_cmd
 }
 
-run_rofi > /dev/null 2&>1
+run_rofi > /dev/null 2>&1

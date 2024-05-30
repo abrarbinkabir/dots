@@ -86,6 +86,7 @@ keys = [
     Key(["mod1"], "w", lazy.spawn(expanduser("~/.config/scripts/archwiki.sh"), shell=True), desc="Runs rofi arch-wiki applet"),
     Key(["mod1"], "m", lazy.spawn(expanduser("~/.config/scripts/man.sh"), shell=True), desc="Runs rofi man page applet"),
     Key(["mod1"], "y", lazy.spawn(expanduser("~/.config/scripts/yt2mpv.sh"), shell=True), desc="Runs rofi youtube to mpv applet"),
+    Key(["mod1"], "e", lazy.spawn(expanduser("~/.config/scripts/extras-menu.sh"), shell=True), desc="Runs rofi menu for showing extra scripts"),
 
     # Taking Screenshot using Maim
     Key([], "Print", lazy.spawn(expanduser("~/.config/scripts/screenshot-opts.sh window"), shell=True), desc="Takes screenshot of the focused window"),

@@ -7,6 +7,8 @@ rofi_cmd() {
 		rofi -theme-str "window {width: 800px;}" \
 		-dmenu -i \
 		-p "ArchWiki" \
+		-sort \
+		-sorting-method fzf \
 		-markup-rows \
 		-theme "$theme"
 		}

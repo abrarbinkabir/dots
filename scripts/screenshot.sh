@@ -17,7 +17,8 @@ option_5="󰘔 Capture Window"
 
 # Rofi CMD
 rofi_cmd() {
-	rofi -dmenu \
+	rofi -theme-str 'listview {columns: 1; lines: 5;}' \
+		-dmenu -i \
 		-mesg "$mesg" \
 		-markup-rows \
 		-theme "$theme"
