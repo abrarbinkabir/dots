@@ -1,8 +1,11 @@
- #!/usr/bin/env bash
+ #!/bin/bash
 
-# Specifies theme path
+# Configuration variables
 theme="$HOME/.config/rofi/config.rasi"
+wikidir="/usr/share/doc/arch-wiki/html/en/"
+browser="firefox"
 
+# Function to display Rofi menu and select ArchWiki article
 rofi_cmd() {
 		rofi -theme-str "window {width: 800px;}" \
 		-dmenu -i \
@@ -13,23 +16,18 @@ rofi_cmd() {
 		-theme "$theme"
 		}
 		
-# Specifies the directory where html wikidocs are stored
-wikidir="/usr/share/doc/arch-wiki/html/en/"
-
-wikipages() {
+main() {
     wikidocs="$(find ${wikidir} -iname "*.html")"
-    choice=$(printf '%s\n' "${wikidocs[@]}" \
+    selection=$(printf '%s\n' "${wikidocs[@]}" \
         | cut -d '/' -f8- \
         | sed -e 's/_/ /g' -e 's/.html//g' \
         | sort -g \
         | rofi_cmd ) || exit 1
 
-    if [ "$choice" ]; then
-        article=$(printf '%s\n' "${wikidir}${choice}.html" | sed 's/ /_/g')
-        firefox "$article"
-    else
-        echo "Program terminated." && exit 0
+    if [ "$selection" ]; then
+        article=$(printf '%s\n' "${wikidir}${selection}.html" | sed 's/ /_/g')
+        "$browser" "$article"
     fi
 }
 
-wikipages
+main

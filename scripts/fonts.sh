@@ -12,4 +12,4 @@ rofi_cmd() {
 		-theme "$theme"
 		}
 
-fc-list | cut -d':' -f1 | awk -F/ '{print $NF}' | sort | rofi_cmd > /dev/null 2>&1
+fc-list | cut -d':' -f1 | awk -F/ '{print $NF}' | sed 's/\.[^.]*$//' | sort | rofi_cmd > /dev/null 2>&1

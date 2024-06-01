@@ -4,10 +4,10 @@
 theme="$HOME/.config/rofi/applet-config.rasi"
 mesg="Count Days"
 
-count_01=$(echo "scale=2; ($(date -d 20240618 +%s) - $(date +%s))/(60*60*24)" | bc)
-count_02=$(echo "scale=2; ($(date -d 20240702 +%s) - $(date +%s))/(60*60*24)" | bc)
-count_03=$(echo "scale=2; ($(date +%s) - $(date -d 20240526 +%s))/(60*60*24)" | bc)
-count_04=$(echo "scale=2; ($(date -d 20240805 +%s) - $(date +%s))/(60*60*24)" | bc)
+count_01=$(echo "scale=2; ($(date -d 20240618 '+%s') - $(date '+%s'))/(60*60*24)" | bc)
+count_02=$(echo "scale=2; ($(date -d 20240702 '+%s') - $(date '+%s'))/(60*60*24)" | bc)
+count_03=$(echo "scale=2; ($(date '+%s') - $(date -d 20240527 '+%s'))/(60*60*24)" | bc)
+count_04=$(echo "scale=2; ($(date -d 20240805 '+%s') - $(date '+%s'))/(60*60*24)" | bc)
 
 # Options
 option_1="Days remaining until Eid: $count_01"
