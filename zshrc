@@ -24,18 +24,18 @@ HISTSIZE=1000
 SAVEHIST=10000
 
 setopt autocd beep nomatch
-bindkey -e
+bindkey -v
 
 # Configures history substring search options
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
-bindkey '^[[1;5C' forward-word
-bindkey '^[[1;5D' backward-word
-bindkey '^?' backward-delete-char
-bindkey '^[[3~' delete-char
-bindkey '^H' backward-delete-word
-bindkey '^[[3;5~' delete-word
-bindkey -s '^f' 'fd\n'
+#bindkey '^[[1;5C' forward-word
+#bindkey '^[[1;5D' backward-word
+#bindkey '^?' backward-delete-char
+#bindkey '^[[3~' delete-char
+#bindkey '^H' backward-delete-word
+#bindkey '^[[3;5~' delete-word
+#bindkey -s '^f' 'fd\n'
 
 # Defines aliases
 alias ll="ls -lh --color=auto"
@@ -66,7 +66,7 @@ alias pic="cd ~/Pictures/"
 alias dt="date +%Y%m%d"
 alias yt="yt-dlp"
 alias yta="yt-dlp -f 'bestaudio[ext=m4a]'"
-alias ytp="yt-dlp -o '~/no-sync/%(playlist)s/%(playlist_index)s-%(title)s.%(ext)s'"
+alias ytp="yt-dlp -o '~/Downloads/%(playlist)s/%(playlist_index)s-%(title)s.%(ext)s'"
 
 
 # Defines function for searching files and folders using fzf
