@@ -11,30 +11,24 @@ rofi_cmd() {
 		-markup-rows \
 		-theme "$theme"
 		}
-
 # Options
-option_1=" Installed Packages"
-option_2=" Count Days"
-option_3=" Installed Fonts"
-option_4=" Kill a Process"
+options=(" Installed Packages" "$HOME/.config/scripts/pkglist.sh"
+         " Count Days" "$HOME/.config/scripts/countdown.sh"
+         " Installed Fonts" "$HOME/.config/scripts/fonts.sh"
+         " All Packages" "$HOME/.config/scripts/allpkglist.sh"
+         )
 
 run_rofi() {
-	echo -e "$option_1\n$option_2\n$option_3\n$option_4" | rofi_cmd
+    for ((i = 0; i < ${#options[@]}; i += 2)); do
+        echo "${options[i]}"
+    done | rofi_cmd
 }
 
-chosen=$(run_rofi)
+selection=$(run_rofi)
 
-case "$chosen" in
-	$option_1)
-		$HOME/.config/scripts/pkglist.sh
-		;;
-	$option_2)
-		$HOME/.config/scripts/countdown.sh
-		;;
-	$option_3)
-		$HOME/.config/scripts/fonts.sh
-		;;
-	$option_4)
-		$HOME/.config/scripts/pkglist.sh
-		;;
-esac	
+for ((i = 0; i < ${#options[@]}; i += 2)); do
+    if [[ "$selection" == "${options[i]}" ]]; then
+        "${options[i+1]}"
+        break
+    fi
+done

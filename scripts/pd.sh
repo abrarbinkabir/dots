@@ -18,7 +18,6 @@ pandoc -H ~/.config/pandoc/inline_code.tex \
     -V monofont="JetBrainsMono Nerd Font Propo" \
     --from=markdown+lists_without_preceding_blankline \
     -N \
-    --toc \
     --pdf-engine=xelatex \
     "${1}.md" \
     -o "${1}.pdf"

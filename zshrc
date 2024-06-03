@@ -38,7 +38,7 @@ bindkey '^[[3;5~' delete-word
 bindkey -s '^f' 'fd\n'
 
 # Defines aliases
-alias ll="ls -lah --color=auto"
+alias ll="ls -lh --color=auto"
 alias ls="ls --color=auto"
 alias diff='diff --color=auto'
 alias grep='grep --color=auto'

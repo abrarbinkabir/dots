@@ -42,6 +42,7 @@ set highlight-active-color      "rgba(210, 15, 57, 0.4)"
 
 set recolor-lightcolor          "#eff1f5"
 set recolor-darkcolor           "#4c4f69"
+set recolor-keephue             true
 
 map f adjust_window best-fit
 map w adjust_window width
