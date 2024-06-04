@@ -68,7 +68,7 @@ alias pic="cd ~/Pictures/"
 alias dt="date +%Y%m%d"
 alias yt="yt-dlp"
 alias yta="yt-dlp -f 'bestaudio[ext=m4a]'"
-alias ytp="yt-dlp -o '~/Downloads/%(playlist)s/%(playlist_index)s-%(title)s.%(ext)s'"
+alias ytp="yt-dlp -o '~/nsync/%(playlist)s/%(playlist_index)s-%(title)s.%(ext)s'"
 
 
 # Defines function for searching files and folders using fzf

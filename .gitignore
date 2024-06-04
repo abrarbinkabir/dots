@@ -1,8 +1,5 @@
-fonts
-images
 micro/backups/
 micro/buffers/
-misc
 mpd/playlists/
 mpd/database
 mpd/sticker.sql

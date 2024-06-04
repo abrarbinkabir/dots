@@ -6,11 +6,11 @@ yesterday=$(date -d "yesterday" '+%Y%m%d')
 
 main() {
 	if [[ "$now" -ge "$up" ]] ; then
-		echo -e "$today\t$up" >> ~/dots/misc/uptime-record.csv
+		echo -e "$today\t$up" >> ~/Documents/70-tech/71-linux/uptime-record.csv
 	else
 		up_yesterday=$(( $up - $now))
-		echo -e "$yesterday\t$up_yesterday" >> ~/dots/misc/uptime-record.csv
-		echo -e "$today\t$now" >> ~/dots/misc/uptime-record.csv
+		echo -e "$yesterday\t$up_yesterday" >> ~Documents/70-tech/71-linux/uptime-record.csv
+		echo -e "$today\t$now" >> ~/Documents/70-tech/71-linux/uptime-record.csv
 	fi
 }
 
