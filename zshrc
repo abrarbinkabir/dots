@@ -24,18 +24,18 @@ HISTSIZE=1000
 SAVEHIST=10000
 
 setopt autocd beep nomatch
-bindkey -v
+bindkey -e
 
 # Configures history substring search options
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
-#bindkey '^[[1;5C' forward-word
-#bindkey '^[[1;5D' backward-word
-#bindkey '^?' backward-delete-char
-#bindkey '^[[3~' delete-char
-#bindkey '^H' backward-delete-word
-#bindkey '^[[3;5~' delete-word
-#bindkey -s '^f' 'fd\n'
+bindkey '^[[1;5C' forward-word
+bindkey '^[[1;5D' backward-word
+bindkey '^?' backward-delete-char
+bindkey '^[[3~' delete-char
+bindkey '^H' backward-delete-word
+bindkey '^[[3;5~' delete-word
+bindkey -s '^f' 'fd\n'
 
 # Defines aliases
 alias ll="ls -lh --color=auto"
@@ -49,6 +49,7 @@ alias rm="rm -vr"
 alias Syu="sudo pacman -Syyu"
 alias S="sudo pacman -S"
 alias Ss="pacman -Ss"
+alias Qs="pacman -Qs"
 alias Qet="pacman -Qet"
 alias Qi="pacman -Qi"
 alias Rns="sudo pacman -Rns"
@@ -60,6 +61,7 @@ alias doc="cd ~/Documents/"
 alias dwl="cd ~/Downloads/"
 alias dot="cd ~/dots/"
 alias scr="cd ~/dots/scripts/"
+alias msc="cd ~/dots/misc/"
 alias nos="cd ~/no-sync/"
 alias pic="cd ~/Pictures/"
 

@@ -200,14 +200,14 @@ Screen(
             measure_mem='G',
             foreground=theme["text"],
             update_interval=5.0,
-            mouse_callbacks = {'Button1': lazy.spawn('alacritty -e btop')},
+            mouse_callbacks = {'Button1': lazy.spawn('alacritty -e htop')},
             ),
             
             widget.CPU(
             format = ' {load_percent:.2f}%',
             foreground = theme["text"],
             update_interval=5.0,
-            mouse_callbacks = {'Button1': lazy.spawn('alacritty -e btop')},
+            mouse_callbacks = {'Button1': lazy.spawn('alacritty -e htop')},
             ),
             
             widget.Clock(

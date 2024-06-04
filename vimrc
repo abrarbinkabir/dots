@@ -17,8 +17,6 @@ set incsearch
 set showmatch
 set cursorline
 set lines=41
-call plug#begin()
-call plug#end()
 
 
-colorscheme catppuccin_latte
+colorscheme catppuccin_latte 
