@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 # Specifies Theme
 theme="$HOME/.config/rofi/config.rasi"
@@ -6,18 +6,18 @@ theme="$HOME/.config/rofi/config.rasi"
 rofi_cmd() {
 		rofi -theme-str "window {width: 1000px;}" \
 		-dmenu -i \
-		-p "Files" \
+		-p "Archives" \
 		-sort \
-		-sorting-method fzf \		
+		-sorting-method fzf \
 		-markup-rows \
 		-theme "$theme"
 		}
 
-selection=$(find ~/Documents/ ~/Downloads/ ~/Pictures/ ~/dots/ ! -path '*/.*' -type f | sort | cut -d '/' -f 4- | rofi_cmd)
+selection=$(find ~/archives ! -path '*/.*' -type f | sort | cut -d '/' -f 5- | rofi_cmd)
 
 # if $selection exists then opens it with xdg-open
 if [ -z ${selection} ] ; then
 	exit 1
 else
-	xdg-open "$HOME/$selection"
+	xdg-open "$HOME/archives/$selection"
 fi

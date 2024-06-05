@@ -19,7 +19,7 @@ rofi_cmd() {
 # Removes $HOME from the path >>
 # Pipes into Rofi dmenu >>
 # Opens with the default application
-selection=`find ~/Documents/ ~/Downloads/ ~/Pictures/ ~/dots/ ! -path '*/.*' ! -path '/home/abrar/Documents/archives*' -type d | sort | cut -d '/' -f 4- | rofi_cmd`
+selection=`find ~/Documents/ ~/Downloads/ ~/Pictures/ ~/dots/ ! -path '*/.*' -type d | sort | cut -d '/' -f 4- | rofi_cmd`
 
 # if $selection exists then opens it with xdg-open
 if [ -z $selection] ; then

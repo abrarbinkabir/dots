@@ -9,7 +9,7 @@ main() {
 		echo -e "$today\t$up" >> ~/Documents/70-tech/71-linux/uptime-record.csv
 	else
 		up_yesterday=$(( $up - $now))
-		echo -e "$yesterday\t$up_yesterday" >> ~Documents/70-tech/71-linux/uptime-record.csv
+		echo -e "$yesterday\t$up_yesterday" >> ~/Documents/70-tech/71-linux/uptime-record.csv
 		echo -e "$today\t$now" >> ~/Documents/70-tech/71-linux/uptime-record.csv
 	fi
 }

@@ -5,17 +5,19 @@ theme="$HOME/.config/rofi/applet-config.rasi"
 mesg="Extra Scripts"
 
 rofi_cmd() {
-		rofi -theme-str 'listview {columns: 1; lines: 4;}' \
+		rofi -theme-str 'listview {columns: 1; lines: 5;}' \
 		-dmenu \
 		-mesg "$mesg" \
 		-markup-rows \
 		-theme "$theme"
 		}
 # Options
-options=(" Installed Packages" "$HOME/.config/scripts/pkglist.sh"
-         " Count Days" "$HOME/.config/scripts/countdown.sh"
-         " Installed Fonts" "$HOME/.config/scripts/fonts.sh"
-         " All Packages" "$HOME/.config/scripts/allpkglist.sh"
+options=(
+        " Browse Archives" "$HOME/.config/scripts/archives.sh"
+        " Installed Packages" "$HOME/.config/scripts/pkglist.sh"
+        " All Packages" "$HOME/.config/scripts/allpkglist.sh"
+        " Count Days" "$HOME/.config/scripts/countdown.sh"
+        " Installed Fonts" "$HOME/.config/scripts/fonts.sh"
          )
 
 run_rofi() {
