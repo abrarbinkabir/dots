@@ -2,7 +2,7 @@
 
 main(){
 	echo "Copying fonts" &&
-	mkdir ~/.local/share/fonts/ &&
+	mkdir -p ~/.local/share/fonts/ &&
 	cp -Tr $HOME/dots/fonts/ $HOME/.local/share/fonts &&
 	echo "Creating symlinks" &&
 	rm -rf $HOME/.config/qtile &&
