@@ -6,7 +6,7 @@ main(){
 	cp -Tr $HOME/dots/fonts/ $HOME/.local/share/fonts &&
 	echo "Creating symlinks" &&
 	rm -rf $HOME/.config/qtile &&
-	./$HOME/dots/symlink.sh &&
+	bash /$HOME/dots/symlink.sh &&
 	echo "Installing native packages" &&
 	sudo pacman -S $(cat $(find ~/dots/misc -type f -iname "npkglist*" -exec ls -t -1 {} + | head -n 1) | cut -d " " -f 1) &&
 	echo "installing yay" &&
