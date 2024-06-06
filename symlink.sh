@@ -12,6 +12,7 @@ ln -sf $HOME/dots/nsxiv ~/.config/
 ln -sf $HOME/dots/pandoc ~/.config/
 ln -sf $HOME/dots/qtile ~/.config/
 ln -sf $HOME/dots/redshift ~/.config/
+ln -sf $HOME/dots/restic ~/.config/
 ln -sf $HOME/dots/rofi ~/.config/
 ln -sf $HOME/dots/scripts ~/.config/
 ln -sf $HOME/dots/yt-dlp ~/.config/

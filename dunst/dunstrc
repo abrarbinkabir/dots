@@ -1,7 +1,7 @@
 [global]
 	monitor = 0
 	follow = none 
-	width = 300
+	width = 350
 	height = 300 
 	origin = top-right 
 	offset = 35x50 
@@ -25,9 +25,9 @@
 	gap_size = 0
 	separator_color = "#179299" # teal
 	sort = yes
-	font = "JetBrainsMono Nerd Font Propo 12"
+	font = "JetBrainsMono Nerd Font Propo 11"
 	line_height = 0
-	format = "<span size='12pt' weight='semibold'>%a</span>\n%s\n%b" # '%a'-app name, '%s'-summary, '%b'-body 
+	format = "<span size='11pt' weight='semibold'>%a</span>\n%s\n%b" # '%a'-app name, '%s'-summary, '%b'-body 
 	alignment = left
 	vertical_alignment = center
 	show_age_threshold = 60

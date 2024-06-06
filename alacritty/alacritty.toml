@@ -1,5 +1,6 @@
 live_config_reload = true
 
+# Set colorscheme-------------------------------
 [colors.primary]
 background = "#eff1f5" # base
 foreground = "#4c4f69" # text
@@ -67,6 +68,7 @@ blue = "#1e66f5" #blue
 magenta = "#8839ef" #mauve
 cyan = "#179299" #teal
 white = "#5c5f77" #subtext1
+#----------------------------------------------
 
 [cursor]
 blink_interval = 750

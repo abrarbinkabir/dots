@@ -1,0 +1,7 @@
+/home/abrar/archives
+/home/abrar/camera
+/home/abrar/Documents
+/home/abrar/dots
+/home/abrar/Downloads
+/home/abrar/Pictures
+

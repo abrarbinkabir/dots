@@ -1,11 +1,11 @@
 [Default Applications]
 
-text/plain=vim.desktop
-text/x-script.python=vim.desktop
-inode/x-empty=vim.desktop
-application/json=vim.desktop
-text/x-shellscript=vim.desktop
-text/vcard=vim.desktop
+text/plain=micro.desktop
+text/x-script.python=micro.desktop
+inode/x-empty=micro.desktop
+application/json=micro.desktop
+text/x-shellscript=micro.desktop
+text/vcard=micro.desktop
 
 application/pdf=org.pwmt.zathura.desktop
 application/epub+zip=org.pwmt.zathura.desktop
