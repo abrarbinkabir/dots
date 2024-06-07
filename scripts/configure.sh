@@ -1,11 +1,11 @@
 #!/bin/bash
 
 main(){
-	echo "Copying fonts" &&
+	echo "Copying fonts to $HOME/.local/share/fonts" &&
 	mkdir -p ~/.local/share/fonts/ &&
 	cp -Tr $HOME/dots/fonts/ $HOME/.local/share/fonts &&
 	echo "Creating symlinks" &&
-	rm -rf $HOME/.config/qtile &&
+	mkdir $HOME/.config &&
 	bash /$HOME/dots/symlink.sh &&
 	echo "Installing native packages" &&
 	sudo pacman -S $(cat $(find ~/dots/misc -type f -iname "npkglist*" -exec ls -t -1 {} + | head -n 1) | cut -d " " -f 1) &&
