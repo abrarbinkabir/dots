@@ -1,6 +1,6 @@
 live_config_reload = true
 
-# Set colorscheme-------------------------------
+# Colorscheme-------------------------------
 [colors.primary]
 background = "#eff1f5" # base
 foreground = "#4c4f69" # text

@@ -1,4 +1,4 @@
-# Set options
+# General settings------------------------------
 display_on=0
 span_image=false
 lock_timeout=300
@@ -9,8 +9,9 @@ pixel_scale=10,1000
 solid_color=333333
 wallpaper_cmd="feh --bg-fill"
 quiet=false
+#-------------------------------------------------
 
-# Configure theme
+# Theme-------------------------------------------
 loginbox=179299ff # background color
 loginshadow=00000000
 locktext="Type password to unlock..."
@@ -34,4 +35,4 @@ wrongtext="Wrong Password!"
 wrongcolor=eff1f5ff # red color
 modifcolor=eff1f5ff # red color
 bgcolor=179299ff # background color
-
+#-----------------------------------------------------

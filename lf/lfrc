@@ -1,4 +1,4 @@
-# Configure basic settings
+# General settings---------------------------
 set ignorecase true
 set icons
 set drawbox # Draw border around panes
@@ -9,9 +9,9 @@ set ifs "\n"
 set filesep "\n"
 set info size 
 set ratios 1:1:2 # Set ratio for the panes
+#---------------------------------------------
 
-# Define custom commands here------------------
-
+# Custom commands-----------------------------
 # Open file/s or folder/s with default app
 cmd open ${{xdg-open "$f"}}
 
@@ -177,7 +177,7 @@ cmd fzf_jump ${{
 map <c-f> :fzf_jump
 # --------------------------------------------------
 
-# Set keybindings
+# Keybindings---------------------------------------
 map c
 map d
 map m
@@ -210,8 +210,9 @@ map C clear
 map mt moveto
 map ct copyto
 map Y $printf "%s" "$fx" | xclip -selection clipboard
+#-------------------------------------------------------
 
-# Set shortcuts for frequently visited folders
+# Favorites---------------------------------------------
 map gD cd ~/Documents
 map gd cd ~/Downloads
 map gp cd ~/Pictures
@@ -219,3 +220,4 @@ map gc cd ~/.config
 map gf cd ~/dotfiles
 map ga cd ~/archives
 map gt cd ~/.local/share/Trash/files
+#--------------------------------------------------------

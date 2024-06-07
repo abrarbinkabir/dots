@@ -16,12 +16,12 @@ main(){
 	sudo cp $HOME/dots/misc/betterlockscreen@.service /usr/lib/systemd/system/ &&
 	sudo systemctl enable lightdm.service &&
 	sudo systemctl enable betterlockscreen@$USER.service &&
-	systemctl enable --user syncthing@$USER.service &&
+	systemctl enable --user syncthing.service &&
 	systemctl enable --user mpd.service &&
 	systemctl enable --user redshift.service &&
 	systemctl enable --user clipmenud.service &&
 	betterlockscreen -u $HOME/dots/images/wallpaper.png &&
-	updatedb &&
+	sudo updatedb &&
 	sudo mandb &&
 	echo "Successful!"
 	exit
