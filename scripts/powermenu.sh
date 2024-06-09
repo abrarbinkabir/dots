@@ -44,17 +44,19 @@ main() {
 		if [[ $answer == "Yes" ]]; then
 			case ${selection} in
 			    $option_1)
-			    	$HOME/.config/scripts/uprecord.sh
-			    	sleep 15 &&
-					systemctl poweroff
+					notify-send -u normal -a Systemctl -i bell "System will shutdown now" &&
+			    	sleep 3 &&
+			    	systemctl poweroff
 			        ;;
 			    $option_2)
+			    	notify-send -u normal -a Systemctl -i bell "System will logout now" &&
+			    	sleep 3 &&
 			    	qtile cmd-obj -o cmd -f shutdown
 			        ;;
 			    $option_3)
-			    	$HOME/.config/scripts/uprecord.sh
-			    	sleep 15 &&
-					systemctl reboot
+			    	notify-send -u normal -a Systemctl -i bell "System will reboot now" &&
+			    	sleep 3 &&
+			    	systemctl reboot
 			        ;;
 			    $option_4)
 					systemctl suspend

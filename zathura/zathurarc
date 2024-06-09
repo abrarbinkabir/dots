@@ -67,13 +67,11 @@ map w adjust_window width
 map = zoom in
 map <C-=> zoom in
 map <C--> zoom out
-map 0 zoom default
 map <C-0> zoom default
 map <C-r> reload
 map <C-i> recolor
 map <C-Right> rotate rotate-cw
 map <C-Left> rotate rotate-ccw
-map <C-f> focus_inputbar "/"
 
 # Unmap keybinds
 unmap a

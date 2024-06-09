@@ -2,7 +2,7 @@
 set ignorecase true
 set icons
 set drawbox # Draw border around panes
-set nopreview # Turn off file preview
+# set nopreview # Turn off file preview
 set shell zsh
 set shellopts '-euy'
 set ifs "\n"
@@ -57,7 +57,7 @@ cmd chmod ${{
 cmd copyto ${{
 	clear
 	set -f
-	res="$(find ~/Documents/ ~/Downloads/ ~/Pictures/ ~/dots/ ! -path '*/.*' ! -path '/home/abrar/Documents/archives*' -type d | cut -d '/' -f4- |fzf -e -i --reverse --header='Copy to')"
+	res="$(find ~/Documents/ ~/Downloads/ ~/Pictures/ ~/dots/ ! -path '*/.*' -type d | cut -d '/' -f4- |fzf -e -i --reverse --header='Copy to')"
 	file="$HOME/$res"
 	for x in $fx; do
 		cp -ivr "$x" $file
@@ -69,7 +69,7 @@ cmd copyto ${{
 cmd moveto ${{
 	clear
 	set -f
-	res="$(find ~/Documents/ ~/Downloads/ ~/Pictures/ ~/dots/ ! -path '*/.*' ! -path '/home/abrar/Documents/archives*' -type d | cut -d '/' -f4- |fzf -e -i --reverse --header='Move to')"
+	res="$(find ~/Documents/ ~/Downloads/ ~/Pictures/ ~/dots/ ! -path '*/.*' -type d | cut -d '/' -f4- |fzf -e -i --reverse --header='Move to')"
 	file="$HOME/$res"
 	for x in $fx; do
 		mv -iv "$x" $file

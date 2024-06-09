@@ -75,7 +75,7 @@ blink_interval = 750
 
 [cursor.style]
 blinking = "On"
-shape = "Beam"
+shape = "Block"
 
 [font]
 size = 12.0
