@@ -4,6 +4,7 @@
 theme="$HOME/.config/rofi/applet-config.rasi"
 message="Backup" 
 dt="$(date +%Y%m%d)"
+source "$HOME/.config/restic/passwd-file"
 
 # Defines options
 options=(" Backup in nvme0n1p2" " Backup in team-c175" " Pacman Package List" " Push Dotfiles Repo")
@@ -12,7 +13,6 @@ directories=("/mnt/nvme0n1p2" "/run/media/abrar/team-c175")
 # Rofi CMD
 rofi_cmd() {
    rofi -theme-str 'listview {columns: 1; lines: 4;}' \
-		-theme-str 'window {width: 400px;}' \
 		-dmenu \
 		-mesg "$message" \
 		-markup-rows \
@@ -23,12 +23,12 @@ backup() {
     cd "$dir" || { echo "Directory $dir not found"; exit 1; }
     restic -r . backup \
         --files-from="$HOME/.config/restic/include.txt" \
-        --exclude-file="$HOME/.config/restic/exclude.txt"  &&
+        --exclude-file="$HOME/.config/restic/exclude.txt" \ &&
     restic -r . unlock &&
     restic -r . forget \
         --keep-last 3 \
         --prune &&
-    notify-send -u normal -a Restic -i bell "Snapshot created successfully"
+    notify-send -u normal -a Restic -i bell "Backup successful"
 }
 
 # Main function  
@@ -38,7 +38,7 @@ main() {
     case $selection in
          "${options[0]}")
             dir="${directories[0]}"
-            backup
+            backup > .scriptlogs 2>&1
             ;;
         "${options[1]}")
             dir="${directories[1]}"
@@ -48,7 +48,7 @@ main() {
                     exit 1
                 }
             fi
-            backup
+            backup > .scriptlogs 2>&1
             ;;
         "${options[2]}")
             pacman -Qen > "$HOME/dots/misc/npkglist-${dt}.md" &&
