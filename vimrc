@@ -1,3 +1,4 @@
+set background=dark
 set number
 set relativenumber
 set nocompatible
@@ -19,7 +20,12 @@ set smartcase
 set incsearch
 set showmatch
 set cursorline
-set lines=41
+" set lines=41
 
+call plug#begin()
 
-colorscheme catppuccin_latte 
+" List your plugins here
+Plug 'morhetz/gruvbox'
+call plug#end()
+
+colorscheme catppuccin_latte

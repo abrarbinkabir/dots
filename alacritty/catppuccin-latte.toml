@@ -1,0 +1,67 @@
+[colors.primary]
+background = "#eff1f5" # base
+foreground = "#4c4f69" # text
+dim_foreground = "#8c8fa1" # overlay1
+bright_foreground = "#4c4f69" # text
+
+[colors.cursor]
+text = "#eff1f5" # base
+cursor = "#179299" # teal
+
+[colors.vi_mode_cursor]
+text = "#eff1f5" # base
+cursor = "#fe640b" # peach
+
+[colors.search.matches]
+foreground = "#179299" # teal
+background = "#eff1f5" # base
+
+[colors.search.focused_match]
+foreground = "#d20f39" # red
+background = "#eff1f5" # base
+
+[colors.footer_bar]
+foreground = "#eff1f5" # base
+background = "#6c6f85" # subtext0
+
+[colors.hints.start]
+foreground = "#eff1f5" # base
+background = "#fe640b" # peach
+
+[colors.hints.end]
+foreground = "#eff1f5" # base
+background = "#6c6f85" # subtext0
+
+[colors.selection]
+text = "#eff1f5" # base
+background = "#179299" # teal
+
+[colors.normal]
+black = "#bcc0cc" # surface1
+red = "#d20f39" # red
+green = "#40a02b" # green
+yellow = "#fe640b" # peach
+blue = "#1e66f5" # blue
+magenta = "#8839ef" # mauve
+cyan = "#179299" # teal
+white = "#5c5f77" # subtext1
+
+[colors.bright]
+black = "#acb0be" # surface2
+red = "#d20f39" # red
+green = "#40a02b" # green
+yellow = "#fe640b" # peach
+blue = "#1e66f5" # blue
+magenta = "#8839ef" # mauve
+cyan = "#179299" # teal
+white = "#6c6f85" # subtext0
+
+[colors.dim]
+black = "#bcc0cc" #surface1
+red = "#d20f39" #red
+green = "#40a02b" #green
+yellow = "#fe640b" #peach
+blue = "#1e66f5" #blue
+magenta = "#8839ef" #mauve
+cyan = "#179299" #teal
+white = "#5c5f77" #subtext1

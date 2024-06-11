@@ -4,6 +4,8 @@ from libqtile.config import Click, Drag, Group, Key, Match, Screen, ScratchPad, 
 from libqtile.lazy import lazy
 from libqtile.utils import guess_terminal
 from os.path import expanduser
+from qtile_extras import widget
+from qtile_extras.widget.decorations import PowerLineDecoration
 import os
 import subprocess
 import pulsectl_asyncio
@@ -157,8 +159,8 @@ layouts = [
     layout.MonadTall(
            font = "Inter",
            fontsize = 10,
-           margin = 3,
-           border_width = 1,
+           margin = 7,
+           border_width = 2,
            single_border_width = None,
            single_margin = None,
            border_focus="#179299", #teal
@@ -173,6 +175,12 @@ widget_defaults = dict(
     fontsize=14,
     padding=8,
 )
+
+powerline = {
+    "decorations": [
+        PowerLineDecoration(path="arrow_right")
+    ]
+}
 
 screens = [
 Screen(
@@ -198,55 +206,57 @@ Screen(
             disable_drag=True,
             ),
             
-            widget.Spacer(),
+            widget.Spacer(
+            **powerline
+            ),
             
             widget.PulseVolume(
             channel= 'Master',
-            foreground = theme["text"],
+            foreground = theme["background"],
+            background="#3e9da3",
             fmt = ' {}',
             step=5,
             mouse_callbacks = {'Button3': lazy.spawn('pavucontrol')},
+            **powerline
             ),
             
             widget.Memory(
             format = ' {MemUsed:.2f} GiB',
             measure_mem='G',
-            foreground=theme["text"],
+            foreground=theme["background"],
+            background="#179299",
             update_interval=5.0,
-            mouse_callbacks = {'Button1': lazy.spawn('alacritty -e htop')},
+            mouse_callbacks = {'Button1': lazy.spawn('alacritty -e btop')},
+            **powerline
             ),
             
             widget.CPU(
             format = ' {load_percent:.2f}%',
-            foreground = theme["text"],
+            foreground = theme["background"],
+            background="#127e84",
             update_interval=5.0,
-            mouse_callbacks = {'Button1': lazy.spawn('alacritty -e htop')},
+            mouse_callbacks = {'Button1': lazy.spawn('alacritty -e btop')},
+            **powerline
             ),
             
             widget.Clock(
-            foreground = theme["text"],
+            foreground = theme["background"],
+            background="#0e6b70",
             format=" %I:%M %p",
-            mouse_callbacks={"Button1": lazy.spawn(expanduser("~/.config/scripts/datetime.sh"))}
+            mouse_callbacks={"Button1": lazy.spawn(expanduser("~/.config/scripts/datetime.sh"))},
+            **powerline
             ),
             
             widget.Clock(
-            foreground = theme["text"],
+            foreground = theme["background"],
+            background="#0a585d",
             format=" %a, %b %d",
             update_interval= 60,
-            mouse_callbacks={"Button1": lazy.spawn(expanduser("~/.config/scripts/datetime.sh"))}
+            mouse_callbacks={"Button1": lazy.spawn(expanduser("~/.config/scripts/datetime.sh"))},
             ),
-            
             widget.Systray(
             icon_size=18,
             padding=7,
-            ),
-
-            widget.TextBox(
-            text="",
-            padding=8,
-            foreground=theme["background"],
-            background=theme["red"], 
-            mouse_callbacks={"Button1": lazy.spawn(expanduser("~/.config/scripts/powermenu.sh"))}
             ),
             ],
             26,
@@ -268,7 +278,7 @@ mouse = [
 
 # Floating layout settings----------------------------
 floating_layout = layout.Floating(
-	border_width=1,
+	border_width=2,
 	border_focus="#179299", #teal
 	border_normal="#bcc0cc", #surface1
     float_rules=[
