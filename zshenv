@@ -1,4 +1,4 @@
-export EDITOR="micro"
+export EDITOR="vim"
 export TERMINAL="alacritty"
 export BROWSER="firefox"
 export "MICRO_TRUECOLOR=1"

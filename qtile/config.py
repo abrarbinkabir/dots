@@ -178,7 +178,7 @@ widget_defaults = dict(
 
 powerline = {
     "decorations": [
-        PowerLineDecoration(path="arrow_right")
+        PowerLineDecoration(path="arrow_right", size=10)
     ]
 }
 
@@ -278,7 +278,7 @@ mouse = [
 
 # Floating layout settings----------------------------
 floating_layout = layout.Floating(
-	border_width=2,
+	border_width=1,
 	border_focus="#179299", #teal
 	border_normal="#bcc0cc", #surface1
     float_rules=[

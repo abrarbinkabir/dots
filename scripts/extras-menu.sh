@@ -5,7 +5,8 @@ theme="$HOME/.config/rofi/applet-config.rasi"
 mesg="Extra Scripts"
 
 rofi_cmd() {
-		rofi -theme-str 'listview {columns: 1; lines: 5;}' \
+		rofi -theme-str "window {width: 820px;}" \
+        -theme-str 'listview {columns: 2; lines: 6;}' \
 		-dmenu \
 		-mesg "$mesg" \
 		-markup-rows \
@@ -13,11 +14,13 @@ rofi_cmd() {
 		}
 # Options
 options=(
+        " Count Days" "$HOME/.config/scripts/countdown.sh"
         " Browse Archives" "$HOME/.config/scripts/archives.sh"
         " Installed Packages" "$HOME/.config/scripts/pkglist.sh"
         " All Packages" "$HOME/.config/scripts/allpkglist.sh"
-        " Count Days" "$HOME/.config/scripts/countdown.sh"
         " Installed Fonts" "$HOME/.config/scripts/fonts.sh"
+        " Toggle Redshift" "$HOME/.config/scripts/redshift.sh"
+        " Kill Processes" "$HOME/.config/scripts/kill.sh"
          )
 
 run_rofi() {

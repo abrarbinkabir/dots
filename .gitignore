@@ -1,9 +1,13 @@
+gtk-3.0/bookmarks
 micro/backups/
 micro/buffers/
+misc/backup-logs
+misc/histfile
 mpd/playlists/
 mpd/database
 mpd/sticker.sql
 ncmpcpp/error.log
 qtile/__pycache__/
 restic/passwd
+restic/passwd-file
 scripts/countdown.sh

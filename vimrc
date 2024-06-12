@@ -1,4 +1,3 @@
-set background=dark
 set number
 set relativenumber
 set nocompatible
@@ -25,7 +24,9 @@ set cursorline
 call plug#begin()
 
 " List your plugins here
-Plug 'morhetz/gruvbox'
+ Plug 'itchyny/lightline.vim'
+ Plug 'catppuccin/vim', { 'as': 'catppuccin' }
 call plug#end()
 
 colorscheme catppuccin_latte
+let g:lightline = {'colorscheme': 'catppuccin_latte'}

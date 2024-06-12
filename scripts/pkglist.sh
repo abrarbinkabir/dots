@@ -14,7 +14,7 @@ rofi_cmd() {
 		}
 		
 # Get the list of explicitly installed native packages
-packages=$(pacman -Qq)
+packages=$(pacman -Qeq)
 
 # Main function
 main(){

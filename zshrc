@@ -7,14 +7,14 @@ zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 
 # ZSH prompt-----------------------------------
 # Configure the left prompt
-PROMPT='%B%F{cyan}%U%~%u%f %F{red}${vcs_info_msg_0_}%f%F{cyan}$%f%b '
+PROMPT='%B%F{cyan}%U%~%u%f%F{red} ${vcs_info_msg_0_}%f%F{cyan}$%f%b '
 
 # Configure the right prompt
 RPROMPT='%F{cyan}%*%f'
 #-----------------------------------------------
 
 # History settings------------------------------
-HISTFILE=~/.histfile
+HISTFILE=$HOME/dots/misc/histfile
 HISTSIZE=1000
 SAVEHIST=10000
 #-----------------------------------------------
@@ -75,6 +75,7 @@ alias loc="cd ~/.local/share"
 alias arc="cd ~/archives"
 alias cam="cd ~/camera/"
 alias doc="cd ~/Documents/"
+alias notes="cd ~/Documents/50-notes/"
 alias dwl="cd ~/Downloads/"
 alias dot="cd ~/dots/"
 alias scr="cd ~/dots/scripts/"
@@ -86,6 +87,9 @@ alias pic="cd ~/Pictures/"
 alias yt="yt-dlp"
 alias yta="yt-dlp -f 'bestaudio[ext=m4a]'"
 alias ytp="yt-dlp -o '~/nsync/%(playlist)s/%(playlist_index)s-%(title)s.%(ext)s'"
+
+# Set other aliases
+alias bm="bashmount"
 #--------------------------------------------------
 
 # Custom functions---------------------------------
@@ -113,6 +117,8 @@ source /usr/share/fzf/completion.zsh 2>/dev/null
 #------------------------------------------------------
 
 # Export variables-------------------------------------
+export ZDOTDIR=~/.config/zsh
+
 # Export $PATH variables
 export PATH=$HOME/.config:$PATH
 export PATH=$HOME/dots/scripts:$PATH
