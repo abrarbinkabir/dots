@@ -18,7 +18,7 @@ widget_defaults = dict(
 
 powerline = {
     "decorations": [
-        PowerLineDecoration(path="arrow_right", size=10)
+        PowerLineDecoration(path="arrow_right", size=12)
     ]
 }
 

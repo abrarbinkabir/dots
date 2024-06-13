@@ -60,7 +60,7 @@ keys = [
     Key(["mod1"], "b", lazy.spawn(expanduser("~/.config/scripts/backup.sh"), shell=True), desc="Execute backup applet"),
     Key(["mod1"], "w", lazy.spawn(expanduser("~/.config/scripts/archwiki.sh"), shell=True), desc="Execute arch-wiki applet"),
     Key(["mod1"], "m", lazy.spawn(expanduser("~/.config/scripts/man.sh"), shell=True), desc="Execute man page applet"),
-    Key(["mod1"], "y", lazy.spawn(expanduser("~/.config/scripts/yt2mpv.sh"), shell=True), desc="Execute youtube to mpv applet"),
+    Key(["mod1"], "n", lazy.spawn(expanduser("~/.config/scripts/open-shot.sh"), shell=True), desc="Open last captured screenshot"),
     Key(["mod1"], "e", lazy.spawn(expanduser("~/.config/scripts/extras-menu.sh"), shell=True), desc="Execute extra scripts applet"),
     Key([], "Print", lazy.spawn(expanduser("~/.config/scripts/screenshot-opts.sh window"), shell=True), desc="Take screenshot of the focused window"),
     Key(["shift"], "Print", lazy.spawn(expanduser("~/.config/scripts/screenshot-opts.sh full"), shell=True), desc="Take fullscreen screenshot"),

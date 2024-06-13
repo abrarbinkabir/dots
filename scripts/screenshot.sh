@@ -31,7 +31,7 @@ run_rofi() {
 
 # Sets the file name format
 time=$(date '+%Y%m%d%H%M%S') # date-month-hours(24 hrs format)-minutes-seconds
-dir="$HOME/Pictures"  # screenshot folder
+dir="$HOME/Pictures/shots"  # screenshot folder
 file="${time}.png"  # file name
 
 # Sends notification whether screenshot is taken or not
@@ -46,7 +46,7 @@ notify_view() {
 
 # Copies the screenshot to clipboard
 copy_shot () {
-	tee "$HOME/Pictures/${file}" | xclip -selection clipboard -t image/png
+	tee "$dir/$file" | xclip -selection clipboard -t image/png
 }
 
 # Does countdown and sends notification on countdown

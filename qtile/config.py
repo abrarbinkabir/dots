@@ -1,4 +1,4 @@
-# Import libraries-------------------------------
+# Import libraries------------------------------------
 from modules.groups import groups
 from modules.widgets import widget_defaults, screens
 from modules.keybinds import keys, mod
@@ -7,7 +7,7 @@ from modules.scratchpads import *
 from modules.hooks import *
 import os
 import subprocess
-#------------------------------------------------
+#-----------------------------------------------------
 
 # Other settings--------------------------------------
 dgroups_key_binder = None
@@ -22,4 +22,4 @@ auto_minimize = True
 wl_input_rules = None
 main = None
 wmname = "LG3D"
-#------------------------------------------------------
+#-----------------------------------------------------
