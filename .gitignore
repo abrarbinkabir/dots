@@ -2,7 +2,6 @@ gtk-3.0/bookmarks
 micro/backups/
 micro/buffers/
 misc/backup-logs
-misc/histfile
 mpd/playlists/
 mpd/database
 mpd/sticker.sql
@@ -11,3 +10,4 @@ qtile/__pycache__/
 restic/passwd
 restic/passwd-file
 scripts/countdown.sh
+zsh/histfile

@@ -1,0 +1,1 @@
+/home/abrar/dots/zsh/zshrc

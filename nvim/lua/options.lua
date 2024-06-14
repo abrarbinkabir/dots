@@ -1,30 +1,53 @@
--- :help options
-vim.opt.clipboard = "unnamedplus"               -- allows neovim to access the system clipboard
-vim.opt.fileencoding = "utf-8"                  -- the encoding written to a file
-vim.opt.hlsearch = true                         -- highlight all matches on previous search pattern
-vim.opt.ignorecase = true                       -- ignore case in search patterns
-vim.opt.mouse = "a"                             -- allow the mouse to be used in neovim
-vim.opt.showtabline = 2                         -- always show tabs
-vim.opt.smartcase = true                        -- smart case
-vim.opt.smartindent = true                      -- make indenting smarter again
-vim.opt.splitbelow = true                       -- force all horizontal splits to go below current window
-vim.opt.splitright = true                       -- force all vertical splits to go to the right of current window
-vim.opt.swapfile = false                        -- creates a swapfile
-vim.opt.termguicolors = true                    -- set term gui colors (most terminals support this)
-vim.opt.undofile = true                         -- enable persistent undo
-vim.opt.updatetime = 300                        -- faster completion (4000ms default)
-vim.opt.writebackup = false                     -- if a file is being edited by another program (or was written to file while editing with another program), it is not allowed to be edited
-vim.opt.expandtab = true                        -- convert tabs to spaces
-vim.opt.shiftwidth = 4                          -- the number of spaces inserted for each indentation
-vim.opt.tabstop = 4                             -- insert 2 spaces for a tab
-vim.opt.cursorline = true                       -- highlight the current line
-vim.opt.number = true                           -- set numbered lines
-vim.opt.relativenumber = true                  -- set relative numbered lines
-vim.opt.signcolumn = "yes"                      -- always show the sign column, otherwise it would shift the text each time
-vim.opt.wrap = true                            -- display lines as one long line
-vim.opt.scrolloff = 8                           -- is one of my fav
-vim.opt.sidescrolloff = 8
-vim.opt.background = "light"
--- disable netrw at the very start of your init.lua
+local opt = vim.opt -- for conciseness
+
+-- Line numbers
+opt.number = true                           -- set numbered lines
+opt.relativenumber = true                  -- set relative numbered lines
+
+-- Tabs and indentations
+opt.tabstop = 4                             -- insert 2 spaces for a tab
+opt.shiftwidth = 4                          -- the number of spaces inserted for each indentation
+opt.expandtab = true                        -- convert tabs to spaces
+opt.autoindent = true
+opt.smartindent = true                      -- make indenting smarter again
+
+-- Appearance
+opt.background = "light"
+opt.termguicolors = true                    -- set term gui colors (most terminals support this)
+opt.signcolumn = "yes"                      -- always show the sign column, otherwise it would shift the text each time
+
+-- Cursorline
+opt.cursorline = true                       -- highlight the current line
+
+-- Line wrapping
+opt.wrap = true                            -- display lines as one long line
+
+-- Search
+opt.hlsearch = true                         -- highlight all matches on previous search pattern
+opt.ignorecase = true                       -- ignore case in search patterns
+opt.smartcase = true                        -- smart case
+
+-- Backspace
+opt.backspace = "indent,eol,start" -- allow backspace on indent, end of line or insert mode start position
+
+-- Clipboard
+opt.clipboard = "unnamedplus"               -- allows neovim to access the system clipboard
+
+-- Mouse
+opt.mouse = "a"                             -- allow the mouse to be used in neovim
+
+-- Window splitting
+opt.splitbelow = true                       -- force all horizontal splits to go below current window
+opt.splitright = true                       -- force all vertical splits to go to the right of current window
+
+-- Others
+opt.fileencoding = "utf-8"                  -- the encoding written to a file
+opt.swapfile = false                        -- creates a swapfile
+opt.updatetime = 300                        -- faster completion (4000ms default)
+opt.writebackup = false                     -- if a file is being edited by another program (or was written to file while editing with another program), it is not allowed to be edited
+opt.scrolloff = 8                           -- is one of my fav
+opt.sidescrolloff = 8
+
+-- Netrw
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
