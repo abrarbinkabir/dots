@@ -7,7 +7,9 @@ if [[ ! -f "${1}.md" ]]; then
 fi
 
 # Convert Markdown to PDF using Pandoc
-pandoc -H ~/.config/pandoc/inline_code.tex \
+main()
+{
+    pandoc -H ~/.config/pandoc/inline_code.tex \
     -H ~/.config/pandoc/quote.tex \
     --highlight-style ~/.config/pandoc/pygments.theme \
     -V linkcolor:blue \
@@ -21,6 +23,7 @@ pandoc -H ~/.config/pandoc/inline_code.tex \
     --pdf-engine=xelatex \
     "${1}.md" \
     -o "${1}.pdf"
+}
 
 # Check if Pandoc succeeded
 if [[ $? -eq 0 ]]; then

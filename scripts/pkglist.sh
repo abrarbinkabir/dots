@@ -8,8 +8,8 @@ rofi_cmd() {
 		rofi -dmenu -i \
 		-p "Packages" \
 		-sort \
-		-sorting-method fzf \		
-		-markup-rows \
+		-sorting-method fzf \
+        -markup-rows \
 		-theme "$theme"
 		}
 		

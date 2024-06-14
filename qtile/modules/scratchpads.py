@@ -1,6 +1,6 @@
 # Imports-----------------------------------------------
 from .groups import groups
-from libqtile.config import ScratchPad, DropDown, Match
+from libqtile.config import ScratchPad, DropDown
 #------------------------------------------------------
 
 # Scratchpad settings----------------------------------

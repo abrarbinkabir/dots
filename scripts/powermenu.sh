@@ -6,7 +6,7 @@ theme="$HOME/.config/rofi/applet-config.rasi"
 # Message to show uptime
 # Gets the uptime >>
 # Replaces 'up ' with ''
-mesg="Uptime: `uptime -p | sed -e 's/up //g' -e 's/\shour[s]\?,/h/g' -e 's/\sminute[s]\?/m/g'`"
+mesg="Uptime: $(uptime -p | sed -e 's/up //g' -e 's/\shour[s]\?,/h/g' -e 's/\sminute[s]\?/m/g')"
 
 # Options
 option_1=" Shut Down"
@@ -65,7 +65,7 @@ main() {
 		else
 			exit 1
 		fi
-	elif [[ -n "$selection" && "$selection"=="$option_5" ]]; then
+	elif [[ -n "$selection" && "$selection" == "$option_5" ]]; then
 		betterlockscreen -l
 	else
 		exit 1

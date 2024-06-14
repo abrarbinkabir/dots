@@ -5,8 +5,6 @@ from modules.keybinds import keys, mod
 from modules.layouts import layouts, floating_layout
 from modules.scratchpads import *
 from modules.hooks import *
-import os
-import subprocess
 #-----------------------------------------------------
 
 # Other settings--------------------------------------

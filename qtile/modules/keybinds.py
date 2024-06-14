@@ -1,5 +1,4 @@
 # Imports----------------------------------------
-from libqtile import qtile
 from libqtile.config import Click, Drag, Key
 from libqtile.lazy import lazy
 from os.path import expanduser

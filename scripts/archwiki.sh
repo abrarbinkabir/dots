@@ -1,4 +1,4 @@
- #!/bin/bash
+#!/bin/bash
 
 # Configuration variables
 theme="$HOME/.config/rofi/config.rasi"

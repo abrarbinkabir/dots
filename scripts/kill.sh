@@ -8,9 +8,9 @@ rofi_cmd() {
 		-dmenu -i \
 		-p "Pkill" \
 		-sort \
-		-sorting-method fzf \		
-		-markup-rows \
+		-sorting-method fzf \
+        -markup-rows \
 		-theme "$theme"
 		}
 
-ps --user $USER -F | awk '{print $2" "$11}' | tail -n +2 | rofi_cmd | cut -d" " -f1 | xargs kill -9
+ps --user "$USER" -F | awk '{print $2" "$11}' | tail -n +2 | rofi_cmd | cut -d" " -f1 | xargs kill -9

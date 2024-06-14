@@ -1,16 +1,14 @@
 # Import-----------------------------------------------
-from libqtile import hook, qtile
+from libqtile import hook
 from os.path import expanduser
 import subprocess
-import os
 #------------------------------------------------------
 
 # Hooks------------------------------------------------
 # Define hook for autostart script
 @hook.subscribe.startup
 def autostart():
-    home = os.path.expanduser('~')
-    subprocess.call([home + '/.config/qtile/autostart.sh'])
+    subprocess.call(expanduser("~/.config/qtile/autostart.sh"))
 
 # Hook for opening windows on certain workspaces
 #@hook.subscribe.client_new

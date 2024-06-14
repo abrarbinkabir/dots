@@ -8,8 +8,8 @@ rofi_cmd() {
 		-dmenu -i \
 		-p "Man Pages" \
 		-sort \
-		-sorting-method fzf \		
-		-markup-rows \
+		-sorting-method fzf \
+        -markup-rows \
 		-theme "$theme"
 		}
 apropos -s 1,5,7 . | awk '{print $1}' | sort | uniq | rofi_cmd | xargs alacritty -e man
