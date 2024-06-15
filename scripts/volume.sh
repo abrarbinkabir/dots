@@ -15,7 +15,7 @@ mute_notification(){
 	# Checks whether muted or not
 	state=$(pactl get-sink-mute @DEFAULT_SINK@ | awk '{print $2}')
 	# Sends notification
-	if [ $state == 'yes' ]; then
+	if [ "$state" == 'yes' ]; then
 		dunstify -a "Pulseaudio" -u normal -r 9993 -i bell "Default sink muted"
 	else
 		dunstify -a "Pulseaudio" -u normal -r 9993 -i bell "Default sink unmuted"

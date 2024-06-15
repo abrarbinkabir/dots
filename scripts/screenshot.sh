@@ -51,7 +51,7 @@ copy_shot () {
 
 # Does countdown and sends notification on countdown
 countdown () {
-	for sec in `seq $1 -1 1`; do
+    for sec in $(seq "$1" -1 1) ; do
 		dunstify -u normal -a Maim --replace=701 -i bell -t 1100 "Taking shot in : $sec seconds"
 		sleep 1
 	done
@@ -73,7 +73,7 @@ area () {
 
 window () {
 	# Takes screenshot of the active window without the mouse shown and copies to the clipboard
-	maim -i `xdotool getactivewindow` -u | copy_shot
+    maim -i "$(xdotool getactivewindow)" -u | copy_shot
 	notify_view
 }
 

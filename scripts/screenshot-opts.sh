@@ -37,7 +37,7 @@ case $1 in
         
     window)
     	# Takes screenshot of the active window without the mouse shown and copies to the clipboard
-		maim -i `xdotool getactivewindow` -u | copy_shot
+        maim -i "$(xdotool getactivewindow)" -u | copy_shot
 		notify_view
         ;;    
 esac

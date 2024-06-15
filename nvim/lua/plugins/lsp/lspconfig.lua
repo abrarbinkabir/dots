@@ -74,7 +74,7 @@ return {
       local hl = "DiagnosticSign" .. type
       vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
     end
-    lspconfig.ltex.setup({
+    lspconfig.texlab.setup({
         capabilities = capabilities
       })
     lspconfig.bashls.setup({

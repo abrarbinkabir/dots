@@ -30,7 +30,7 @@ return {
         "lua_ls",
         "pyright",
         "bashls",
-        "ltex",
+        "texlab",
         "markdown_oxide"
       },
     })

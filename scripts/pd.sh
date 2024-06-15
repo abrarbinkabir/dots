@@ -7,23 +7,21 @@ if [[ ! -f "${1}.md" ]]; then
 fi
 
 # Convert Markdown to PDF using Pandoc
-main()
-{
-    pandoc -H ~/.config/pandoc/inline_code.tex \
-    -H ~/.config/pandoc/quote.tex \
-    --highlight-style ~/.config/pandoc/pygments.theme \
-    -V linkcolor:blue \
-    -V geometry:a4paper \
-    -V geometry:margin=1in \
-    -V fontsize=12pt \
-    -V pagestyle=empty \
-    -V monofont="JetBrainsMono Nerd Font Propo" \
-    --from=markdown+lists_without_preceding_blankline \
-    -N \
-    --pdf-engine=xelatex \
-    "${1}.md" \
-    -o "${1}.pdf"
-}
+pandoc -H ~/.config/pandoc/inline_code.tex \
+-H ~/.config/pandoc/quote.tex \
+--highlight-style ~/.config/pandoc/pygments.theme \
+-V linkcolor:blue \
+-V geometry:a4paper \
+-V geometry:margin=1in \
+-V fontsize=12pt \
+-V pagestyle=empty \
+-V mainfont="Inter" \
+-V monofont="JetBrainsMono Nerd Font Propo" \
+--from=markdown+lists_without_preceding_blankline \
+-N \
+--pdf-engine=xelatex \
+"${1}.md" \
+-o "${1}.pdf"
 
 # Check if Pandoc succeeded
 if [[ $? -eq 0 ]]; then
