@@ -13,7 +13,7 @@ pandoc -H ~/.config/pandoc/inline_code.tex \
 -V linkcolor:blue \
 -V geometry:a4paper \
 -V geometry:margin=1in \
--V fontsize=12pt \
+-V fontsize=11pt \
 -V pagestyle=empty \
 -V mainfont="Inter" \
 -V monofont="JetBrainsMono Nerd Font Propo" \

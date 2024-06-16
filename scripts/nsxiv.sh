@@ -8,9 +8,9 @@ elif [ -f "$1" ]; then
     # If the argument is a file, open all images in its parent directory
     parent_dir=$(dirname "$1")
     # Get all images in the same directory as the selected image
-    images=("$(find "$parent_dir" -maxdepth 1 -type f -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" -o -iname "*.gif" -o -iname "*.bmp" -o -iname "*.tif" -o -iname "*.tiff")")
+    images=($(find "$parent_dir" -maxdepth 1 -type f -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" -o -iname "*.gif" -o -iname "*.bmp" -o -iname "*.tif" -o -iname "*.tiff"))
     # Sort images array based on modification time
-    sorted_images=("$(stat -c "%Y %n" "${images[@]}" | sort -n | cut -d ' ' -f 2-)")
+    sorted_images=($(stat -c "%Y %n" "${images[@]}" | sort -n | cut -d ' ' -f 2-))
     # Find the index of the selected image
     selected_index=-1
     for i in "${!sorted_images[@]}"; do
