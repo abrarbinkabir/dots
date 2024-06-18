@@ -40,7 +40,7 @@ main() {
     case $selection in
          "${options[0]}")
             dir="${directories[0]}"
-            backup #> ~/dots/misc/backup-logs 2>&1
+            backup > ~/dots/misc/backup-logs 2>&1
             ;;
         "${options[1]}")
             dir="${directories[1]}"
@@ -50,7 +50,7 @@ main() {
                     exit 1
                 }
             fi
-            backup #> ~/dots/misc/backup-logs 2>&1
+            backup > ~/dots/misc/backup-logs 2>&1
             ;;
         "${options[2]}")
             pacman -Qen > "$HOME/dots/misc/npkglist-${dt}.md" &&
