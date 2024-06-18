@@ -26,7 +26,9 @@ backup() {
         --exclude-file="$HOME/.config/restic/exclude.txt" \ &&
     restic -r . unlock &&
     restic -r . forget \
-        --keep-last 3 \
+        --keep-daily 3 \
+        --keep-weekly 4 \
+        --keep-monthly 6 \
         --prune &&
     notify-send -u normal -a Restic -i bell "Backup successful"
 }
@@ -38,7 +40,7 @@ main() {
     case $selection in
          "${options[0]}")
             dir="${directories[0]}"
-            backup > ~/dots/misc/backup-logs 2>&1
+            backup #> ~/dots/misc/backup-logs 2>&1
             ;;
         "${options[1]}")
             dir="${directories[1]}"
@@ -48,7 +50,7 @@ main() {
                     exit 1
                 }
             fi
-            backup > ~/dots/misc/backup-logs 2>&1
+            backup #> ~/dots/misc/backup-logs 2>&1
             ;;
         "${options[2]}")
             pacman -Qen > "$HOME/dots/misc/npkglist-${dt}.md" &&
@@ -62,7 +64,10 @@ main() {
             fi
             ;;
 	  "${options[3]}")
-            cd "$HOME/dots" && git add -A && git commit -m "Minor changes" && git push origin main
+            cd "$HOME/dots" && 
+            git add -A && git commit -m "Minor changes" 
+            git push origin main
+
         if [ $? -eq 0 ] ; then
             notify-send -u normal -a "Dotfiles" -i bell -t 3000 "Pushed successfully!"
         else
