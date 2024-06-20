@@ -33,6 +33,7 @@ keys = [
     Key([mod], "r", lazy.layout.reset(), desc="Reset all windows to their default size"),
     Key([mod], "n", lazy.layout.normalize(), desc="Restore all secondary windows to their default size"),
     Key([mod], "m", lazy.window.toggle_minimize(), desc="Toggle minimization on focused window"),
+    Key([mod], "o", lazy.window.toggle_maximize(), desc="Toggle minimization on focused window"),
     Key([mod], "space", lazy.window.toggle_floating(), desc="Toggle floating layout"),
 
     # Launch apps

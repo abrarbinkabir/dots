@@ -5,8 +5,7 @@ theme="$HOME/.config/rofi/applet-config.rasi"
 mesg="Extra Scripts"
 
 rofi_cmd() {
-		rofi -theme-str "window {width: 820px;}" \
-        -theme-str 'listview {columns: 2; lines: 6;}' \
+		rofi -theme-str 'listview {columns: 1; lines: 6;}' \
 		-dmenu \
 		-mesg "$mesg" \
 		-markup-rows \

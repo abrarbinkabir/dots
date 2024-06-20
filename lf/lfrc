@@ -1,14 +1,14 @@
 # General settings---------------------------
 set ignorecase true
-set icons
-set drawbox # Draw border around panes
-# set nopreview # Turn off file preview
+set nopreview # Turn off file preview
 set shell zsh
 set shellopts '-euy'
 set ifs "\n"
 set filesep "\n"
 set info size 
-set ratios 1:1:2 # Set ratio for the panes
+set ratios 1:2:2 # Set ratio for the panes
+# set icons
+# set drawbox # Draw border around panes
 #---------------------------------------------
 
 # Custom commands-----------------------------

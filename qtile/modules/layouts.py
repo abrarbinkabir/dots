@@ -1,28 +1,29 @@
 # Imports---------------------------------------------
 from libqtile import layout
 from libqtile.config import Match
+from .themes import theme
 #-----------------------------------------------------
 
 # Layout settings-------------------------------------
+layout_theme = {
+    "font":"Inter",
+    "fontsize":10,
+    "margin":10,
+    "border_width":0,
+    "change_ratio":0.02,
+}
+
 layouts = [
-    layout.MonadTall(
-           font = "Inter",
-           fontsize = 10,
-           margin = 7,
-           border_width = 2,
-           single_border_width = None,
-           single_margin = None,
-           border_focus="#179299", #teal
-           border_normal="#bcc0cc", #surface1           
-          ),
+    layout.MonadTall(**layout_theme),
+    layout.MonadWide(**layout_theme),
 ]
 #-----------------------------------------------------
 
 # Floating layout settings----------------------------
 floating_layout = layout.Floating(
-	border_width=1,
-	border_focus="#179299", #teal
-	border_normal="#bcc0cc", #surface1
+	border_width=2,
+    border_focus= theme["blue"],
+    border_normal= theme["overlay0"],       
     float_rules=[
         *layout.Floating.default_float_rules, 
         # List windows to use floating layout

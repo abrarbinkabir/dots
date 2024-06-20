@@ -4,7 +4,6 @@ from libqtile.lazy import lazy
 from libqtile.config import Screen
 from os.path import expanduser
 from qtile_extras import widget
-from qtile_extras.widget.decorations import PowerLineDecoration
 from .themes import theme
 #-----------------------------------------------------
 
@@ -13,83 +12,62 @@ from .themes import theme
 widget_defaults = dict(
     font='JetBrainsMono Nerd Font Propo SemiBold',
     fontsize=14,
-    padding=8,
+    padding=10,
 )
-
-powerline = {
-    "decorations": [
-        PowerLineDecoration(path="arrow_right", size=12)
-    ]
-}
 
 screens = [
 Screen(
-        top=bar.Bar(
-        [   widget.TextBox(
-            text="",
-            padding=8,
-            foreground=theme["background"],
-            background=theme["teal"], 
-            mouse_callbacks={"Button1": lazy.spawn(expanduser("~/.config/scripts/launcher.sh"))}
-            ),
-            
+        top=bar.Bar([
             widget.GroupBox(
             font= 'JetBrainsMono Nerd Font Propo',
             fontsize=14,
             padding=8,
             highlight_method = "line",
-            highlight_color=theme["teal"],
+            highlight_color=theme["blue"],
             block_highlight_text_color=theme["background"],
             borderwidth = 0,
-            active = theme["foreground"],
+            active = theme["lavender"],
             inactive = theme["overlay0"],
             disable_drag=True,
             ),
-            
-            widget.Spacer(
-            **powerline
+
+            widget.CurrentLayoutIcon(
+                scale = 0.6,
             ),
+
+            widget.Spacer(),
             
             widget.PulseVolume(
             channel= 'Master',
-            foreground = theme["background"],
-            background="#3e9da3",
+            foreground = theme["pink"],
             fmt = ' {}',
             step=5,
             mouse_callbacks = {'Button3': lazy.spawn('pavucontrol')},
-            **powerline
             ),
             
             widget.Memory(
             format = ' {MemUsed:.2f} GiB',
             measure_mem='G',
-            foreground=theme["background"],
-            background="#179299",
+            foreground=theme["blue"],
             update_interval=5.0,
             mouse_callbacks = {'Button1': lazy.spawn('alacritty -e btop')},
-            **powerline
             ),
             
             widget.CPU(
             format = ' {load_percent:.2f}%',
-            foreground = theme["background"],
-            background="#127e84",
+            foreground = theme["peach"],
             update_interval=5.0,
             mouse_callbacks = {'Button1': lazy.spawn('alacritty -e btop')},
-            **powerline
             ),
             
             widget.Clock(
-            foreground = theme["background"],
-            background="#0e6b70",
+            foreground = theme["green"],
             format=" %I:%M %p",
             mouse_callbacks={"Button1": lazy.spawn(expanduser("~/.config/scripts/datetime.sh"))},
-            **powerline
             ),
             
             widget.Clock(
-            foreground = theme["background"],
-            background="#0a585d",
+            foreground = theme["flamingo"],
             format=" %a, %b %d",
             update_interval= 60,
             mouse_callbacks={"Button1": lazy.spawn(expanduser("~/.config/scripts/datetime.sh"))},
@@ -99,10 +77,10 @@ Screen(
             padding=7,
             ),
             ],
-            26,
+            28,
             background=theme["background"],
-            border_width=[0, 0, 1, 0],  # Draw bottom border
-            border_color=["000000", "000000", "#ccd0da", "000000"]  # surface0
+            border_width=[0, 0, 0, 0],  # Draw bottom border
+            border_color=["000000", "000000", "#ccd0da", "000000"],  # surface0
         ),
     ),
 ]

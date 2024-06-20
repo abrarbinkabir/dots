@@ -4,15 +4,7 @@ configuration {
 }
 
 /*****----- Global Properties -----*****/
-* {	
-	background:     #eff1f5;
-    background-alt: #e6e9ef; /* mantle color */
-    foreground:     #4c4f69;
-    foreground-alt: #9ca0b0; /* overlay0 color */
-    primary:        #179299; /* teal color */
-	red:			#d20f39;
-	font: "JetBrainsMono Nerd Font Propo Regular 13";
-}
+@import "colors.rasi"
 
 /*****----- Main Window -----*****/
 window {
@@ -21,13 +13,8 @@ window {
     anchor:                      center;
     fullscreen:                  false;
     width:                       450px;
-    x-offset:                    0px;
-    y-offset:                    0px;
-    margin:                      0px;
-    padding:                     0px;
     border:                      2px solid;
-    border-radius:               0px;
-    border-color:                @primary;
+    border-color:                @blue;
     cursor:                      "default";
     background-color:            @background;
 }
@@ -48,10 +35,8 @@ message {
     margin:                      0px;
     padding:                     10px;
     border:                      0px solid;
-    border-radius:               0px;
-    border-color:                @primary;
-    background-color:            @primary;
-    text-color:                  @background;
+    background-color:            @background-alt;
+    text-color:                  @foreground;
 }
 
 textbox {
@@ -79,9 +64,6 @@ listview {
 element {
     enabled:                     true;
     padding:                     10px 20px;
-    border:                      0px solid;
-    border-radius:               0px;
-    border-color:                @primary;
     background-color:            transparent;
     text-color:                  @foreground;
     cursor:                      pointer;
@@ -97,22 +79,20 @@ element-text {
 
 element normal.normal,
 element alternate.normal {
-    background-color:            @background-alt;
+    background-color:            @background;
     text-color:                  @foreground;
 }
 
 element selected.normal {
-    border:                      2px;
-    border-color:                @primary;
-    background-color:            @background-alt;
-    text-color:                  @primary;
+    background-color:            @blue;
+    text-color:                  @background;
 }
 
 element normal.urgent,
 element alternate.urgent,
 element selected.active {
     background-color:            @red;
-    text-color:                  @foreground;
+    text-color:                  @background;
 }
 
 element normal.active,
