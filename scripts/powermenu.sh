@@ -44,17 +44,17 @@ main() {
 		if [[ $answer == "Yes" ]]; then
 			case ${selection} in
 			    $option_1)
-					notify-send -u normal -a Systemctl -i bell "System will shutdown now" &&
+					notify-send -u normal -a Systemctl -i poweroff "System will shutdown now" &&
 			    	sleep 3 &&
 			    	systemctl poweroff
 			        ;;
 			    $option_2)
-			    	notify-send -u normal -a Systemctl -i bell "System will logout now" &&
+			    	notify-send -u normal -a Systemctl -i logout "System will logout now" &&
 			    	sleep 3 &&
 			    	qtile cmd-obj -o cmd -f shutdown
 			        ;;
 			    $option_3)
-			    	notify-send -u normal -a Systemctl -i bell "System will reboot now" &&
+			    	notify-send -u normal -a Systemctl -i restart "System will reboot now" &&
 			    	sleep 3 &&
 			    	systemctl reboot
 			        ;;

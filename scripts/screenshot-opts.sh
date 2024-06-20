@@ -7,7 +7,7 @@ file="${time}.png"  # file name
 
 # Sends notification whether screenshot is taken or not
 notify_view() {
-	notify_cmd_shot='dunstify -u normal -a Screenshot -i bell'
+	notify_cmd_shot='dunstify -u normal -a Screenshot -i screenshot'
 	if [[ -e "$dir/$file" ]]; then
 		${notify_cmd_shot} "Saved successfully!"
 	else
