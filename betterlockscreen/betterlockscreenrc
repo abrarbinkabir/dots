@@ -12,27 +12,7 @@ quiet=false
 #-------------------------------------------------
 
 # Theme-------------------------------------------
-loginbox=179299ff # background color
-loginshadow=00000000
-locktext="Type password to unlock..."
-font="JetBrainsMono Nerd Font Propo:Medium"
-ringcolor=eff1f5ff # foreground color
-insidecolor=00000000
-separatorcolor=179299ff # background color
-ringvercolor=eff1f5ff # foreground color
-insidevercolor=00000000
-ringwrongcolor=F38BA8FF # red color
-insidewrongcolor=00000000
-timecolor=eff1f5ff # foreground color
+font="JetBrainsMono Nerd Font Propo"
+locktext="Type your password..."
 time_format="%I:%M %P" # time format
-greetercolor=eff1f5ff # foreground color
-layoutcolor=eff1f5ff # foreground color
-keyhlcolor=dce0e8ff # red color
-bshlcolor=dce0e8ff # red color
-veriftext="Verifying..."
-verifcolor=eff1f5ff # primary color
-wrongtext="Wrong Password!"
-wrongcolor=eff1f5ff # red color
-modifcolor=eff1f5ff # red color
-bgcolor=179299ff # background color
 #-----------------------------------------------------

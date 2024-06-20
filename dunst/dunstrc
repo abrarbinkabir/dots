@@ -1,7 +1,7 @@
 [global]
 	monitor = 0
 	follow = none 
-	width = 350
+	width = 300
 	height = 300 
 	origin = top-right 
 	offset = 35x50 
@@ -9,25 +9,25 @@
 	notification_limit = 20 
 	progress_bar = true 
 	progress_bar_height = 10 
-	progress_bar_frame_width = 2 
+	progress_bar_frame_width = 1 
 	progress_bar_min_width = 150
 	progress_bar_max_width = 250
 	progress_bar_corner_radius = 0
 	icon_corner_radius = 0
 	indicate_hidden = yes 
 	transparency = 0 
-	separator_height = 2 
+	separator_height = 1 
 	padding = 12 # set padding between text and separator 
 	horizontal_padding = 20 
 	text_icon_padding = 10  
-	frame_width = 2
-	frame_color = "#179299" # teal
+	frame_width = 1
+	frame_color = "#89b4fa" # blue
 	gap_size = 0
-	separator_color = "#179299" # teal
+	separator_color = "#89b4fa" # blue
 	sort = yes
-	font = "JetBrainsMono Nerd Font Propo 12"
+	font = "JetBrainsMono Nerd Font Propo 11"
 	line_height = 0
-	format = "<span size='12pt' weight='semibold'>%a</span>\n%s\n%b" # '%a'-app name, '%s'-summary, '%b'-body 
+	format = "<span size='11pt' weight='semibold'>%a</span>\n%s\n%b" # '%a'-app name, '%s'-summary, '%b'-body 
 	alignment = left
 	vertical_alignment = center
 	show_age_threshold = 60
@@ -60,22 +60,25 @@
     per_monitor_dpi = false
     
 [urgency_low]
-    background = "#eff1f5" # base
-    foreground = "#4c4f69" # text
-    highlight = "#179299" # teal
+    background = "#1e1e2e" # base
+    foreground = "#cdd6f4" # text
+    highlight = "#89b4fa" # blue
     timeout = 3
         
 [urgency_normal]
-    background = "#eff1f5" # base
-    foreground = "#4c4f69" # text
-    highlight = "#179299" # teal
+    background = "#1e1e2e" # base
+    foreground = "#cdd6f4" # text
+    highlight = "#89b4fa" # blue
     timeout = 3
+
     
         
 [urgency_critical]
-    background = "#eff1f5" # base
-    foreground = "#4c4f69" # text
-    frame_color = "#d20f39" # red
-    highlight = "#179299" # teal
+    background = "#1e1e2e" # base
+    foreground = "#cdd6f4" # text
+    highlight = "#89b4fa" # blue
+    frame_color = "#f38ba8" # red
+    timeout = 3
+
     timeout = 0
     

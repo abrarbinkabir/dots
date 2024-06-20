@@ -3,7 +3,6 @@
     background-alt: #313244; /* surface0 color */
     foreground:     #cdd6f4; /* text color */
     foreground-alt: #6c7086; /* overlay0 color */
-    primary:        #89b4fa; /* blue color */
     rosewater:      #f5e0dc;
     flamingo:       #f2cdcd;
     pink:           #f5c2e7;

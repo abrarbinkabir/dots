@@ -7,7 +7,7 @@ volume_notification() {
 	# Gets the integer value of volume without percentage sign
     volume=$(pactl get-sink-volume @DEFAULT_SINK@ | awk '/Volume/ {print $5}'| cut -d "%" -f 1)
     # Sends a notification showing the volume in progress bar and text
-    notify-send -a "Pulseaudio" -u normal -r 9993 -h int:value:"$volume" -i bell "Volume set to: ${volume}%"
+    notify-send -a "Pulseaudio" -u normal -r 9993 -h int:value:"$volume" -i volume "Volume set to: ${volume}%"
 }
 
 # Notification for mute state
@@ -16,9 +16,9 @@ mute_notification(){
 	state=$(pactl get-sink-mute @DEFAULT_SINK@ | awk '{print $2}')
 	# Sends notification
 	if [ "$state" == 'yes' ]; then
-		dunstify -a "Pulseaudio" -u normal -r 9993 -i bell "Default sink muted"
+		dunstify -a "Pulseaudio" -u normal -r 9993 -i volume "Default sink muted"
 	else
-		dunstify -a "Pulseaudio" -u normal -r 9993 -i bell "Default sink unmuted"
+		dunstify -a "Pulseaudio" -u normal -r 9993 -i volume "Default sink unmuted"
 	fi
 	}
 

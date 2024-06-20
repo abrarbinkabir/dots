@@ -30,7 +30,7 @@ backup() {
         --keep-weekly 4 \
         --keep-monthly 6 \
         --prune &&
-    notify-send -u normal -a Restic -i bell "Backup successful"
+    notify-send -u normal -a Restic -i backup "Backup successful"
 }
 
 # Main function  
@@ -46,7 +46,7 @@ main() {
             dir="${directories[1]}"
             if [ ! -d "$dir" ]; then
                 udisksctl mount -b /dev/sdb1 > /dev/null 2>&1 || {
-                    notify-send -u normal -a Restic -i bell "Please insert USB drive"
+                    notify-send -u normal -a Restic -i usb "Please insert USB drive"
                     exit 1
                 }
             fi
@@ -58,9 +58,9 @@ main() {
             pacman -Qem > "$HOME/dots/misc/fpkglist-${dt}.md" &&
             find "$HOME/dots/misc/" -type f -iname 'fpkglist*' -exec ls -r {} + | tail -n +4 | xargs -I {} mv {} ~/.local/share/Trash/files/
             if [ $? -eq 0 ] ; then
-                notify-send -u normal -a "Package List" -i bell -t 3000 "Backup successful!"
+                notify-send -u normal -a "Package List" -i pacman -t 3000 "Backup successful!"
             else
-                notify-send -u critical -a "Package List" -i bell -t 3000 "Backup unsuccessful!"
+                notify-send -u critical -a "Package List" -i pacman -t 3000 "Backup unsuccessful!"
             fi
             ;;
 	  "${options[3]}")
@@ -69,9 +69,9 @@ main() {
             git push origin main
 
         if [ $? -eq 0 ] ; then
-            notify-send -u normal -a "Dotfiles" -i bell -t 3000 "Pushed successfully!"
+            notify-send -u normal -a "Dotfiles" -i github -t 3000 "Pushed successfully!"
         else
-            notify-send -u critical -a "Dotfiles" -i bell -t 3000 "Push unsuccessful!"
+            notify-send -u critical -a "Dotfiles" -i github -t 3000 "Push unsuccessful!"
         fi
         ;;
     esac
