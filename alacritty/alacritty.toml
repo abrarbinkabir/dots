@@ -2,7 +2,7 @@ live_config_reload = true
 
 # Colorscheme----------------------------------
 import = [
-  "~/.config/alacritty/catppuccin-frappe.toml"
+  "~/.config/alacritty/themes/catppuccin-frappe.toml"
 ]
 #----------------------------------------------
 

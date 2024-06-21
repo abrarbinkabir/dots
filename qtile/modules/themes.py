@@ -1,5 +1,5 @@
 # Theme------------------------------------------
-theme = {
+theme_mocha = {
     "background": "#1e1e2e",
     "foreground": "#cdd6f4",
     "rosewater":  "#f5e0dc",
@@ -20,6 +20,27 @@ theme = {
     "overlay0":   "#6c7086",
 
 }
+
+theme = {
+    "background": "#303446",
+    "foreground": "#c6d0f5",
+    "rosewater":  "#f2d5cf",
+    "flamingo":   "#eebebe",
+    "pink":       "#f4b8e4",
+    "mauve":      "#ca9ee6",
+    "red":        "#e78284",
+    "maroon":     "#ea999c",
+    "peach":      "#ef9f76",
+    "yellow":     "#e5c890",
+    "green":      "#a6d189",
+    "teal":       "#81c8be",
+    "sky":        "#99d1db",
+    "sapphire":   "#85c1dc",
+    "blue":       "#8caaee",
+    "lavender":   "#babbf1",
+    "text":       "#c6d0f5",
+    "overlay0":   "#737994",
+    }
 
 theme_latte = {
     "background": "#eff1f5",
