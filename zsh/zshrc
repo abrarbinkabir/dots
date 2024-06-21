@@ -55,3 +55,6 @@ export PATH=$PATH:$HOME/dots/scripts
 
 # To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
 [[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
+
+# To customize prompt, run `p10k configure` or edit ~/dots/zsh/.p10k.zsh.
+[[ ! -f ~/dots/zsh/.p10k.zsh ]] || source ~/dots/zsh/.p10k.zsh
