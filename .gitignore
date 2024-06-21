@@ -7,6 +7,7 @@ mpd/database
 mpd/sticker.sql
 ncmpcpp/error.log
 qtile/__pycache__/
+qtile/modules/__pycache__/
 restic/passwd
 restic/passwd-file
 zsh/histfile
