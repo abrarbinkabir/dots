@@ -1,5 +1,5 @@
 # Theme------------------------------------------
-theme_mocha = {
+theme = {
     "background": "#1e1e2e",
     "foreground": "#cdd6f4",
     "rosewater":  "#f5e0dc",
@@ -21,7 +21,7 @@ theme_mocha = {
 
 }
 
-theme = {
+theme_latte = {
     "background": "#eff1f5",
     "foreground": "#4c4f69",
     "rosewater":  "#dc8a78",
