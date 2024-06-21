@@ -1,0 +1,24 @@
+* {
+    background:     #1e1e2e; /* base color */
+    background-alt: #313244; /* surface0 color */
+    foreground:     #cdd6f4; /* text color */
+    foreground-alt: #6c7086; /* overlay0 color */
+    rosewater:      #f5e0dc;
+    flamingo:       #f2cdcd;
+    pink:           #f5c2e7;
+    mauve:          #cba6f7;
+    red:			#f38ba8;
+    maroon:         #eba0ac;
+    peach:          #fab387;
+    yellow:         #f9e2af;
+    green:          #a6e3a1;
+    teal:           #94e2d5;
+    sky:            #89dceb;
+    sappire:        #89dceb;
+    blue:           #89b4fa;
+    lavender:       #b4befe;
+    text:           #cdd6f4;
+    font: "JetBrainsMono Nerd Font Propo Medium 13";
+}
+
+
