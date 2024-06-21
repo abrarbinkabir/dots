@@ -1,7 +1,7 @@
 # General settings-------------------------------------
 set default-bg                  "#1e1e2e"
 set default-fg                  "#cdd6f4"
-set font 						"JetBrainsMono Nerd Font Propo Medium 10"
+set font 						"JetBrainsMono Nerd Font Propo Regular 10"
 set page-padding				3
 set selection-clipboard 		clipboard
 set selection-notification		false
