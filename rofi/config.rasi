@@ -7,7 +7,7 @@ configuration {
 }
 
 /*****----- Global Properties -----*****/
-@import "colors.rasi"
+@import "themes/catppuccin-frappe.rasi"
 
 /*****----- Main Window -----*****/
 window {
