@@ -20,7 +20,7 @@
 	padding = 12 # set padding between text and separator 
 	horizontal_padding = 20 
 	text_icon_padding = 10  
-	frame_width = 1
+	frame_width = 0
 	frame_color = "#89b4fa" # blue
 	gap_size = 0
 	separator_color = "#89b4fa" # blue

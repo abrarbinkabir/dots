@@ -4,7 +4,7 @@ configuration {
 }
 
 /*****----- Global Properties -----*****/
-@import "colors.rasi"
+@import "themes/catppuccin-frappe.rasi"
 
 /*****----- Main Window -----*****/
 window {
@@ -55,7 +55,7 @@ listview {
     cycle:                       true;
     scrollbar:                   false;
     layout:                      vertical;
-    spacing:                     10px;
+    spacing:                     5px;
     background-color:            transparent;
     cursor:                      "default";
 }
