@@ -1,0 +1,9 @@
+[Unit]
+Description=Automatic Restic backup service
+
+[Service]
+Type=simple
+Restart=on-failure
+RestartSec=30
+ExecStart=/bin/bash /home/abrar/.config/scripts/restic.sh
+EnvironmentFile=/home/abrar/.config/restic/backup.conf

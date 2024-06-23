@@ -1,0 +1,10 @@
+[Unit]
+Description=Automatic Restic backup on schedule
+
+[Timer]
+OnCalendar=daily
+Persistent=true
+
+[Install]
+WantedBy=timers.target
+

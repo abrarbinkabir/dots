@@ -1,16 +1,16 @@
 # General settings-------------------------------------
-set default-bg                  "#1e1e2e"
-set default-fg                  "#cdd6f4"
+set default-bg                  "#303446"
+set default-fg                  "#c6d0f5"
 set font 						"JetBrainsMono Nerd Font Propo Regular 10"
-set page-padding				3
+set page-padding				1
 set selection-clipboard 		clipboard
 set selection-notification		false
 set database					"sqlite"
 #------------------------------------------------------
 
 # Statusbar settings-----------------------------------
-set statusbar-bg                "#89b4fa"
-set statusbar-fg                "#1e1e2e"
+set statusbar-bg                "#8caaee"
+set statusbar-fg                "#303446"
 set statusbar-h-padding			12
 set statusbar-v-padding			5
 set statusbar-page-percent		true
@@ -18,45 +18,45 @@ set statusbar-home-tilde		true
 #------------------------------------------------------
 
 # Inputbar settings------------------------------------
-set inputbar-bg                 "#1e1e2e"
-set inputbar-fg                 "#cdd6f4"
+set inputbar-bg                 "#292c3c"
+set inputbar-fg                 "#c6d0f5"
 #------------------------------------------------------
 
 # Completion settings----------------------------------
 set n-completion-items			10
-set completion-group-bg         "#181825"
-set completion-group-fg         "#cdd6f4"
-set completion-bg               "#181825"
-set completion-fg               "#cdd6f4"
-set completion-highlight-bg     "#a6e3a1"
-set completion-highlight-fg     "#1e1e2e"
+set completion-group-bg         "#292c3c"
+set completion-group-fg         "#c6d0f5"
+set completion-bg               "#292c3c"
+set completion-fg               "#c6d0f5"
+set completion-highlight-bg     "#8caaee"
+set completion-highlight-fg     "#303446"
 #------------------------------------------------------
 
 # Notification settings--------------------------------
-set notification-error-bg       "#f38ba8"
-set notification-error-fg       "#1e1e2e"
-set notification-warning-bg     "#f38ba8"
-set notification-warning-fg     "#1e1e2e"
-set notification-bg             "#a6e3a1"
-set notification-fg             "#1e1e2e"
+set notification-error-bg       "#292c3c"
+set notification-error-fg       "#e78284"
+set notification-warning-bg     "#292c3c"
+set notification-warning-fg     "#e5c890"
+set notification-bg             "#292c3c"
+set notification-fg             "#c6d0f5"
 #------------------------------------------------------
 
 # Index settings---------------------------------------
-set index-bg                    "#1e1e2e"
-set index-fg                    "#cdd6f4"
-set index-active-bg             "#89b4fa"
-set index-active-fg             "#1e1e2e"
+set index-bg                    "#303446"
+set index-fg                    "#c6d0f5"
+set index-active-bg             "#8caaee"
+set index-active-fg             "#303446"
 #------------------------------------------------------
 
 # Highlight settings-----------------------------------
-set highlight-color             "rgba(166, 227, 161, 0.6)"
-set highlight-fg                "rgba(30, 30, 46, 1)"
-set highlight-active-color      "rgba(243, 139, 168, 0.6)"
+set highlight-color             "rgba(166, 209, 137, 0.6)"
+set highlight-fg                "rgba(48, 52, 70, 1)"
+set highlight-active-color      "rgba(231, 130, 132, 0.6)"
 #------------------------------------------------------
 
 # Recolor settings-------------------------------------
-set recolor-lightcolor          "#1e1e2e"
-set recolor-darkcolor           "#cdd6f4"
+set recolor-lightcolor          "#303446"
+set recolor-darkcolor           "#c6d0f5"
 set recolor-keephue             true
 #------------------------------------------------------
 
@@ -78,4 +78,6 @@ unmap a
 unmap s
 unmap q
 unmap <C-q>
+
+set guioptions ''
 #------------------------------------------------------

@@ -13,7 +13,7 @@ set ratios 1:2:2 # Set ratio for the panes
 
 # Custom commands-----------------------------
 # Open file/s or folder/s with default app
-cmd open ${{xdg-open "$f"}}
+cmd open ${{xdg-open "$f" &}}
 
 # Make folder
 cmd mkdir ${{

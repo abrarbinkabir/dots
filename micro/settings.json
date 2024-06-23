@@ -1,7 +1,7 @@
 {
     "autosu": true,
     "basename": true,
-    "colorscheme": "catppuccin-latte",
+    "colorscheme": "catppuccin-frappe",
     "softwrap": true,
     "wordwrap": true
 }

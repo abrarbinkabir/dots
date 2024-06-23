@@ -4,15 +4,15 @@
 theme="$HOME/.config/rofi/applet-config.rasi"
 message="Backup" 
 dt="$(date +%Y%m%d)"
-source "$HOME/.config/restic/passwd-file"
+source /home/abrar/.config/restic/passwd
 
 # Defines options
-options=(" Backup in nvme0n1p2" " Backup in team-c175" " Pacman Package List" " Push Dotfiles Repo")
-directories=("/mnt/nvme0n1p2" "/run/media/abrar/team-c175")
+options=(" Backup in team-c175" " Pacman Package List" " Push Dotfiles Repo")
+dir="/run/media/abrar/team-c175"
 
 # Rofi CMD
 rofi_cmd() {
-   rofi -theme-str 'listview {columns: 1; lines: 4;}' \
+   rofi -theme-str 'listview {columns: 1; lines: 3;}' \
 		-dmenu \
 		-mesg "$message" \
 		-markup-rows \
@@ -24,7 +24,6 @@ backup() {
     restic -r . backup \
         --files-from="$HOME/.config/restic/include.txt" \
         --exclude-file="$HOME/.config/restic/exclude.txt" \ &&
-    restic -r . unlock &&
     restic -r . forget \
         --keep-daily 3 \
         --keep-weekly 4 \
@@ -39,11 +38,6 @@ main() {
     selection=$(printf "%s\n" "${options[@]}" | rofi_cmd)
     case $selection in
          "${options[0]}")
-            dir="${directories[0]}"
-            backup > ~/dots/misc/backup-logs 2>&1
-            ;;
-        "${options[1]}")
-            dir="${directories[1]}"
             if [ ! -d "$dir" ]; then
                 udisksctl mount -b /dev/sdb1 > /dev/null 2>&1 || {
                     notify-send -u normal -a Restic -i usb "Please insert USB drive"
@@ -52,7 +46,7 @@ main() {
             fi
             backup > ~/dots/misc/backup-logs 2>&1
             ;;
-        "${options[2]}")
+        "${options[1]}")
             pacman -Qen > "$HOME/dots/misc/npkglist-${dt}.md" &&
             find "$HOME/dots/misc/" -type f -iname 'npkglist*' -exec ls -r {} + | tail -n +4 | xargs -I {} mv {} ~/.local/share/Trash/files/ &&
             pacman -Qem > "$HOME/dots/misc/fpkglist-${dt}.md" &&
@@ -63,7 +57,7 @@ main() {
                 notify-send -u critical -a "Package List" -i pacman -t 3000 "Backup unsuccessful!"
             fi
             ;;
-	  "${options[3]}")
+	  "${options[2]}")
             cd "$HOME/dots" && 
             git add -A && git commit -m "Minor changes" 
             git push origin main

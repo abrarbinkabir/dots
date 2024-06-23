@@ -17,3 +17,12 @@ require("lazy").setup ( {{import="plugins"}, {import="plugins.lsp"}}, {
     notify = false,
   },}
 )
+
+-- Define autocommands for Python files
+vim.cmd([[
+  augroup PythonAutocommands
+    autocmd!
+    autocmd FileType python nnoremap <buffer> <leader>r :w<CR>:belowright terminal python3 %<CR>
+  augroup END
+]])
+

@@ -28,5 +28,5 @@ call plug#begin()
  Plug 'catppuccin/vim', { 'as': 'catppuccin' }
 call plug#end()
 
-colorscheme catppuccin_latte
-let g:lightline = {'colorscheme': 'catppuccin_latte'}
+colorscheme catppuccin_frappe
+let g:lightline = {'colorscheme': 'catppuccin_frappe'}

@@ -52,7 +52,7 @@ copy_shot () {
 # Does countdown and sends notification on countdown
 countdown () {
     for sec in $(seq "$1" -1 1) ; do
-		dunstify -u normal -a Maim --replace=701 -i bell -t 1100 "Taking shot in : $sec seconds"
+		dunstify -u normal -a Screenshot --replace=701 -i timer -t 1100 "Taking shot in: $sec sec"
 		sleep 1
 	done
 }
