@@ -39,7 +39,7 @@ Screen(
             
             widget.PulseVolume(
             channel= 'Master',
-            foreground = theme["teal"],
+            foreground = theme["mauve"],
             fmt = ' {}',
             step=5,
             mouse_callbacks = {'Button3': lazy.spawn('pavucontrol')},
@@ -48,26 +48,26 @@ Screen(
             widget.Memory(
             format = ' {MemUsed:.2f} GiB',
             measure_mem='G',
-            foreground=theme["green"],
+            foreground=theme["sapphire"],
             update_interval=5.0,
             mouse_callbacks = {'Button1': lazy.spawn('alacritty -e btop')},
             ),
             
             widget.CPU(
             format = ' {load_percent:.2f}%',
-            foreground = theme["yellow"],
+            foreground = theme["green"],
             update_interval=5.0,
             mouse_callbacks = {'Button1': lazy.spawn('alacritty -e btop')},
             ),
             
             widget.Clock(
-            foreground = theme["peach"],
+            foreground = theme["yellow"],
             format=" %I:%M %p",
             mouse_callbacks={"Button1": lazy.spawn(expanduser("~/.config/scripts/datetime.sh"))},
             ),
             
             widget.Clock(
-            foreground = theme["maroon"],
+            foreground = theme["peach"],
             format=" %a, %b %d",
             update_interval= 60,
             mouse_callbacks={"Button1": lazy.spawn(expanduser("~/.config/scripts/datetime.sh"))},

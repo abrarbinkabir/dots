@@ -42,7 +42,7 @@
     max_icon_size = 32
 	icon_path = /home/abrar/dots/images/
 	sticky_history = yes
-	history_length = 20
+	history_length = 100
 	dmenu = /usr/bin/dmenu -p dunst:
 	browser = /usr/bin/xdg-open
 	always_run_script = true
@@ -78,7 +78,9 @@
     foreground = "#cdd6f4" # text
     highlight = "#89b4fa" # blue
     frame_color = "#f38ba8" # red
-    timeout = 3
-
     timeout = 0
+
+[history-ignore]
+    appname = Pulseaudio
+    history_ignore = yes
     

@@ -18,29 +18,44 @@ vim.g.maplocalleader = " "
 --   command_mode = "c",
 
 -- Normal --
--- Better window navigation
+keymap("n", "<C-s>", ":w<CR>", opts)
+keymap("n", "<C-s-a>", ":wa<CR>", opts)
+keymap("n", "<C-q>", ":wq<CR>", opts)
+keymap("i", "<C-q>", "<ESC>:wq<CR>", opts)
+keymap("i", "<C-s>", "<ESC>:w<CR>a", opts)
+
+-- Manage buffers
+keymap("n", "<C-t>", ":enew<CR>", opts)
+keymap("n", "<C-Tab>", ":bnext<CR>", opts)
+keymap("n", "<C-S-Tab>", ":bprevious<CR>", opts)
+keymap("n", "<leader>bb", ":Telescope buffers<CR>", opts)
+keymap("n", "<C-w>", ":bdelete<CR>", opts)
+
+-- Manage splits
+keymap("n", "<leader>s", ":split<CR>", opts)
+keymap("n", "<leader>v", ":vsplit<CR>", opts)
+keymap("n", "<leader>r", "<C-w>=", opts)
+
+-- Navigate between 
 keymap("n", "<C-h>", "<C-w>h", opts)
 keymap("n", "<C-j>", "<C-w>j", opts)
 keymap("n", "<C-k>", "<C-w>k", opts)
 keymap("n", "<C-l>", "<C-w>l", opts)
 
-keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
+-- Resize windows
+keymap("n", "<C-Up>", ":resize -2<CR>", opts)
+keymap("n", "<C-Down>", ":resize +2<CR>", opts)
+keymap("n", "<C-Left>", ":vertical resize +2<CR>", opts)
+keymap("n", "<C-Right>", ":vertical resize -2<CR>", opts)
 
--- Resize with arrows
-keymap("n", "<C-Up>", ":resize +2<CR>", opts)
-keymap("n", "<C-Down>", ":resize -2<CR>", opts)
-keymap("n", "<C-Left>", ":vertical resize -2<CR>", opts)
-keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
+--Toggle NvimTree
+keymap("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
 
 -- Clear search highlights
-keymap("n", "<leader>nh", ":nohl<CR>", {  noremap = true, silent = true , desc = "Clear search highlights" })
+keymap("n", "<leader>nh", ":nohl<CR>", opts)
 
 -- Delete single character without copying into register
 keymap("n", "x", '"_x', opts)
-
--- Navigate buffers
-keymap("n", "<S-l>", ":bnext<CR>", opts)
-keymap("n", "<S-h>", ":bprevious<CR>", opts)
 
 -- Insert --
 -- Press jk fast to enter
@@ -70,14 +85,8 @@ keymap("t", "<C-j>", "<C-\\><C-N><C-w>j", term_opts)
 keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
 keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
 
--- window management
-keymap("n", "<leader>sv", "<C-w>v", { desc = "Split window vertically" }) -- split window vertically
-keymap("n", "<leader>sh", "<C-w>s", { desc = "Split window horizontally" }) -- split window horizontally
-keymap("n", "<leader>se", "<C-w>=", { desc = "Make splits equal size" }) -- make split windows equal width & height
-keymap("n", "<leader>sx", "<cmd>close<CR>", { desc = "Close current split" }) -- close current split window
-
-keymap("n", "<C-t>", "<cmd>tabnew<CR>", { desc = "Open new tab" }) -- open new tab
-keymap("n", "<leader>tx", "<cmd>tabclose<CR>", { desc = "Close current tab" }) -- close current tab
-keymap("n", "<C-Tab>", "<cmd>tabn<CR>", { desc = "Go to next tab" }) --  go to next tab
-keymap("n", "<leader>tp", "<cmd>tabp<CR>", { desc = "Go to previous tab" }) --  go to previous tab
-keymap("n", "<leader>tf", "<cmd>tabnew %<CR>", { desc = "Open current buffer in new tab" }) --  move current buffer to new tab
+--Check or uncheck tasks in Markdown
+keymap('n', '<leader>t', '^f[lrx$j', opts)
+keymap('n', '<leader>u', '^f[lr $j', opts)
+keymap('x', '<leader>t', ':normal! ^f[lrx$<CR>', opts)
+keymap('x', '<leader>u', ':normal! ^f[lr $<CR>', opts)

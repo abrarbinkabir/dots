@@ -46,6 +46,7 @@ floating_layout = layout.Floating(
         Match(wm_class="Lxappearance"),
         Match(wm_class="Xarchiver"),
         Match(wm_class="xarchiver"),
+        Match(wm_class="float_term"),
         ]
 )
 #-----------------------------------------------------

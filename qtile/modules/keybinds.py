@@ -68,6 +68,9 @@ keys = [
     Key(["mod1"], "F1", lazy.spawn(expanduser("~/.config/scripts/volume.sh up"), shell=True), desc="Increase volume by 5%"),
     Key(["mod1"], "F2", lazy.spawn(expanduser("~/.config/scripts/volume.sh down"), shell=True), desc="Decrease volume by 5%"),
     Key(["mod1"], "F3", lazy.spawn(expanduser("~/.config/scripts/volume.sh mute"), shell=True), desc="Toggle mute state"),    
+
+    Key(["mod1"], "h", lazy.spawn("dunstctl history-pop"), desc="Show last notification"),
+    Key(["mod1"], "j", lazy.spawn(expanduser("~/.config/scripts/journal.sh")), desc="Open daily journal")
 ]
 
 # Switch between groups and move focused window to a group
@@ -82,6 +85,7 @@ for i in groups:
 # Toggle scratchpads
 keys.extend([
     Key([], "F1", lazy.group['0'].dropdown_toggle('alacritty')),
+    Key([], "F2", lazy.group['0'].dropdown_toggle('tasklist')),
     Key([], "F3", lazy.group['0'].dropdown_toggle('lf')),
     Key([], "F4", lazy.group['0'].dropdown_toggle('thunar')),
     Key([], "F5", lazy.group['0'].dropdown_toggle('ncmpcpp')),

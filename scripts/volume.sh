@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/bin/bash
 
 # Notification for the current volume if volume increases or decreases
 volume_notification() {
