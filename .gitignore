@@ -8,6 +8,7 @@ mpd/sticker.sql
 ncmpcpp/error.log
 qtile/__pycache__/
 qtile/modules/__pycache__/
+qutebrowser/__pycache__/
 restic/backup.conf
 restic/passwd
 restic/passwd-file
