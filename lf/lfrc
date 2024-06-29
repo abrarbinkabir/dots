@@ -69,7 +69,7 @@ cmd copyto ${{
 cmd moveto ${{
 	clear
 	set -f
-	res="$(find ~/Documents/ ~/Downloads/ ~/Pictures/ ~/dots/ ! -path '*/.*' -type d | cut -d '/' -f4- |fzf -e -i --reverse --header='Move to')"
+	res="$(find ~/Documents/ ~/Downloads/ ~/Pictures/ ~/dots/ ~/archives/ ! -path '*/.*' -type d | cut -d '/' -f4- |fzf -e -i --reverse --header='Move to')"
 	file="$HOME/$res"
 	for x in $fx; do
 		mv -iv "$x" $file
@@ -170,7 +170,7 @@ cmd zip ${{
 
 # Finding folders
 cmd fzf_jump ${{
-	res="$(find ~/Documents/ ~/Downloads/ ~/Pictures/ ~/dots/ ! -path '*/.*' ! -path '/home/abrar/Documents/archives*' -type d | cut -d '/' -f4- |fzf -e -i --reverse --header='Search folders')"
+	res="$(find ~/Documents/ ~/Downloads/ ~/Pictures/ ~/dots/ ! -path '*/.*' -type d | cut -d '/' -f4- |fzf -e -i --reverse --header='Search folders')"
     file="$HOME/$res"
     lf -remote "send $id cd '$file'"
 }}

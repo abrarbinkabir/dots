@@ -19,10 +19,6 @@ config.set('content.javascript.enabled', True, 'qute://*/*')
 config.set('content.local_content_can_access_remote_urls', True, 'file:///home/abrar/.local/share/qutebrowser/userscripts/*')
 config.set('content.local_content_can_access_file_urls', False, 'file:///home/abrar/.local/share/qutebrowser/userscripts/*')
 
-# import catppuccin
-# config.load_autoconfig()
-# catppuccin.setup(c, 'frappe', True)
-
 import color
 color.setup(c)
 
