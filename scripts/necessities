@@ -1,0 +1,9 @@
+#!/bin/bash
+
+necessities_file="$HOME/Documents/50-notes/60-journal/necessities.md"
+if [[ -f "$necessities_file" && -s "$necessities_file" ]]; then
+    nvim -c 'norm Go- [ ]  ' -c 'startinsert' "$necessities_file"
+
+elif [[ ! -s "$necessities_file" ]]; then
+    nvim -c 'norm i- [ ]  ' -c 'startinsert' "$necessities_file"
+fi

@@ -36,6 +36,9 @@ confirm() {
 		-theme "$theme"
 }
 
+day_tomorrow=$(date --date='tomorrow' +%A)
+date_tomorrow=$(date --date='tomorrow' +%B' '%d)
+
 # Passes variables to rofi dmenu
 main() {
 	selection="$(echo -e "$option_1\n$option_2\n$option_3\n$option_4\n$option_5"|menu)"
@@ -43,22 +46,24 @@ main() {
 		answer="$(echo -e "Yes\nNo" | confirm)"
 		if [[ $answer == "Yes" ]]; then
 			case ${selection} in
-			    $option_1)
-					notify-send -u normal -a Systemctl -i poweroff "System will shutdown now" &&
-			    	sleep 3 &&
+			    "$option_1")
+                    notify-send -u normal -a Tomorrow -i calendar "${date_tomorrow}, $day_tomorrow" &&
+                    sleep 4 &&
+					notify-send -u normal -a Systemctl -i poweroff -t 2000 "System will shutdown now" &&
+			    	sleep 2 && 
 			    	systemctl poweroff
 			        ;;
-			    $option_2)
-			    	notify-send -u normal -a Systemctl -i logout "System will logout now" &&
+			    "$option_2")
+			    	notify-send -u normal -a Systemctl -i logout -t 2000 "System will logout now" &&
 			    	sleep 3 &&
 			    	qtile cmd-obj -o cmd -f shutdown
 			        ;;
-			    $option_3)
-			    	notify-send -u normal -a Systemctl -i restart "System will reboot now" &&
+			    "$option_3")
+			    	notify-send -u normal -a Systemctl -i restart -t 2000 "System will reboot now" &&
 			    	sleep 3 &&
 			    	systemctl reboot
 			        ;;
-			    $option_4)
+			    "$option_4")
 					systemctl suspend
 			        ;;			      
 			esac

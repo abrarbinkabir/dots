@@ -1,6 +1,6 @@
 export EDITOR="nvim"
 export TERMINAL="alacritty"
-export BROWSER="firefox"
+export BROWSER="qutebrowser"
 
 # Export LESS Colors
 export LESS_TERMCAP_mb=$'\e[1;36m'     # begin bold

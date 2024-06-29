@@ -46,4 +46,4 @@ application/octet-stream=xarchiver.desktop
 font/sfnt=org.gnome.font-viewer.desktop
 inode/directory=lf.desktop
 
-
+text/html=org.qutebrowser.qutebrowser.desktop

@@ -38,30 +38,34 @@ keys = [
 
     # Launch apps
     Key([mod], "Return", lazy.spawn(terminal), desc="Launch terminal"),
-    Key([mod], "a", lazy.spawn(browser), desc="Launch browser"),
+    Key([mod], "a", lazy.spawn("qutebrowser"), desc="Launch browser"),
+    Key([mod], "b", lazy.spawn(browser), desc="Launch browser"),
     Key([mod], "f", lazy.spawn(filemanager), desc="Launch filemanager"),
     
     # Control the system
     Key([mod], "q", lazy.window.kill(), desc="Kill the focused window"),
     Key([mod, "shift"], "r", lazy.reload_config(), desc="Reload the Qtile config"),
     Key([mod, "control"], "q", lazy.shutdown(), desc="Log out from Qtile"),
-    Key(["mod1"], "l", lazy.spawn("betterlockscreen -l"), desc="Lock the system"),
-    Key(["mod1"], "s", lazy.spawn("systemctl suspend"), desc="Suspend the system"),
     
-    # Run various scripts
+    # Run various scripts and commands with alt key
     Key(["mod1"], "a", lazy.spawn(expanduser("~/.config/scripts/launcher.sh"), shell=True), desc="Execute launcher applet"),
-    Key(["mod1"], "p", lazy.spawn(expanduser("~/.config/scripts/powermenu.sh"), shell=True), desc="Execute powermenu applet"),
-    Key(["mod1"], "space", lazy.spawn(expanduser("~/.config/scripts/files.sh"), shell=True), desc="Execute file search applet"),
-    Key(["mod1"], "f", lazy.spawn(expanduser("~/.config/scripts/folders.sh"), shell=True), desc="Execute folder search applet"),
-    Key(["mod1"], "c", lazy.spawn("clipmenu"), desc="Show clipboard"),
-    Key(["mod1"], "o", lazy.spawn(expanduser("~/.config/scripts/screenshot.sh"), shell=True), desc="Execute screenshot applet"),
-    Key(["mod1"], "d", lazy.spawn(expanduser("~/.config/scripts/datetime.sh"), shell=True), desc="Execute date-time applet"),
-    Key(["mod1"], "t", lazy.spawn(expanduser("~/.config/scripts/mpd.sh"), shell=True), desc="Execute mpd applet"),
     Key(["mod1"], "b", lazy.spawn(expanduser("~/.config/scripts/backup.sh"), shell=True), desc="Execute backup applet"),
-    Key(["mod1"], "w", lazy.spawn(expanduser("~/.config/scripts/archwiki.sh"), shell=True), desc="Execute arch-wiki applet"),
-    Key(["mod1"], "m", lazy.spawn(expanduser("~/.config/scripts/man.sh"), shell=True), desc="Execute man page applet"),
-    Key(["mod1"], "n", lazy.spawn(expanduser("~/.config/scripts/open-shot.sh"), shell=True), desc="Open last captured screenshot"),
+    Key(["mod1"], "c", lazy.spawn("clipmenu"), desc="Show clipboard"),
+    Key(["mod1"], "d", lazy.spawn(expanduser("~/.config/scripts/datetime.sh"), shell=True), desc="Execute date-time applet"),
     Key(["mod1"], "e", lazy.spawn(expanduser("~/.config/scripts/extras-menu.sh"), shell=True), desc="Execute extra scripts applet"),
+    Key(["mod1"], "f", lazy.spawn(expanduser("~/.config/scripts/folders.sh"), shell=True), desc="Execute folder search applet"),
+    Key(["mod1"], "h", lazy.spawn("dunstctl history-pop"), desc="Show last notification"),
+    Key(["mod1"], "i", lazy.spawn(expanduser("~/.config/scripts/open-shot.sh"), shell=True), desc="Open last saved screenshot"),
+    Key(["mod1"], "j", lazy.spawn(expanduser("~/.config/scripts/journal.sh")), desc="Open daily journal"),
+    Key(["mod1"], "l", lazy.spawn("betterlockscreen -l"), desc="Lock the system"),
+    Key(["mod1"], "m", lazy.spawn(expanduser("~/.config/scripts/man.sh"), shell=True), desc="Execute man page applet"),
+    Key(["mod1"], "n", lazy.spawn(expanduser("~/.config/scripts/open-in-nvim.sh"), shell=True), desc="Open favorite folders with nvim"),
+    Key(["mod1"], "o", lazy.spawn(expanduser("~/.config/scripts/screenshot.sh"), shell=True), desc="Execute screenshot applet"),
+    Key(["mod1"], "p", lazy.spawn(expanduser("~/.config/scripts/powermenu.sh"), shell=True), desc="Execute powermenu applet"),
+    Key(["mod1"], "s", lazy.spawn("systemctl suspend"), desc="Suspend the system"),
+    Key(["mod1"], "t", lazy.spawn(expanduser("~/.config/scripts/mpd.sh"), shell=True), desc="Execute mpd applet"),
+    Key(["mod1"], "w", lazy.spawn(expanduser("~/.config/scripts/archwiki.sh"), shell=True), desc="Execute arch-wiki applet"),
+    Key(["mod1"], "space", lazy.spawn(expanduser("~/.config/scripts/files.sh"), shell=True), desc="Execute file search applet"),
     Key([], "Print", lazy.spawn(expanduser("~/.config/scripts/screenshot-opts.sh window"), shell=True), desc="Take screenshot of the focused window"),
     Key(["shift"], "Print", lazy.spawn(expanduser("~/.config/scripts/screenshot-opts.sh full"), shell=True), desc="Take fullscreen screenshot"),
     Key(["mod1"], "Print", lazy.spawn(expanduser("~/.config/scripts/screenshot-opts.sh area"), shell=True), desc="Take screenshot of the selection"),
@@ -69,8 +73,6 @@ keys = [
     Key(["mod1"], "F2", lazy.spawn(expanduser("~/.config/scripts/volume.sh down"), shell=True), desc="Decrease volume by 5%"),
     Key(["mod1"], "F3", lazy.spawn(expanduser("~/.config/scripts/volume.sh mute"), shell=True), desc="Toggle mute state"),    
 
-    Key(["mod1"], "h", lazy.spawn("dunstctl history-pop"), desc="Show last notification"),
-    Key(["mod1"], "j", lazy.spawn(expanduser("~/.config/scripts/journal.sh")), desc="Open daily journal")
 ]
 
 # Switch between groups and move focused window to a group

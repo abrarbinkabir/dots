@@ -1608,6 +1608,9 @@ function exec_dislikes(args, result)
         end
 
         if (not state.descriptionLoaded) then
+            if state.localDescriptionClick == nil then
+                state.localDescriptionClick = ""
+            end
             state.localDescriptionClick = state.localDescriptionClick .. '\\N' .. state.dislikes
             state.videoDescription = state.localDescriptionClick
         else

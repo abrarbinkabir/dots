@@ -1,0 +1,8 @@
+[Unit]
+Description=Check system uptime and send notification if more than 7 hours
+
+[Service]
+Type=simple
+Restart=on-failure
+RestartSec=30
+ExecStart=/bin/bash /home/abrar/.config/scripts/uptime-check.sh

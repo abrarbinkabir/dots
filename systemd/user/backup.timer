@@ -1,5 +1,5 @@
 [Unit]
-Description=Automatic Restic backup on schedule
+Description=Run backup.service everyday
 
 [Timer]
 OnCalendar=daily

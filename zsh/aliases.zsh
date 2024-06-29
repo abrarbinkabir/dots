@@ -32,7 +32,7 @@ alias dwl="cd ~/Downloads/"
 alias dot="cd ~/dots/"
 alias scr="cd ~/dots/scripts/"
 alias msc="cd ~/dots/misc/"
-alias nos="cd ~/no-sync/"
+alias nsc="cd ~/nsync/"
 alias pic="cd ~/Pictures/"
 
 # Set aliases for yt-dlp

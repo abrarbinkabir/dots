@@ -1,51 +1,50 @@
-local opt = vim.opt -- for conciseness
+local opt = vim.opt
 
 -- Line numbers
-opt.number = true                           -- set numbered lines
-opt.relativenumber = true                  -- set relative numbered lines
+opt.number = true
+opt.relativenumber = true
 
 -- Tabs and indentations
-opt.tabstop = 4                             -- insert 2 spaces for a tab
-opt.shiftwidth = 4                          -- the number of spaces inserted for each indentation
-opt.expandtab = true                        -- convert tabs to spaces
+opt.tabstop = 4
+opt.shiftwidth = 4
+opt.expandtab = true
 opt.autoindent = true
-opt.smartindent = true                      -- make indenting smarter again
+opt.smartindent = true
 
 -- Appearance
-opt.background = "light"
-opt.termguicolors = true                    -- set term gui colors (most terminals support this)
-opt.signcolumn = "yes"                      -- always show the sign column, otherwise it would shift the text each time
+opt.termguicolors = true
+opt.signcolumn = "yes"
 
 -- Cursorline
-opt.cursorline = true                       -- highlight the current line
+opt.cursorline = true
 
 -- Line wrapping
-opt.wrap = true                            -- display lines as one long line
+opt.wrap = true
 
 -- Search
-opt.hlsearch = true                         -- highlight all matches on previous search pattern
-opt.ignorecase = true                       -- ignore case in search patterns
-opt.smartcase = true                        -- smart case
+opt.hlsearch = true
+opt.ignorecase = true
+opt.smartcase = true
 
 -- Backspace
-opt.backspace = "indent,eol,start" -- allow backspace on indent, end of line or insert mode start position
+opt.backspace = "indent,eol,start"
 
 -- Clipboard
-opt.clipboard = "unnamedplus"               -- allows neovim to access the system clipboard
+opt.clipboard = "unnamedplus"
 
 -- Mouse
-opt.mouse = "a"                             -- allow the mouse to be used in neovim
+opt.mouse = "a"
 
 -- Window splitting
-opt.splitbelow = true                       -- force all horizontal splits to go below current window
-opt.splitright = true                       -- force all vertical splits to go to the right of current window
+opt.splitbelow = true
+opt.splitright = true
 
 -- Others
-opt.fileencoding = "utf-8"                  -- the encoding written to a file
-opt.swapfile = false                        -- creates a swapfile
-opt.updatetime = 300                        -- faster completion (4000ms default)
-opt.writebackup = false                     -- if a file is being edited by another program (or was written to file while editing with another program), it is not allowed to be edited
-opt.scrolloff = 8                           -- is one of my fav
+opt.fileencoding = "utf-8"
+opt.swapfile = false
+opt.updatetime = 300
+opt.writebackup = false
+opt.scrolloff = 8
 opt.sidescrolloff = 8
 
 -- Netrw
