@@ -14,5 +14,5 @@ quiet=false
 # Theme-------------------------------------------
 font="JetBrainsMono Nerd Font Propo"
 locktext="Type your password..."
-time_format="%I:%M %P" # time format
+time_format="%I:%M %P" # hour(0..12):minute am/pm
 #-----------------------------------------------------
