@@ -41,7 +41,7 @@ A good number of *amateurishly* written scripts have been used to increase the e
 
 Screenshots of scripts can be found on [assets](https://github.com/abrarbinkabir/dots/tree/main/assets) folder. Here is an example:
 
-![screenshot](assets/files.png) ![screenshot](assets/screenshot-opts.png) ![screenshot](assets/extras-menu.png)  
+![screenshot](assets/combined-02-alt.png) 
 
 Below is a list showing where and how the scripts are used:
 - `launcher.sh`: show the applications list and currently opened windows menu
