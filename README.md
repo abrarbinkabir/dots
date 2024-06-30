@@ -35,7 +35,12 @@ The repository contains dotfiles of my **ArchLinux** machine. I use **ArchLinux*
 List of all the packages can be found in `misc/npkglist-*` (native Arch packages) and `misc/fpkglist-*` (foreign/AUR packages).
 
 ## Scripts
-A good number of *amateurishly* written scripts have been used to increase the ease of use and functionality of the wm. All of the scripts are placed in a single `scripts` folder. Most of them use **Rofi** to display the contents if they have any. Below is a list showing where and how the scripts are used:
+A good number of *amateurishly* written scripts have been used to increase the ease of use and functionality of the wm. All of the scripts are placed in a single `scripts` folder. Most of them use **Rofi** to display the contents if they have any. 
+
+Screenshots of scripts can be found on `[assets](./assets/) `folder. Here is an example:
+![screenshot](assets/combined-03.png) 
+
+Below is a list showing where and how the scripts are used:
 - `launcher.sh`: show the applications list and currently opened windows menu
 - `files.sh`: show all files from folders where you save your documents and open with *default app* on selection
 - `folders.sh`: show all folders from parent folders where you save your documents and open with default *file manager* on selection
