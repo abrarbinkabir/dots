@@ -3,11 +3,19 @@ The repository contains dotfiles of my **ArchLinux** machine. I use **ArchLinux*
 
 *In floating layout for showcase*
 
-![screenshot](assets/combined-01.png)
+<p float="left">
+<img src="assets/alacritty-btop-lf.png" width="250"/>
+<img src="assets/pipes-nvim.png" width="250"/>
+<img src="assets/qutebrowser.png" width="250"/>
+</p>
 
 *In MonadTall layout which is practically used*
 
-![screenshot](assets/combined-02.png)
+<p float="left">
+<img src="assets/full-nvim.png" width="250"/>
+<img src="assets/full-nvim-zathura.png" width="250"/>
+<img src="assets/full-qutebrowser.png" width="250"/>
+</p>
 
 ## Programs
 | Type   | Name    |
