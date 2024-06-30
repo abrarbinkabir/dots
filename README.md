@@ -1,7 +1,10 @@
 ## Introduction
 The repository contains dotfiles of my **ArchLinux** machine. I use **ArchLinux** with **Qtile** WM as my daily driver. So, this rice has been done keeping usability and practicality in mind rather than prioritizing only aesthetics.
 
+*In floating layout for aesthetics*
 ![screenshot](assets/combined-01.png)
+
+*In MonadTall layout which is practically used*
 ![screenshot](assets/combined-02.png)
 
 ## Programs
