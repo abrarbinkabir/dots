@@ -94,3 +94,26 @@ config.bind('xd', 'hint links spawn alacritty -e yt-dlp {hint-url}')
 config.bind('ts', 'config-cycle statusbar.show always never')
 config.bind('tt', 'config-cycle tabs.show always never')
 config.bind('tb', 'config-cycle statusbar.show always never;; config-cycle tabs.show always never')
+
+c.content.blocking.adblock.lists = [
+    'https://easylist.to/easylist/easylist.txt',
+    'https://easylist.to/easylist/easyprivacy.txt',
+    'https://easylist-downloads.adblockplus.org/easylistdutch.txt',
+    'https://easylist-downloads.adblockplus.org/abp-filters-anti-cv.txt',
+    'https://www.i-dont-care-about-cookies.eu/abp/',
+    'https://secure.fanboy.co.nz/fanboy-cookiemonster.txt'
+    "https://raw.githubusercontent.com/uBlockOrigin/uAssets/master/filters/annoyances.txt",
+    "https://raw.githubusercontent.com/uBlockOrigin/uAssets/master/filters/badlists.txt",
+    "https://raw.githubusercontent.com/uBlockOrigin/uAssets/master/filters/badware.txt",
+    "https://raw.githubusercontent.com/uBlockOrigin/uAssets/master/filters/filters-2020.txt",
+    "https://raw.githubusercontent.com/uBlockOrigin/uAssets/master/filters/filters-2021.txt",
+    "https://raw.githubusercontent.com/uBlockOrigin/uAssets/master/filters/filters.txt",
+    "https://raw.githubusercontent.com/uBlockOrigin/uAssets/master/filters/privacy.txt",
+    "https://raw.githubusercontent.com/uBlockOrigin/uAssets/master/filters/resource-abuse.txt",
+    "https://raw.githubusercontent.com/uBlockOrigin/uAssets/master/thirdparties/easylist-downloads.adblockplus.org/easyprivacy.txt",
+    "https://raw.githubusercontent.com/uBlockOrigin/uAssets/master/thirdparties/pgl.yoyo.org/as/serverlist",
+    "https://raw.githubusercontent.com/StevenBlack/hosts/master/alternates/fakenews-gambling/hosts",
+    "https://raw.githubusercontent.com/AdAway/adaway.github.io/master/hosts.txt",
+    "https://fanboy.co.nz/fanboy-problematic-sites.txt",
+    "https://raw.githubusercontent.com/bogachenko/fuckfuckadblock/master/fuckfuckadblock.txt"
+]
