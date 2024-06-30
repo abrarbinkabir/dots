@@ -42,8 +42,9 @@ A good number of *amateurishly* written scripts have been used to increase the e
 Screenshots of scripts can be found on [assets](https://github.com/abrarbinkabir/dots/tree/main/assets) folder. Here is an example:
 
 <p float="left">
-<img src="assets/files.png" width="200"/>
-<img src="assets/screenshot-opts.png" width="200"/>
+<img src="assets/files.png" width="300"/>
+<img src="assets/screenshot-opts.png" width="300"/>
+<img src="assets/extras-menu.png" width="300"/>
 </p>
 
 Below is a list showing where and how the scripts are used:
