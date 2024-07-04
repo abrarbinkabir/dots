@@ -6,7 +6,5 @@
 
 config_version: 2
 settings:
-  statusbar.show:
-    global: never
-  tabs.show:
-    global: never
+  content.register_protocol_handler:
+    https://mail.proton.me#mailto=%25s: true

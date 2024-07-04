@@ -75,17 +75,18 @@ c.url.default_page = 'file:///home/abrar/Documents/70-tech/86-git/startpage/inde
 c.url.start_pages = 'file:///home/abrar/Documents/70-tech/86-git/startpage/index.html'
 c.url.open_base_url = True
 c.url.searchengines = {
-                        'DEFAULT': 'https://duckduckgo.com/?q={}',
-                        'yt': 'https://www.youtube.com/results?search_query={}',
-                        'aw': 'https://wiki.archlinux.org/?search={}',
-                        'gh': 'https://www.github.com/{}',
-                        'mp': 'https://man.archlinux.org/man/{}',
-                        'ar': 'https://aur.archlinux.org/packages?O=0&K={}',
-                        'rd': 'https://www.reddit.com/r/{}',
-                        'gg': 'https://www.google.com/search?q={}',
-                        'wp': 'https://en.wikipedia.org/wiki/{}',
-                        'rm': 'https://www.rokomari.com/search?term={}&search_type=BOOK',
-                        }
+    'DEFAULT': 'https://duckduckgo.com/?q={}',
+    'yt': 'https://www.youtube.com/results?search_query={}',
+    'aw': 'https://wiki.archlinux.org/?search={}',
+    'gh': 'https://www.github.com/{}',
+    'mp': 'https://man.archlinux.org/man/{}',
+    'ar': 'https://aur.archlinux.org/packages?O=0&K={}',
+    'rd': 'https://www.reddit.com/r/{}',
+    'gg': 'https://www.google.com/search?q={}',
+    'wp': 'https://en.wikipedia.org/wiki/{}',
+    'rm': 'https://www.rokomari.com/search?term={}&search_type=BOOK',
+    'cc': 'https://www.collinsdictionary.com/dictionary/english/{}',
+}
 
 # Bindings for normal mode
 config.bind('xv', 'hint links spawn mpv {hint-url}')

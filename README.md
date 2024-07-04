@@ -47,7 +47,7 @@ List of all the packages can be found in `misc/npkglist-*` (native Arch packages
 ## Scripts
 A good number of *amateurishly* written scripts have been used to increase the ease of use and functionality of the wm. All of the scripts are placed in a single `scripts` folder. Most of them use **Rofi** to display the contents if they have any. 
 
-Screenshots of scripts can be found on [assets](https://github.com/abrarbinkabir/dots/tree/main/assets) folder. Here is an example:
+Screenshots of scripts can be found on [assets](https://github.com/abrarbinkabir/dots/tree/main/assets) folder. Here are few examples:
 
 <p float="left">
 <img src="assets/files.png" width="250"/>
