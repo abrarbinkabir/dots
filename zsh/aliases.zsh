@@ -1,7 +1,9 @@
 # Aliases---------------------------------------
 # Set aliases for common shell commands
-alias ll="ls -lh --color=auto"
-alias ls="ls --color=auto"
+alias ll="eza --color=always --git -l"
+alias la="eza --color=always --git -la"
+alias ls="eza --color=always"
+alias tree="exa --tree --level=2"
 alias diff='diff --color=auto'
 alias grep='grep --color=auto'
 alias cp="cp -vr"
@@ -42,5 +44,6 @@ alias ytp="yt-dlp -o '~/nsync/ytdlp/%(playlist)s/%(playlist_index)s-%(title)s.%(
 
 # Set other aliases
 alias bm="bashmount"
+alias vi="nvim"
 #--------------------------------------------------
 

@@ -57,24 +57,24 @@ cmd chmod ${{
 cmd copyto ${{
 	clear
 	set -f
-	res="$(find ~/Documents/ ~/Downloads/ ~/Pictures/ ~/dots/ ! -path '*/.*' -type d | cut -d '/' -f4- |fzf -e -i --reverse --header='Copy to')"
+	res="$(find ~/Documents/ ~/Downloads/ ~/Pictures/ ~/dots/ ! -path '*/.*' -type d | cut -d '/' -f4- |fzf -i --reverse --header='Copy to')"
 	file="$HOME/$res"
 	for x in $fx; do
 		cp -ivr "$x" $file
 	done &&
-	notify-send -a "File Operation" -i bell "File(s) copied to $file"
+	notify-send -a "File Operation" -i copy-move "Copied successfully!"
 }}
 
 # Move file/s using fzf
 cmd moveto ${{
 	clear
 	set -f
-	res="$(find ~/Documents/ ~/Downloads/ ~/Pictures/ ~/dots/ ~/archives/ ! -path '*/.*' -type d | cut -d '/' -f4- |fzf -e -i --reverse --header='Move to')"
+	res="$(find ~/Documents/ ~/Downloads/ ~/Pictures/ ~/dots/ ~/nsync ~/archives/ ~/camera ! -path '*/.*' -type d | cut -d '/' -f4- |fzf -i --reverse --header='Move to')"
 	file="$HOME/$res"
 	for x in $fx; do
 		mv -iv "$x" $file
 	done &&
-	notify-send -a "File Operation" -i bell "File(s) moved to $file"
+	notify-send -a "File Operation" -i copy-move "Moved successfully!"
 }}
 
 # Rename files in bulk
@@ -170,8 +170,8 @@ cmd zip ${{
 
 # Finding folders
 cmd fzf_jump ${{
-	res="$(find ~/Documents/ ~/Downloads/ ~/Pictures/ ~/dots/ ! -path '*/.*' -type d | cut -d '/' -f4- |fzf -e -i --reverse --header='Search folders')"
-    file="$HOME/$res"
+	base="$(find ~/Documents/ ~/Downloads/ ~/dots/ ~/Pictures ~/nsync ~/archives ~/camera ! -path '*/.*' -type d | cut -d '/' -f4- |fzf -i --reverse --header='Search folders')"
+    file="$HOME/$base"
     lf -remote "send $id cd '$file'"
 }}
 map <c-f> :fzf_jump

@@ -36,8 +36,12 @@ confirm() {
 		-theme "$theme"
 }
 
+day_today=$(date +%A)
+date_today=$(date +%b' '%d', '%Y)
 day_tomorrow=$(date --date='tomorrow' +%A)
-date_tomorrow=$(date --date='tomorrow' +%B' '%d)
+date_tomorrow=$(date --date='tomorrow' +%b' '%d', '%Y)
+hour_now=$(date +%H)
+hour_now=${hour_now#0} # remove leading zeros
 
 # Passes variables to rofi dmenu
 main() {
@@ -47,20 +51,24 @@ main() {
 		if [[ $answer == "Yes" ]]; then
 			case ${selection} in
 			    "$option_1")
-                    notify-send -u normal -a Tomorrow -i calendar "${date_tomorrow}, $day_tomorrow" &&
-                    sleep 4 &&
+                    if [[ "$hour_now" -le 4 ]]; then
+                        notify-send -u normal -a Today -i calendar "${date_today} ($day_today)"
+                    else
+                        notify-send -u normal -a Tomorrow -i calendar "${date_tomorrow} ($day_tomorrow)"
+                    fi
+                    sleep 4
 					notify-send -u normal -a Systemctl -i poweroff -t 2000 "System will shutdown now" &&
-			    	sleep 2 && 
+			    	sleep 2 
 			    	systemctl poweroff
 			        ;;
 			    "$option_2")
 			    	notify-send -u normal -a Systemctl -i logout -t 2000 "System will logout now" &&
-			    	sleep 3 &&
+			    	sleep 3
 			    	qtile cmd-obj -o cmd -f shutdown
 			        ;;
 			    "$option_3")
 			    	notify-send -u normal -a Systemctl -i restart -t 2000 "System will reboot now" &&
-			    	sleep 3 &&
+			    	sleep 3
 			    	systemctl reboot
 			        ;;
 			    "$option_4")

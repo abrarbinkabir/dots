@@ -17,9 +17,9 @@ options=(
         " Toggle Redshift" "$HOME/.config/scripts/redshift.sh"
         " Browse Archives" "$HOME/.config/scripts/archives.sh"
         " Installed Packages" "$HOME/.config/scripts/pkglist.sh"
+        " Kill Processes" "$HOME/.config/scripts/kill.sh"
         " All Packages" "$HOME/.config/scripts/allpkglist.sh"
         " Installed Fonts" "$HOME/.config/scripts/fonts.sh"
-        " Kill Processes" "$HOME/.config/scripts/kill.sh"
          )
 
 run_rofi() {

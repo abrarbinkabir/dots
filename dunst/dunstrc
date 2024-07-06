@@ -83,4 +83,7 @@
 [history-ignore]
     appname = Pulseaudio
     history_ignore = yes
-    
+
+[thunar]
+    appname = Thunar
+    icon = /home/abrar/dots/images/thunar.png

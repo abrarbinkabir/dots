@@ -1,28 +1,19 @@
 #!/bin/bash
 
 # Define the folder path to search for videos
-dir_path="$HOME/nsync/ytdlp/"
+dir_path="$HOME/nsync/ytdlp"
+selection=$(find "$dir_path" -type f -iname '*.mp4' | sort | cut -d '/' -f 6- | fzf --multi --reverse)
+files=()
 
-# Search for video files in the specified folder
-videos=$(find "$dir_path" -type f \( -iname "*.mp4" -o -iname "*.avi" -o -iname "*.mkv" \))
+main() {
+    # Loop through each selected file path in selection
+    while IFS= read -r file_path; do
+        # Add each file path to the files array
+        files+=("$dir_path/$file_path")
+    done <<< "$selection"
+    
+    mpv "${files[@]}"
+    # echo "${files[@]}"
+}
 
-# Check if any videos were found
-if [ -z "$videos" ]; then
-    echo "No videos found in $dir_path"
-    exit 1
-fi
-
-# Convert the list of videos into an array
-IFS=$'\n' read -r -d '' -a video_array <<< "$videos"
-
-# Create a Rofi menu with the list of videos
-selected_video=$(printf "%s\n" "${video_array[@]}" | rofi -dmenu -p "Select a video:")
-
-# Check if a video was selected
-if [ -n "$selected_video" ]; then
-    # Play the selected video using your preferred video player
-    # Replace 'mpv' with your preferred video player
-    mpv "$selected_video"
-else
-    echo "No video selected."
-fi
+main

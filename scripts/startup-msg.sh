@@ -1,13 +1,12 @@
 #!/bin/bash
 
 day_today=$(date +%A)
-date_today=$(date +%d)
-month_today=$(date +%B)
+date_today=$(date +%b' '%d', '%Y)
 hour_now=$(date +%H)
-hour_now=${hour_now#0}
+hour_now=${hour_now#0} # remove leading zeros
 
 sleep 3 &&
-notify-send -u normal -a Today -i calendar "$month_today ${date_today}, $day_today" &&
+    notify-send -u normal -a Today -i calendar "${date_today} ($day_today)" &&
 sleep 4
 
 if [[ "$hour_now" -ge 6 && "$hour_now" -le 12 ]]; then

@@ -1,9 +1,0 @@
-[Unit]
-Description=Run uptime-check.service every hour
-
-[Timer]
-OnBootSec=420m
-OnUnitActiveSec=60m
-
-[Install]
-WantedBy=timers.target

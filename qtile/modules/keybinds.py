@@ -7,9 +7,6 @@ from .groups import groups
 
 # Variables--------------------------------------
 mod = "mod4" 
-terminal = "alacritty"
-browser = "firefox"
-filemanager = "thunar"
 #------------------------------------------------
 
 # Keybindings------------------------------------
@@ -36,11 +33,15 @@ keys = [
     Key([mod], "o", lazy.window.toggle_maximize(), desc="Toggle minimization on focused window"),
     Key([mod], "space", lazy.window.toggle_floating(), desc="Toggle floating layout"),
 
-    # Launch apps
-    Key([mod], "Return", lazy.spawn(terminal), desc="Launch terminal"),
-    Key([mod], "a", lazy.spawn("qutebrowser"), desc="Launch browser"),
-    Key([mod], "b", lazy.spawn(browser), desc="Launch browser"),
-    Key([mod], "f", lazy.spawn(filemanager), desc="Launch filemanager"),
+    # Launch applications and run scripts with mod key
+    Key([mod], "a", lazy.spawn(expanduser("~/.config/scripts/launcher.sh"), shell=True), desc="Execute launcher applet"),
+    Key([mod], "Return", lazy.spawn("alacritty"), desc="Launch alacritty"),
+    Key([mod], "t", lazy.spawn("alacritty"), desc="Launch alacritty"),
+    Key([mod], "w", lazy.spawn("qutebrowser"), desc="Launch Qutebrowser"),
+    Key([mod, "shift"], "w", lazy.spawn("firefox"), desc="Launch Firefox"),
+    Key([mod], "f", lazy.spawn("alacritty -e lf"), desc="Launch lf"),
+    Key([mod, "shift"], "f", lazy.spawn("thunar"), desc="Launch Thunar"),
+    Key([mod], "e", lazy.spawn("alacritty -e nvim /home/abrar/Documents/50-notes/"), desc="Launch neovim"),
     
     # Control the system
     Key([mod], "q", lazy.window.kill(), desc="Kill the focused window"),
@@ -48,7 +49,7 @@ keys = [
     Key([mod, "control"], "q", lazy.shutdown(), desc="Log out from Qtile"),
     
     # Run various scripts and commands with alt key
-    Key(["mod1"], "a", lazy.spawn(expanduser("~/.config/scripts/launcher.sh"), shell=True), desc="Execute launcher applet"),
+    Key(["mod1"], "a", lazy.spawn(expanduser("~/.config/scripts/archives.sh"), shell=True), desc="Execute archives search applet"),
     Key(["mod1"], "b", lazy.spawn(expanduser("~/.config/scripts/backup.sh"), shell=True), desc="Execute backup applet"),
     Key(["mod1"], "c", lazy.spawn("clipmenu"), desc="Show clipboard"),
     Key(["mod1"], "d", lazy.spawn(expanduser("~/.config/scripts/datetime.sh"), shell=True), desc="Execute date-time applet"),
@@ -63,7 +64,7 @@ keys = [
     Key(["mod1"], "o", lazy.spawn(expanduser("~/.config/scripts/screenshot.sh"), shell=True), desc="Execute screenshot applet"),
     Key(["mod1"], "p", lazy.spawn(expanduser("~/.config/scripts/powermenu.sh"), shell=True), desc="Execute powermenu applet"),
     Key(["mod1"], "s", lazy.spawn("systemctl suspend"), desc="Suspend the system"),
-    Key(["mod1"], "t", lazy.spawn(expanduser("~/.config/scripts/mpd.sh"), shell=True), desc="Execute mpd applet"),
+    Key(["mod1"], "t", lazy.spawn(expanduser("~/.config/scripts/tasklist.sh"), shell=True), desc="Execute mpd applet"),
     Key(["mod1"], "w", lazy.spawn(expanduser("~/.config/scripts/archwiki.sh"), shell=True), desc="Execute arch-wiki applet"),
     Key(["mod1"], "space", lazy.spawn(expanduser("~/.config/scripts/files.sh"), shell=True), desc="Execute file search applet"),
     Key([], "Print", lazy.spawn(expanduser("~/.config/scripts/screenshot-opts.sh window"), shell=True), desc="Take screenshot of the focused window"),
@@ -87,7 +88,6 @@ for i in groups:
 # Toggle scratchpads
 keys.extend([
     Key([], "F1", lazy.group['0'].dropdown_toggle('alacritty')),
-    Key([], "F2", lazy.group['0'].dropdown_toggle('tasklist')),
     Key([], "F3", lazy.group['0'].dropdown_toggle('lf')),
     Key([], "F4", lazy.group['0'].dropdown_toggle('thunar')),
     Key([], "F5", lazy.group['0'].dropdown_toggle('ncmpcpp')),
