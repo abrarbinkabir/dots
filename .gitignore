@@ -1,12 +1,10 @@
 .stversions
+.stignore
 gtk-3.0/bookmarks
-micro/backups/
-micro/buffers/
 misc/backup-logs
 mpd/playlists/
 mpd/database
 mpd/sticker.sql
-ncmpcpp/error.log
 qtile/__pycache__/
 qtile/modules/__pycache__/
 qutebrowser/__pycache__/

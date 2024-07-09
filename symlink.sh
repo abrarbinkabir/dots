@@ -1,27 +1,17 @@
 #!/bin/bash
-ln -sf $HOME/dots/alacritty ~/.config/
-ln -sf $HOME/dots/betterlockscreen ~/.config/
-ln -sf $HOME/dots/dunst ~/.config/
-ln -sf $HOME/dots/fontconfig ~/.config/
-ln -sf $HOME/dots/lf ~/.config/
-ln -sf $HOME/dots/micro ~/.config/
-ln -sf $HOME/dots/mpd ~/.config/
-ln -sf $HOME/dots/mpv ~/.config/
-ln -sf $HOME/dots/ncmpcpp ~/.config/
-ln -sf $HOME/dots/nsxiv ~/.config/
-ln -sf $HOME/dots/pandoc ~/.config/
-ln -sf $HOME/dots/qtile ~/.config/
-ln -sf $HOME/dots/redshift ~/.config/
-ln -sf $HOME/dots/restic ~/.config/
-ln -sf $HOME/dots/rofi ~/.config/
-ln -sf $HOME/dots/scripts ~/.config/
-ln -sf $HOME/dots/yt-dlp ~/.config/
-ln -sf $HOME/dots/zathura ~/.config/
-ln -sf $HOME/dots/mimeapps.list ~/.config/mimeapps.list
 
-ln -sf $HOME/dots/zshrc ~/.zshrc
-ln -sf $HOME/dots/zshenv ~/.zshenv
-ln -sf $HOME/dots/Xresources ~/.Xresources
-ln -sf $HOME/dots/vimrc ~/.vimrc
+# Define the directories and files to link as a space-separated array
+directories=("alacritty" "bat" "betterlockscreen" "btop" "dunst" "fontconfig" "gtk-3.0" "lf" "mpd" "mpv" "nsxiv" "nvim" "pandoc" "qtile" "qutebrowser" "redshift" "restic" "rofi" "scripts" "systemd" "yt-dlp" "zathura" "zoxide" "zsh")
 
-ln -sf $HOME/dots/applications ~/.local/share/
+# Loop through each config and create symbolic links
+for dir in "${directories[@]}"; do
+    ln -sf "$HOME/dots/$dir" "$HOME/.config/"
+done
+
+# Additional specific links
+ln -sf "$HOME/dots/zsh/zshrc" "$HOME/dots/zsh/.zshrc"
+ln -sf "$HOME/dots/zshenv" "$HOME/.zshenv"
+ln -sf "$HOME/dots/vimrc" "$HOME/.vimrc"
+ln -sf "$HOME/dots/gtkrc-2.0" "$HOME/.gtkrc-2.0"
+ln -sf "$HOME/dots/applications" "$HOME/.local/share/"
+ln -sf "$HOME/dots/mimeapps.list" "$HOME/.config/mimeapps.list"
