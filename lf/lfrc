@@ -12,8 +12,10 @@ set cursorpreviewfmt ""
 #---------------------------------------------
 
 # Preview settings----------------------------
-set previewer ~/.config/lf/lf-ueberzug-previewer
-set cleaner ~/.config/lf/lf-ueberzug-cleaner
+set previewer ctpv
+set cleaner ctpvclear
+&ctpv -s $id
+&ctpvquit $id
 #---------------------------------------------
 
 # Custom commands-----------------------------
@@ -204,7 +206,7 @@ map gnt cd ~/Documents/50-notes
 map glx cd ~/Documents/50-notes/62-linux
 map gcd cd ~/Documents/code
 map gdl cd ~/Downloads
-map odt cd ~/dots
+map gdt cd ~/dots
 map gms cd ~/dots/misc
 map gqt cd ~/dots/qtile
 map gsc cd ~/dots/scripts
