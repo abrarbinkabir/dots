@@ -71,6 +71,7 @@ map <C-0> zoom default
 map <C-r> reload
 map <C-i> recolor
 map <C-Right> rotate rotate-cw
+# map <S-r> rotate rotate-ccw
 map <C-Left> rotate rotate-ccw
 
 # Unmap keybinds

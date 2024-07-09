@@ -10,15 +10,14 @@ import subprocess
 def autostart():
     subprocess.call(expanduser("~/.config/qtile/autostart.sh"))
 
-# @hook.subscribe.client_new
-# def floating_dialogs(client):
-#     # Check if the window class is 'floating'
-#     wm_class = client.window.get_wm_class()
-#     if wm_class and wm_class[0] == "float_term":
-#         # Set the window to floating
-#         client.floating = True
-#         # Set specific dimensions (adjust as needed)
-#         client.place(x=200, y=600, width=900, height=900)
+# ref: https://www.reddit.com/r/qtile/comments/tw9apn/comment/i4cct7r
+@hook.subscribe.client_new
+def center_floating_win(window):
+    wm_name = window.cmd_inspect()["name"]
+    if wm_name == "float_term":
+        window.toggle_floating()
+        window.cmd_set_size_floating(711, 891)
+        # window.cmd_set_position_floating((1366 - 301) // 2, (768 - 227) // 2)
 
 # Hook for opening windows on certain workspaces
 #@hook.subscribe.client_new

@@ -12,5 +12,7 @@ qutebrowser/__pycache__/
 restic/backup.conf
 restic/passwd
 restic/passwd-file
+systemd/user/default.target.wants
+systemd/user/timers.target.wants
 zoxide/
 zsh/histfile

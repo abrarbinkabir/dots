@@ -1,9 +1,8 @@
 # Imports---------------------------------------------
-from libqtile import bar
+from libqtile import bar, widget
 from libqtile.lazy import lazy
 from libqtile.config import Screen
 from os.path import expanduser
-from qtile_extras import widget
 from .themes import theme
 #-----------------------------------------------------
 
@@ -70,7 +69,7 @@ Screen(
             foreground = theme["peach"],
             format=" %a, %b %d",
             update_interval= 60,
-            mouse_callbacks={"Button1": lazy.spawn(expanduser("~/.config/scripts/datetime.sh"))},
+            mouse_callbacks={"Button1": lazy.spawn("alacritty --hold -t 'float_term' -e cal -y")},
             ),
             widget.Systray(
             icon_size=18,

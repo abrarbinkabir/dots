@@ -1,59 +1,92 @@
 # General settings---------------------------
 set ignorecase true
-set nopreview # Turn off file preview
 set shell zsh
 set shellopts '-euy'
 set ifs "\n"
-set filesep "\n"
 set info size 
 set ratios 1:2:2 # Set ratio for the panes
+# set nopreview # Turn off file preview
 # set icons
-# set drawbox # Draw border around panes
+set drawbox # Draw border around panes
+set cursorpreviewfmt ""
+#---------------------------------------------
+
+# Preview settings----------------------------
+set previewer ~/.config/lf/lf-ueberzug-previewer
+set cleaner ~/.config/lf/lf-ueberzug-cleaner
 #---------------------------------------------
 
 # Custom commands-----------------------------
 # Open file/s or folder/s with default app
 cmd open ${{xdg-open "$f" &}}
 
-# Make folder
-cmd mkdir ${{
-  clear  
-  printf "Folder Name: "
-  read ans
-  mkdir $ans
-}}
+# Copy filenames into clipboard
+cmd copy-filenames ${{ echo -n "$fx" | xclip -selection clipboard; lf -remote 'send unselect' }}
 
-# Make file and open it with $EDITOR
-cmd mkfile ${{
-  clear
-  printf "File Name: "
-  read ans
-  $EDITOR $ans
-}}
+# Move file/s and folder/s to trash
+cmd move-to-trash ${{ trash-put $fx }}
 
-# Set home and lockscreen wallpaper
-cmd setwallpaper ${{
-    clear
-    cp "$f" ~/dots/images/wallpaper.png
-    feh --bg-scale "$f"
-    betterlockscreen -u "$f"
-}}
+# Empty trash
+cmd empty-trash ${{ trash-empty }}
+
+# Make files
+cmd touch $touch "$@"
+
+# Make folders
+cmd mkdir $mkdir "$@"
+
+# Make file executable
+cmd make-executable ${{ chmod +x $fx ; lf -remote 'send reload'; lf -remote 'send unselect' }}
 
 # Change file permissions 
-cmd chmod ${{
-  clear
-  printf "Set permissions: "
-  read ans
-
-  for file in "$fx"
-  do
+cmd set-permissions ${{
+    clear
+    printf "Set permissions: "; read ans
+    for file in "$fx"; do
     chmod $ans $file
-  done
-
-  lf -remote 'send reload'
+    done
+    lf -remote 'send reload'; lf -remote 'send unselect'
 }}
 
-# Copy file/s using fzf
+# Extract selected file/s
+cmd extract-files ${{
+	clear; set -f
+    case $f in
+        *.tar.bz|*.tar.bz2|*.tbz|*.tbz2) tar -xjf $f;;
+        *.tar.gz|*.tgz) tar -xzf $f;;
+        *.tar.xz|*.txz) tar -xJf $f;;
+        *.zip)
+            file=$(basename -- "$f")
+            filename="${file%.*}"
+            mkdir -p "$filename"
+            unzip "$f" -d "$filename";;
+        *.rar) unrar x $f;;
+        *.7z) 7z x $f;;
+    esac
+    lf -remote 'send reload'
+}}
+
+# Archive and compress selected file/s with tar.gz
+cmd make-targz ${{
+    clear; set -f
+    printf "Enter the name of archive: "; read ans
+    temp_dir=$(mktemp -d)
+    while IFS= read -r file; do
+        cp -r "$file" "$temp_dir/$(basename "$file")"
+    done <<< "$fx"
+    tar -czf "${ans}".tar.gz -C "$temp_dir" .
+    rm -r "$temp_dir"
+    lf -remote 'send unselect'
+}}
+
+# Jump to folders
+cmd jumpto ${{
+	base="$(find ~/Documents/ ~/Downloads/ ~/dots/ ~/Pictures ~/nsync ~/archives ~/camera ! -path '*/.*' -type d | cut -d '/' -f4- |fzf -i --reverse --header='Search folders')"
+    file="$HOME/$base"
+    lf -remote "send $id cd '$file'"
+}}
+
+# Copy file/s and folder/s to other folders
 cmd copyto ${{
 	clear
 	set -f
@@ -65,7 +98,7 @@ cmd copyto ${{
 	notify-send -a "File Operation" -i copy-move "Copied successfully!"
 }}
 
-# Move file/s using fzf
+# Move file/s and folder/s to other folders
 cmd moveto ${{
 	clear
 	set -f
@@ -102,122 +135,81 @@ cmd bulk-rename ${{
     lf -remote "send $id unselect"
 }}
 
-# Trash files
-cmd trash ${{
-  files=$(printf "$fx" | tr '\n' ';')
-  while [ "$files" ]; do
-    # extract the substring from start of string up to delimiter.
-    # this is the first "element" of the string.
-    file=${files%%;*}
-
-    trash-put "$(basename "$file")"
-    # if there's only one element left, set `files` to an empty string.
-    # this causes us to exit this `while` loop.
-    # else, we delete the first "element" of the string from files, and move onto the next.
-    if [ "$files" = "$file" ]; then
-      files=''
-    else
-      files="${files#*;}"
-    fi
-  done
-}}
-
-# Clear trash
-cmd clear_trash %trash-empty
-
-# Restore trash
-cmd restore_trash ${{
-  clear
-  trash-restore
-}}
-
-# Deleting selected file/s
-cmd delete ${{
+# Set home and lockscreen wallpaper
+cmd set-wallpaper ${{ 
     clear
-	set -f
-	printf "%s\n" "$fx" "Are you sure to delete?[y/n]"
-	read ans
-	[ $ans = "y" ] && rm -rf -- $fx
+    cp "$f" ~/dots/images/wallpaper.png
+    feh --bg-scale "$f"
+    betterlockscreen -u "$f"
 }}
-
-# Extract selected file
-cmd extract ${{
-	clear
-    set -f
-    case $f in
-        *.tar.bz|*.tar.bz2|*.tbz|*.tbz2) tar xjvf $f;;
-        *.tar.gz|*.tgz) tar xzvf $f;;
-        *.tar.xz|*.txz) tar xJvf $f;;
-        *.zip)
-        file=$(basename -- "$f")
-        filename="${file%.*}"
-        mkdir -p "$filename"
-        unzip "$f" -d "$filename";;
-        *.rar) unrar x $f;;
-        *.7z) 7z x $f;;
-    esac
-}}
-
-# Compress selected file/s with zip
-cmd zip ${{
-    clear
-    set -u
-    mkdir "$1"
-    cp -r $fx "$1"
-    zip -r "$1.zip" "$1"
-    rm -rf "$1"
-}}
-
-# Finding folders
-cmd fzf_jump ${{
-	base="$(find ~/Documents/ ~/Downloads/ ~/dots/ ~/Pictures ~/nsync ~/archives ~/camera ! -path '*/.*' -type d | cut -d '/' -f4- |fzf -i --reverse --header='Search folders')"
-    file="$HOME/$base"
-    lf -remote "send $id cd '$file'"
-}}
-map <c-f> :fzf_jump
 # --------------------------------------------------
 
+
 # Keybindings---------------------------------------
-map c
+# Cut-copy-paste-delete
+map <enter> open
+map xx cut
+map y
+map yy copy
+map p :paste; clear
+map yt copy-filenames
 map d
-map m
+map <delete> move-to-trash
+map dd move-to-trash
 map e
-map ex extract
-map ez zip
+map et empty-trash
+map D delete
+
+# Make files and folders
+map m
+map mf push :touch<space>
+map md push :mkdir<space>
+
+# Rename files
 map r
 map i rename
 map I :rename; cmd-home
 map A :rename; cmd-end
-#map c :rename; cmd-delete-home
-#map C :rename; cmd-end; cmd-delete-home
 
-# Map functions to keybindings
-map mf mkfile
-map md mkdir
-map bg setwallpaper
-map ch chmod
-map p paste
-map x cut
-map y copy
-map <enter> open
-map <delete> trash
-#map ct clear_trash
-map rt restore_trash
-map D delete
-map R reload
+# Change permissions
+map mx make-executable
+map sp set-permissions
+
+# Extract and compress files
+map ex extract-files
+map mt make-targz
+
+map J jumpto
+map C copyto
+map M moveto
 map br bulk-rename
-map C clear
-map mt moveto
-map ct copyto
-map Y $printf "%s" "$fx" | xclip -selection clipboard
+map sw set-wallpaper
+
+# Quit
+map q
+map <c-q> quit
+
+# Unmap unnecessary keybinds
+map t
 #-------------------------------------------------------
 
 # Favorites---------------------------------------------
-map gD cd ~/Documents
-map gd cd ~/Downloads
-map gp cd ~/Pictures
-map gc cd ~/.config
-map gf cd ~/dotfiles
-map ga cd ~/archives
-map gt cd ~/.local/share/Trash/files
+map gcf cd ~/.config
+map gls cd ~/.local/share
+map gtr cd ~/.local/share/Trash/files
+map gar cd ~/archives
+map gcm cd ~/camera
+map gdc cd ~/Documents
+map gnt cd ~/Documents/50-notes
+map glx cd ~/Documents/50-notes/62-linux
+map gcd cd ~/Documents/code
+map gdl cd ~/Downloads
+map odt cd ~/dots
+map gms cd ~/dots/misc
+map gqt cd ~/dots/qtile
+map gsc cd ~/dots/scripts
+map gns cd ~/nsync
+map gyt cd ~/nsync/ytdlp
+map gpc cd ~/Pictures
+map gss cd ~/Pictures/shots
 #--------------------------------------------------------
