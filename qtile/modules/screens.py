@@ -1,6 +1,6 @@
 # Imports---------------------------------------------
 from libqtile.config import Screen
-from .bar import *
+from .bar import default_bar
 #-----------------------------------------------------
 
 # Screen settings----------------------------

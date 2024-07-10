@@ -6,8 +6,7 @@
 --write-auto-subs
 --sub-langs en
 --embed-thumbnail
---convert-thumbnails png
+--convert-thumbnails jpg
 --embed-chapters
 -4
 --socket-timeout 300
-

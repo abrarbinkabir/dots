@@ -65,13 +65,12 @@ set recolor-keephue             true
 map f adjust_window best-fit
 map w adjust_window width
 map = zoom in
-map <C-=> zoom in
-map <C--> zoom out
-map <C-0> zoom default
+map <C-=> zoom default
+map <C-s> toggle_statusbar
 map <C-r> reload
 map <C-i> recolor
 map <C-Right> rotate rotate-cw
-# map <S-r> rotate rotate-ccw
+map <S-r> rotate rotate-ccw
 map <C-Left> rotate rotate-ccw
 
 # Unmap keybinds

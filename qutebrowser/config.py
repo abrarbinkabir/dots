@@ -71,8 +71,8 @@ c.tabs.last_close = 'startpage'
 c.tabs.padding = {"bottom": 2, "left": 5, "right": 5, "top": 2}
 c.tabs.show = 'multiple'
 c.tabs.title.format = '{current_title}'
-c.url.default_page = 'file:///home/abrar/Documents/70-tech/86-git/startpage/index.html'
-c.url.start_pages = 'file:///home/abrar/Documents/70-tech/86-git/startpage/index.html'
+c.url.default_page = 'file:///home/abrar/Documents/git/startpage/index.html'
+c.url.start_pages = 'file:///home/abrar/Documents/git/startpage/index.html'
 c.url.open_base_url = True
 c.url.searchengines = {
     'DEFAULT': 'https://duckduckgo.com/?q={}',
@@ -95,6 +95,7 @@ config.bind('xd', 'hint links spawn alacritty -e yt-dlp {hint-url}')
 config.bind('ts', 'config-cycle statusbar.show always never')
 config.bind('tt', 'config-cycle tabs.show always never')
 config.bind('tb', 'config-cycle statusbar.show always never;; config-cycle tabs.show always never')
+config.unbind('d', mode='normal')
 
 c.content.blocking.adblock.lists = [
     'https://easylist.to/easylist/easylist.txt',

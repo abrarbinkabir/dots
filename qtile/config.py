@@ -1,6 +1,7 @@
 # Import libraries------------------------------------
 from modules.groups import groups
 from modules.screens import screens
+from modules.bar import widget_defaults
 from modules.keybinds import keys, mod
 from modules.layouts import layouts, floating_layout
 from modules.scratchpads import *

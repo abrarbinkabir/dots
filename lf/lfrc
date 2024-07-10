@@ -28,14 +28,11 @@ cmd copy-filenames ${{ echo -n "$fx" | xclip -selection clipboard; lf -remote 's
 # Move file/s and folder/s to trash
 cmd move-to-trash ${{ trash-put $fx }}
 
-# Empty trash
-cmd empty-trash ${{ trash-empty }}
-
 # Make files
-cmd touch $touch "$@"
+cmd touch %touch "$@"
 
 # Make folders
-cmd mkdir $mkdir "$@"
+cmd mkdir %mkdir "$@"
 
 # Make file executable
 cmd make-executable ${{ chmod +x $fx ; lf -remote 'send reload'; lf -remote 'send unselect' }}
@@ -158,8 +155,6 @@ map yt copy-filenames
 map d
 map <delete> move-to-trash
 map dd move-to-trash
-map e
-map et empty-trash
 map D delete
 
 # Make files and folders
@@ -178,6 +173,7 @@ map mx make-executable
 map sp set-permissions
 
 # Extract and compress files
+map e
 map ex extract-files
 map mt make-targz
 

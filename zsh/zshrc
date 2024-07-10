@@ -41,6 +41,7 @@ source /usr/share/fzf/completion.zsh 2>/dev/null
 # Export $PATH variables-------------------------------
 export PATH=$PATH:$HOME/.config
 export PATH=$PATH:$HOME/dots/scripts
+export PATH=$PATH:$HOME/Documents/code
 #------------------------------------------------------
 
 eval "$(zoxide init --cmd cd zsh)"

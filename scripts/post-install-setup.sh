@@ -85,14 +85,14 @@ main() {
     
     echo "Creating necessary folders..."
     cd ~ &&
-    mkdir -p Documents/70-tech/86-git Downloads
+    mkdir -p Documents/git Downloads
     if [ $? -eq 0 ]; then
         echo "Folder creation completed successfully!"
     else
         echo "Error: Something went wrong while creating necessary folders."
     fi
 
-    git clone "https://github.com/abrarbinkabir/startpage.git" "$HOME/Documents/70-tech/86-git/" && 
+    git clone "https://github.com/abrarbinkabir/startpage.git" "$HOME/Documents/git/" && 
     rm -rf yay &&
     echo "Setup completed successfully! Exiting..."
     exit
