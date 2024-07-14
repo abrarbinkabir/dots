@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+file=$1
+w=$2
+h=$3
+x=$4
+y=$5
+
+filetype="$( file -Lb --mime-type "$file")"
+CACHE="$HOME/.cache/tmpimg"
+
+if [[ "$filetype" = image/png || "$filetype" = image/jpeg || "$filetype" = image/gif ]]; then
+    kitty +kitten icat --silent --stdin no --transfer-mode file --place "${w}x${h}@${x}x${y}" "$file" < /dev/null > /dev/tty
+    exit 1
+fi
+
+if [[ "$filetype" = application/pdf ]]; then
+    pdftoppm -jpeg -f 1 -singlefile "$file" "$CACHE"
+    kitty +kitten icat --silent --stdin no --transfer-mode file --place "${w}x${h}@${x}x${y}" "${CACHE}.jpg" < /dev/null > /dev/tty
+    exit 1
+fi
+
+if [[ "$filetype" = image/svg+xml ]]; then
+    convert "$file" "${CACHE}.jpg"
+    kitty +kitten icat --silent --stdin no --transfer-mode file --place "${w}x${h}@${x}x${y}" "${CACHE}.jpg" < /dev/null > /dev/tty
+    exit 1
+fi
+
+pistol "$file"

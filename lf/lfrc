@@ -12,10 +12,8 @@ set cursorpreviewfmt ""
 #---------------------------------------------
 
 # Preview settings----------------------------
-set previewer ctpv
-set cleaner ctpvclear
-&ctpv -s $id
-&ctpvquit $id
+set previewer ~/.config/lf/lf_kitty_preview
+set cleaner ~/.config/lf/lf_kitty_clean
 #---------------------------------------------
 
 # Custom commands-----------------------------
