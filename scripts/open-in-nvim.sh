@@ -1,38 +1,30 @@
 #!/bin/bash
 
 # Specifies Theme
-theme="$HOME/.config/rofi/applet-config.rasi"
-mesg="Open in NeoVim"
+theme="$HOME/.config/rofi/config.rasi"
 
 rofi_cmd() {
-		rofi -theme-str "listview {columns: 1; lines: 8; }" \
-        -dmenu -i \
-        -mesg "$mesg"\
+		rofi -theme-str "window {width: 1000px;}" \
+		-dmenu -i \
+		-p "Folders" \
+		-sort \
+		-sorting-method fzf \
+		-markup-rows \
 		-theme "$theme"
 		}
-# Options
-options=(
-        " scripts" "$HOME/dots/scripts/"
-        " notes" "$HOME/Documents/50-notes/"
-        " nvim" "$HOME/dots/nvim/"
-        " qtile" "$HOME/dots/qtile/"
-        " dots" "$HOME/dots/"
-        " code" "$HOME/Documents/50-notes/61-coding/"
-        "󰌽 linux" "$HOME/Documents/50-notes/62-linux/"
 
-    )
 
-run_rofi() {
-    for ((i = 0; i < ${#options[@]}; i += 2)); do
-        echo "${options[i]}"
-    done | rofi_cmd
-}
+# Finds folders from Documents, Downloads and Pictures folder >>
+# Excludes hidden folders and the Archives folder >>
+# Removes $HOME from the path >>
+# Pipes into Rofi dmenu >>
+# Opens with the default application
+selection=$(find ~/Documents/ ~/Downloads/ ~/dots/ ! -path '*/.*' -type d | sort | cut -d '/' -f 4- | rofi_cmd)
 
-selection=$(run_rofi)
+# if $selection exists then opens it with xdg-open
+if [ -z "$selection" ] ; then
+	exit 1
+else
+	alacritty -e nvim "$HOME/$selection"
+fi
 
-for ((i = 0; i < ${#options[@]}; i += 2)); do
-    if [[ "$selection" == "${options[i]}" ]]; then
-        alacritty -e nvim "${options[i+1]}"
-        break
-    fi
-done
