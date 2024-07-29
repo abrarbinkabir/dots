@@ -12,5 +12,12 @@ rofi_cmd() {
         -markup-rows \
 		-theme "$theme"
 		}
-apropos -s 1,5,7 . | awk '{print $1}' | sort | uniq | rofi_cmd | xargs alacritty -e man
+
+selection=$(apropos -s 1,5,7 . | awk '{print $1}' | sort | uniq | rofi_cmd)
+
+if [[ -z "$selection" ]] ; then
+    exit 1
+else
+    alacritty -e man "$selection"
+fi
 
