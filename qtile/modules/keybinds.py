@@ -37,9 +37,9 @@ keys = [
     Key([mod], "a", lazy.spawn(expanduser("~/.config/scripts/launcher.sh"), shell=True), desc="Execute launcher applet"),
     Key([mod], "Return", lazy.spawn("alacritty"), desc="Launch alacritty"),
     Key([mod], "t", lazy.spawn("alacritty"), desc="Launch alacritty"),
-    Key([mod], "w", lazy.spawn("qutebrowser"), desc="Launch Qutebrowser"),
-    Key([mod, "shift"], "w", lazy.spawn("firefox"), desc="Launch Firefox"),
-    Key([mod], "f", lazy.spawn("alacritty -e lf"), desc="Launch lf"),
+    Key([mod], "w", lazy.spawn("firefox"), desc="Launch Firefox"),
+    Key([mod, "shift"], "w", lazy.spawn("qutebrowser"), desc="Launch Qutebrowser"),
+    Key([mod], "f", lazy.spawn("kitty -e lf"), desc="Launch lf"),
     Key([mod, "shift"], "f", lazy.spawn("thunar"), desc="Launch Thunar"),
     Key([mod], "e", lazy.spawn("alacritty -e nvim /home/abrar/Documents/50-notes/"), desc="Launch neovim"),
     

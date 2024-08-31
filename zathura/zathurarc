@@ -78,6 +78,7 @@ unmap a
 unmap s
 unmap q
 unmap <C-q>
+unmap <C-n>
 
 set guioptions ''
 #------------------------------------------------------
