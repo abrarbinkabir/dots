@@ -13,10 +13,18 @@ widget_defaults = dict(
 )
 
 default_bar = bar.Bar([
+    widget.TextBox(
+    fmt = '',
+    fontsize = 15,
+    foreground = theme["blue"],
+    mouse_callbacks={"Button1": lazy.spawn(expanduser("~/.config/scripts/launcher.sh"))},
+    ),
+
     widget.GroupBox(
     font= 'JetBrainsMono Nerd Font Propo',
     fontsize=14,
     padding=8,
+    margin_x=0,
     highlight_method = "line",
     highlight_color=theme["blue"],
     block_highlight_text_color=theme["background"],
@@ -65,11 +73,18 @@ default_bar = bar.Bar([
     foreground = theme["peach"],
     format=" %a, %b %d",
     update_interval= 60,
-    mouse_callbacks={"Button1": lazy.spawn("alacritty --hold -t 'float_term' -e cal -y")},
     ),
+
     widget.Systray(
     icon_size=18,
-    padding=7,
+    padding=0,
+    ),
+
+    widget.TextBox(
+    fmt = '',
+    padding=8,
+    foreground = theme["red"],
+    mouse_callbacks={"Button1": lazy.spawn(expanduser("~/.config/scripts/powermenu.sh"))},
     ),
     ],
     size=28,

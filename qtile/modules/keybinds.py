@@ -39,9 +39,10 @@ keys = [
     Key([mod], "t", lazy.spawn("alacritty"), desc="Launch alacritty"),
     Key([mod], "w", lazy.spawn("firefox"), desc="Launch Firefox"),
     Key([mod, "shift"], "w", lazy.spawn("qutebrowser"), desc="Launch Qutebrowser"),
-    Key([mod], "f", lazy.spawn("kitty -e lf"), desc="Launch lf"),
-    Key([mod, "shift"], "f", lazy.spawn("thunar"), desc="Launch Thunar"),
+    Key([mod], "f", lazy.spawn("thunar"), desc="Launch Thunar"),
+    Key([mod, "shift"], "f", lazy.spawn("kitty -e lf"), desc="Launch lf"),
     Key([mod], "e", lazy.spawn("alacritty -e nvim /home/abrar/Documents/50-notes/"), desc="Launch neovim"),
+    Key([mod], "c", lazy.spawn("galculator"), desc="Launch galculator"),
     
     # Control the system
     Key([mod], "q", lazy.window.kill(), desc="Kill the focused window"),

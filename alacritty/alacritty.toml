@@ -1,13 +1,7 @@
-live_config_reload = true
-
-# Colorscheme----------------------------------
-import = [
-  "~/.config/alacritty/themes/catppuccin-frappe.toml"
-]
 #----------------------------------------------
 
 [cursor]
-blink_interval = 750
+blink_interval = 1000
 
 [cursor.style]
 blinking = "On"
@@ -72,3 +66,11 @@ instance = "Alacritty"
 [window.padding]
 x = 20
 y = 20
+
+[general]
+live_config_reload = true
+
+# Colorscheme----------------------------------
+import = [
+  "~/.config/alacritty/themes/catppuccin-frappe.toml"
+]
