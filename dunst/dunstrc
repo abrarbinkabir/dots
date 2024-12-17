@@ -2,9 +2,9 @@
 	monitor = 0
 	follow = none 
 	width = 300
-	height = 300 
+	height = (0, 300) 
 	origin = top-right 
-	offset = 35x50 
+	offset = (35, 50)
 	scale = 0 
 	notification_limit = 20 
 	progress_bar = true 

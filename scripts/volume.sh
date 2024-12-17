@@ -41,7 +41,25 @@ case $1 in
         # Sends notification
         volume_notification
 	    ;;
+    
+    up-one)
+        # Unmutes
+        pactl set-sink-mute @DEFAULT_SINK@ 0
+        # Increases volume by 5%
+        pactl set-sink-volume @DEFAULT_SINK@ +1%
+        # Sends notification
+        volume_notification
+        ;;
 	    
+    down-one)
+        # Unmutes
+        pactl set-sink-mute @DEFAULT_SINK@ 0
+        # Increases volume by 5%
+        pactl set-sink-volume @DEFAULT_SINK@ -1%
+        # Sends notification
+        volume_notification
+        ;;
+
     mute)
     	# Toggles mute state
         pactl set-sink-mute @DEFAULT_SINK@ toggle

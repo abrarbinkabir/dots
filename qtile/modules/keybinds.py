@@ -72,7 +72,9 @@ keys = [
     Key(["mod1"], "Print", lazy.spawn(expanduser("~/.config/scripts/screenshot-opts.sh area"), shell=True), desc="Take screenshot of the selection"),
     Key(["mod1"], "F1", lazy.spawn(expanduser("~/.config/scripts/volume.sh up"), shell=True), desc="Increase volume by 5%"),
     Key(["mod1"], "F2", lazy.spawn(expanduser("~/.config/scripts/volume.sh down"), shell=True), desc="Decrease volume by 5%"),
-    Key(["mod1"], "F3", lazy.spawn(expanduser("~/.config/scripts/volume.sh mute"), shell=True), desc="Toggle mute state"),    
+    Key(["mod1"], "F3", lazy.spawn(expanduser("~/.config/scripts/volume.sh up-one"), shell=True), desc="Increase volume by 1%"),
+    Key(["mod1"], "F4", lazy.spawn(expanduser("~/.config/scripts/volume.sh down-one"), shell=True), desc="Decrease volume by 1%"),
+    Key(["mod1"], "F5", lazy.spawn(expanduser("~/.config/scripts/volume.sh mute"), shell=True), desc="Toggle mute state"),    
 
 ]
 
