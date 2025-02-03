@@ -7,9 +7,11 @@ misc/backup-logs
 mpd/playlists/
 mpd/database
 mpd/sticker.sql
+obs-studio/logs/
 restic/backup.conf
 restic/passwd
 restic/passwd-file
+qutebrowser/__pycache__/
 systemd/user/default.target.wants
 systemd/user/timers.target.wants
 zoxide/
