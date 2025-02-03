@@ -1,6 +1,6 @@
 .stversions
 .stignore
-clipse/tmp_files
+clipse/tmp_files/
 clipse/clipboard_history.json
 gtk-3.0/bookmarks
 misc/backup-logs
