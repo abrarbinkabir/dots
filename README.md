@@ -9,7 +9,7 @@ The repository contains dotfiles of my *ArchLinux* machine. I use *ArchLinux* wi
 
 <p float="left">
 <img src="assets/rofi-files.png" width="250"/>
-<img src="assets/firfox.png" width="250"/>
+<img src="assets/firefox.png" width="250"/>
 </p>
 
 ## Programs

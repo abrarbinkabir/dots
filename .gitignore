@@ -1,13 +1,12 @@
 .stversions
 .stignore
+clipse/tmp_files
+clipse/clipboard_history.json
 gtk-3.0/bookmarks
 misc/backup-logs
 mpd/playlists/
 mpd/database
 mpd/sticker.sql
-qtile/__pycache__/
-qtile/modules/__pycache__/
-qutebrowser/__pycache__/
 restic/backup.conf
 restic/passwd
 restic/passwd-file
