@@ -1,4 +1,4 @@
-#files: 826	version: 5.9
+#files: 832	version: 5.9
 
 _comps=(
 '-' '_precommand'
@@ -236,7 +236,7 @@ _comps=(
 'dd' '_dd'
 'declare' '_typeset'
 '-default-' '_default'
-'delta' '_delta'
+'delta' '_sccs'
 'designate' '_openstack'
 'devtodo' '_devtodo'
 'df' '_df'
@@ -351,7 +351,6 @@ _comps=(
 'fixwpps' '_psutils'
 'fixwwps' '_psutils'
 'flac' '_flac'
-'flameshot' '_flameshot'
 'flex' '_flex'
 'flex++' '_flex'
 'flipdiff' '_patchutils'
@@ -585,6 +584,8 @@ _comps=(
 'hostnamectl' '_hostnamectl'
 'hotjava' '_webbrowser'
 'htop' '_htop'
+'hyprctl' '_hyprctl'
+'hyprpm' '_hyprpm'
 'iceweasel' '_mozilla'
 'icombine' '_ispell'
 'iconv' '_iconv'
@@ -596,7 +597,6 @@ _comps=(
 'iftop' '_iftop'
 'ifup' '_net_interfaces'
 'ijoin' '_ispell'
-'img2sixel' '_img2sixel'
 'import' '_imagemagick'
 'inc' '_mh'
 'includeres' '_psutils'
@@ -641,6 +641,7 @@ _comps=(
 'join' '_join'
 'journalctl' '_journalctl'
 'jq' '_jq'
+'jupyter' '_jupyter'
 'kdeconnect-cli' '_kdeconnect'
 'kernel-install' '_kernel-install'
 'keystone' '_openstack'
@@ -847,7 +848,6 @@ _comps=(
 'nginx' '_nginx'
 'ngrep' '_ngrep'
 'nice' '_nice'
-'ninja' '_ninja'
 'nkf' '_nkf'
 'nl' '_nl'
 'nm' '_nm'
@@ -950,6 +950,7 @@ _comps=(
 'pkginfo' '_pkginfo'
 'pkgrm' '_pkgrm'
 'pkill' '_pgrep'
+'playerctl' '_playerctl'
 'pldd' '_pids'
 'pmake' '_make'
 'pman' '_perl_modules'
@@ -1018,6 +1019,7 @@ _comps=(
 'pwdx' '_pids'
 'pwgen' '_pwgen'
 'pyhtmlizer' '_twisted'
+'pypr' '_pypr'
 'qdbus' '_qdbus'
 'qiv' '_qiv'
 'quilt' '_quilt'
@@ -1336,6 +1338,7 @@ _comps=(
 'unwrapdiff' '_patchutils'
 'unxz' '_xz'
 'unzip' '_zip'
+'upower' '_upower'
 'uptime' '_uptime'
 'urxvt' '_urxvt'
 'urxvt256c' '_urxvt'
@@ -1442,8 +1445,11 @@ _comps=(
 'whom' '_mh'
 'wiggle' '_wiggle'
 'wipefs' '_wipefs'
+'wl-copy' '_wl-copy'
+'wl-paste' '_wl-paste'
 'wodim' '_cdrecord'
 'wpa_cli' '_wpa_cli'
+'wpctl' '_wpctl'
 'write' '_users_on'
 'www' '_webbrowser'
 'xargs' '_xargs'
@@ -1678,17 +1684,18 @@ bindkey '^[/' _history-complete-older
 bindkey '^[~' _bash_complete-word
 
 autoload -Uz _alacritty _bat _bootctl _busctl _bwrap \
-            _coredumpctl _curl _delta _dunst _dunstctl \
-            _eza _flameshot _hostnamectl _img2sixel _journalctl \
+            _coredumpctl _curl _dunst _dunstctl _eza \
+            _hostnamectl _hyprctl _hyprpm _journalctl _jupyter \
             _kernel-install _kitty _lf _libinput _localectl \
             _loginctl _machinectl _mkinitcpio _mpv _networkctl \
-            _ninja _oomctl _pacman _pip _pulseaudio \
-            _resolvectl _restic _rg _run0 _sd_hosts_or_user_at_host \
-            _sd_machines _sd_outputmodes _sd_unit_files _shtab _systemctl \
-            _systemd _systemd-analyze _systemd-delta _systemd-inhibit _systemd-nspawn \
-            _systemd-path _systemd-run _systemd-tmpfiles _timedatectl _tldr \
-            _trash _trash-empty _trash-list _trash-put _trash-restore \
-            _udevadm _udisks2 _varlinkctl _yay _yt-dlp \
+            _oomctl _pacman _pip _playerctl _pulseaudio \
+            _pypr _resolvectl _restic _rg _run0 \
+            _sd_hosts_or_user_at_host _sd_machines _sd_outputmodes _sd_unit_files _shtab \
+            _systemctl _systemd _systemd-analyze _systemd-delta _systemd-inhibit \
+            _systemd-nspawn _systemd-path _systemd-run _systemd-tmpfiles _timedatectl \
+            _tldr _trash _trash-empty _trash-list _trash-put \
+            _trash-restore _udevadm _udisks2 _upower _varlinkctl \
+            _wl-copy _wl-paste _wpctl _yay _yt-dlp \
             _zathura _zoxide _cdr _all_labels _all_matches \
             _alternative _approximate _arg_compile _arguments _bash_completions \
             _cache_invalid _call_function _combination _complete _complete_debug \

@@ -1,37 +1,40 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
-# Specifies Theme
-theme="$HOME/.config/rofi/applet-config.rasi"
+# Import Current Theme
+theme="$HOME/.config/rofi/config-3.rasi"
 
 # Theme Elements
-get_status(){
-	status=$(mpc status | awk 'FNR == 2 {print $1}' | sed -e 's|\[||g' -e 's|\]||g')
-}
+status="`mpc status`"
 
-get_status
-if [[ -z "$status" ]]; then
-	mesg="MPD is Offline"
+# Theme Elements
+if [[ "$status" == *"[playing]"* ]]; then
+    option_1=""
 else
-	mesg="Track Controls"
+    option_1=""
 fi
+option_2=""
+option_3=""
+option_4=""
+option_5=""
+option_6=""
 
-if [[ ${status} == "playing" ]]; then
-		option_1=" Pause"
-	else
-		option_1=" Play"
-	fi
-	option_2=" Stop"
-	option_3=" Next"
-	option_4=" Previous"
-	option_5=" Repeat"
-	option_6=" Random"
+# Toggle Actions
+active=''
+# Repeat
+if [[ ${status} == *"repeat: on"* ]]; then
+    active="-a 4"
+fi
+# Random
+if [[ ${status} == *"random: on"* ]]; then
+    [ -n "$active" ] && active+=",5" || active="-a 5"
+fi
 
 # Rofi CMD
 rofi_cmd() {
-	rofi -theme-str 'listview {columns: 1; lines: 6;}' \
+	rofi -theme-str "listview {columns: 1; lines: 6;}" \
 		-dmenu \
-		-mesg "$mesg" \
 		-markup-rows \
+        "$active"\
 		-theme "$theme"
 }
 
@@ -40,35 +43,42 @@ run_rofi() {
 	echo -e "$option_1\n$option_2\n$option_3\n$option_4\n$option_5\n$option_6" | rofi_cmd
 }
 
-repeat_mode(){
-	repeat=$(mpc status | awk '/repeat/ {print $4}')
-	notify-send -u normal -a "Music Player Daemon" -i bell -t 1500 "Repeat mode turned"\n "$repeat"
-}
-
-random_mode(){
-	random=$(mpc status | awk '/repeat/ {print $6}')
-	notify-send -u normal -a "Music Player Daemon" -i bell -t 1500 "Repeat mode turned $random"
+# Execute Command
+run_cmd() {
+	if [[ "$1" == '--opt1' ]]; then
+		mpc -q toggle
+	elif [[ "$1" == '--opt2' ]]; then
+		mpc -q stop
+	elif [[ "$1" == '--opt3' ]]; then
+		mpc -q next
+	elif [[ "$1" == '--opt4' ]]; then
+		mpc -q prev
+	elif [[ "$1" == '--opt5' ]]; then
+		mpc -q repeat
+	elif [[ "$1" == '--opt6' ]]; then
+		mpc -q random
+	fi
 }
 
 # Actions
 chosen="$(run_rofi)"
 case ${chosen} in
     $option_1)
-		mpc -q toggle && get_status && notify-send -u normal -a "Track ${status}" -i bell -t 1500 "`mpc current`"
+		run_cmd --opt1
         ;;
     $option_2)
-		mpc -q stop && notify-send -u normal -a "Music Player Daemon" -i bell -t 1500 "MPD Stopped" 
+		run_cmd --opt2
         ;;
     $option_3)
-		mpc -q next && notify-send -u normal -a "Playing Now" -i bell -t 1500 "`mpc current`"
+		run_cmd --opt3
         ;;
     $option_4)
-		mpc -q prev && notify-send -u normal -a "Playing Now" -i bell -t 1500 "`mpc current`"
+		run_cmd --opt4
         ;;
     $option_5)
-		mpc -q repeat && repeat_mode
+		run_cmd --opt5
         ;;
     $option_6)
-		mpc -q random && random_mode
+		run_cmd --opt6
         ;;
 esac

@@ -1,31 +1,25 @@
 #!/bin/bash
 
 # Specifies Theme
-theme="$HOME/.config/rofi/applet-config.rasi"
-
-# Message to show uptime
-# Gets the uptime >>
-# Replaces 'up ' with ''
-mesg="Uptime: $(uptime -p | sed -e 's/up //g' -e 's/\shour[s]\?,/h/g' -e 's/\sminute[s]\?/m/g')"
+theme="$HOME/.config/rofi/config-3.rasi"
 
 # Options
-option_1=" Shut Down"
-option_2=" Log Out"
-option_3=" Restart"
-option_4=" Suspend"
-option_5=" Lock"
+option_1=""
+option_2=""
+option_3=""
+option_4=""
+option_5=""
 
 # Rofi CMD
 menu() {
    rofi -dmenu \
-		-mesg "$mesg" \
 		-markup-rows \
 		-theme "$theme"
 }
 
 # Confirmation CMD
 confirm() {
-   rofi -theme-str 'window {location: center; anchor: center; fullscreen: false; width: 350px;}' \
+   rofi -theme-str 'window {location: center; anchor: center; fullscreen: false; width: 300px;}' \
    		-theme-str 'mainbox {orientation: vertical; children: [ "message", "listview" ];}' \
 		-theme-str 'listview {columns: 2; lines: 1;}' \
 		-theme-str 'element-text {font: "JetBrainsMono Nerd Font Propo Regular 13"; horizontal-align: 0.5;}' \
@@ -64,7 +58,7 @@ main() {
 			    "$option_2")
 			    	notify-send -u normal -a Systemctl -i logout -t 2000 "System will logout now" &&
 			    	sleep 3
-			    	qtile cmd-obj -o cmd -f shutdown
+			    	hyprctl dispatch exit
 			        ;;
 			    "$option_3")
 			    	notify-send -u normal -a Systemctl -i restart -t 2000 "System will reboot now" &&
@@ -79,7 +73,7 @@ main() {
 			exit 1
 		fi
 	elif [[ -n "$selection" && "$selection" == "$option_5" ]]; then
-		betterlockscreen -l
+		hyprlock -q
 	else
 		exit 1
 	fi

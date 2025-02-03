@@ -4,7 +4,7 @@
 	width = 300
 	height = (0, 300) 
 	origin = top-right 
-	offset = (35, 50)
+	offset = (30, 25)
 	scale = 0 
 	notification_limit = 20 
 	progress_bar = true 
@@ -12,7 +12,7 @@
 	progress_bar_frame_width = 1 
 	progress_bar_min_width = 150
 	progress_bar_max_width = 250
-	progress_bar_corner_radius = 0
+	progress_bar_corner_radius = 3
 	icon_corner_radius = 0
 	indicate_hidden = yes 
 	transparency = 0 
@@ -20,10 +20,10 @@
 	padding = 12 # set padding between text and separator 
 	horizontal_padding = 20 
 	text_icon_padding = 10  
-	frame_width = 0
-	frame_color = "#89b4fa" # blue
-	gap_size = 0
-	separator_color = "#89b4fa" # blue
+	frame_width = 3
+	frame_color = "#8aadf4" # blue
+	gap_size = 10
+	separator_color = "#8aadf4" # blue
 	sort = yes
 	font = "JetBrainsMono Nerd Font Propo 11"
 	line_height = 0
@@ -48,7 +48,7 @@
 	always_run_script = true
 	title = Dunst
 	class = Dunst
-	corner_radius = 0
+	corner_radius = 7
 	ignore_dbusclose = false
 	force_xwayland = false
 	force_xinerama = false
@@ -60,25 +60,23 @@
     per_monitor_dpi = false
     
 [urgency_low]
-    background = "#1e1e2e" # base
-    foreground = "#cdd6f4" # text
-    highlight = "#89b4fa" # blue
-    timeout = 3
-        
-[urgency_normal]
-    background = "#1e1e2e" # base
-    foreground = "#cdd6f4" # text
-    highlight = "#89b4fa" # blue
-    timeout = 3
+background = "#24273a" # base
+foreground = "#cad3f5" # text
+highlight = "#8aadf4"  # blue
+timeout = 3
 
-    
-        
+[urgency_normal]
+background = "#24273a" # base
+foreground = "#cad3f5" # text
+highlight = "#8aadf4"  # blue
+timeout = 3
+
 [urgency_critical]
-    background = "#1e1e2e" # base
-    foreground = "#cdd6f4" # text
-    highlight = "#89b4fa" # blue
-    frame_color = "#f38ba8" # red
-    timeout = 0
+background = "#24273a" # base
+foreground = "#cad3f5" # text
+highlight = "#8aadf4"  # blue
+frame_color = "#ed8796" # red
+timeout = 0
 
 [history-ignore]
     appname = Pulseaudio

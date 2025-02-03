@@ -18,10 +18,11 @@ window {
     location:                    center;
     anchor:                      center;
     fullscreen:                  false;
-    width:                       600px;
+    width:                       550px;
     enabled:                     true;
     border:                      2px solid;
     border-color:                @blue;
+    border-radius:				 7px;
     background-color:            @background;
     cursor:                      "default";
 }
@@ -39,6 +40,7 @@ mainbox {
 /*****----- Inputbar -----*****/
 inputbar {
     enabled:                     true;
+    border-radius:				 5px;
     background-color:            @background-alt;
     text-color:                  @foreground;
     children:                    [ "prompt", "entry" ];
@@ -111,17 +113,20 @@ element alternate.normal{
 element selected.normal {
     background-color:            @blue;
     text-color:                  @background;
+    border-radius:				 5px;
 }
 
 element normal.active,
 element alternate.active{
     background-color:            @green;
     text-color:                  @background;
+    border-radius:				 5px;
 }
 
 element selected.active {
     background-color:            @red;
     text-color:                  @background;
+    border-radius:				 5px;
 }
 
 element-icon {

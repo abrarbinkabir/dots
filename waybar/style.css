@@ -1,0 +1,81 @@
+@define-color rosewater #f2d5cf;
+@define-color flamingo  #eebebe;
+@define-color pink      #f4b8e4;
+@define-color mauve     #ca9ee6;
+@define-color red       #e78284;
+@define-color maroon    #ea999c;
+@define-color peach     #ef9f76;
+@define-color yellow    #e5c890;
+@define-color green     #a6d189;
+@define-color teal      #81c8be;
+@define-color sky       #99d1db;
+@define-color sapphire  #85c1dc;
+@define-color blue      #8caaee;
+@define-color lavender  #babbf1;
+
+/* Neutral Colors */
+@define-color text       #c6d0f5;
+@define-color subtext1   #b5bfe2;
+@define-color subtext0   #a5adce;
+@define-color overlay2   #949cbb;
+@define-color overlay1   #838ba7;
+@define-color overlay0   #737994;
+@define-color surface2   #626880;
+@define-color surface1   #51576d;
+@define-color surface0   #414559;
+@define-color base       #303446;
+@define-color mantle     #292c3c;
+@define-color crust      #232634;
+
+* { 
+	font-family: "JetBrainsMono Nerd Font Propo";
+	font-weight: 700;
+    font-size: 14px;
+}
+
+window#waybar {
+    background: @base;
+    color: @text;
+}
+
+#workspaces{margin-left: 20px;}
+
+#workspaces button, #workspaces button:hover {
+  color: @overlay2;
+  padding: 0 5px;
+  border-radius: 0px;
+  border: none;
+  box-shadow: none;
+  transition: none;
+}
+
+#workspaces button.empty {
+	color: @surface1;
+}
+
+#workspaces button.active {
+    color: @green;
+}
+
+#language,#pulseaudio,#memory,#cpu,#disk,#clock,#tray{
+	padding: 6px 10px;
+}
+
+#mpd{color: @rosewater;}
+
+#language{color: @green;}
+#pulseaudio{color: @peach;}
+#memory{color: @yellow;}
+#cpu{color: @flamingo;}
+#disk{color: @pink;}
+#clock{color: @mauve;}
+#clock.date{color: @blue;}
+
+/* Global tooltip styling */
+tooltip {
+    background-color: #303446; /* Mantle */
+    color: #c6d0f5;           /* Text */
+    border: 1px solid #8caaee; /* Blue */
+    border-radius: 5px;       /* Rounded corners */
+    font-family: "JetBrainsMono Nerd Font Propo"; /* Font family */
+}

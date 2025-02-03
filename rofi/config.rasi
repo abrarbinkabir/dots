@@ -19,6 +19,7 @@ window {
     enabled:                     true;
     border:                      2px solid;
     border-color:                @blue;
+    border-radius:				 7px;
     background-color:            @background;
     cursor:                      "default";
 }
@@ -42,6 +43,7 @@ inputbar {
     border:                      0px solid;
     border-radius:               0px;
     border-color:                @blue;
+    border-radius:				 5px;
     background-color:            @background-alt;
     text-color:                  @foreground;
     children:                    [ "prompt", "entry" ];
@@ -114,8 +116,7 @@ element alternate.normal {
 }
 
 element selected.normal {
-    border:                      2px;
-    border-color:                @blue;
+    border-radius:				 5px;
     background-color:            @blue;
     text-color:                  @background;
 }

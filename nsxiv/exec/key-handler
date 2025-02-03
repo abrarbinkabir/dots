@@ -15,8 +15,8 @@ do
 	"underscore")
 		convert -flip "$file" "$file" ;;
     "n")
-        printf "%s" "$file" | tr -d '\n' | xclip -selection clipboard ;;
+        printf "%s" "$file" | tr -d '\n' | wl-copy ;;
     "y")
-        xclip -selection clipboard -target image/png "$file" ;;
+        wl-copy < "$file" ;;
     esac
 done

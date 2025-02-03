@@ -21,7 +21,7 @@ set cleaner ~/.config/lf/lf_kitty_clean
 cmd open ${{xdg-open "$f" &}}
 
 # Copy filenames into clipboard
-cmd copy-filenames ${{ echo -n "$fx" | xclip -selection clipboard; lf -remote 'send unselect' }}
+cmd copy-filenames ${{ echo -n "$fx" | wl-copy ; lf -remote 'send unselect' }}
 
 # Move file/s and folder/s to trash
 cmd move-to-trash ${{ trash-put $fx }}

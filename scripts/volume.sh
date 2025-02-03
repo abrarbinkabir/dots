@@ -16,9 +16,9 @@ mute_notification(){
 	state=$(pactl get-sink-mute @DEFAULT_SINK@ | awk '{print $2}')
 	# Sends notification
 	if [ "$state" == 'yes' ]; then
-		dunstify -a "Pulseaudio" -u normal -r 9993 -i volume-mute "Default sink muted"
+		notify-send -a "Pulseaudio" -u normal -r 9993 -i volume-mute "Default sink muted"
 	else
-		dunstify -a "Pulseaudio" -u normal -r 9993 -i volume-on "Default sink unmuted"
+		notify-send -a "Pulseaudio" -u normal -r 9993 -i volume-on "Default sink unmuted"
 	fi
 	}
 
@@ -41,7 +41,14 @@ case $1 in
         # Sends notification
         volume_notification
 	    ;;
-    
+	    
+    mute)
+    	# Toggles mute state
+        pactl set-sink-mute @DEFAULT_SINK@ toggle
+        # Sends notification
+        mute_notification
+        ;;
+        
     up-one)
         # Unmutes
         pactl set-sink-mute @DEFAULT_SINK@ 0
@@ -59,13 +66,7 @@ case $1 in
         # Sends notification
         volume_notification
         ;;
-
-    mute)
-    	# Toggles mute state
-        pactl set-sink-mute @DEFAULT_SINK@ toggle
-        # Sends notification
-        mute_notification
-        ;;
+        
     *)
         echo "Usage: $0 up | down | mute"
         ;;

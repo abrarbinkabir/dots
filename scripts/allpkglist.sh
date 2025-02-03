@@ -5,7 +5,7 @@ theme="$HOME/.config/rofi/config.rasi"
 
 # Function to execute the rofi command with desired options
 rofi_cmd() {
-		rofi -theme-str "window {width:800px;}" \
+		rofi -theme-str "window {width:700px;}" \
 		-dmenu -i \
 		-p "Packages" \
 		-sort \

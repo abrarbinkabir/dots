@@ -1,11 +1,12 @@
 #!/bin/bash
 
-theme="$HOME/.config/rofi/config.rasi"
+theme="$HOME/.config/rofi/config-4.rasi"
 
 # Rofi CMD
 rofi_cmd() {
-		rofi -theme-str "window {width: 800px;}" \
-		-dmenu -i \
+		rofi -theme-str "entry {placeholder: 'Search manpages...';}" \
+        -theme-str "imagebox {background-image: url('~/dots/images/mars-car.jpg', width);}" \
+        -dmenu -i \
 		-p "Man Pages" \
 		-sort \
 		-sorting-method fzf \

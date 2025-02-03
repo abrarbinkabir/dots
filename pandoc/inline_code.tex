@@ -1,12 +1,28 @@
-%% https://stackoverflow.com/questions/40975004/pandoc-latex-change-backtick-highlight
+\usepackage{titlesec}
+\titlespacing*{\section}{0pt}{*4.0}{*0.2} % Adjusts space before and after \section
+\titlespacing*{\subsection}{0pt}{*2.0}{*0.2} % Adjusts space before and after \subsection
+\titlespacing*{\subsubsection}{0pt}{*1.5}{*0.2} % Adjusts space before and after \subsubsection
+
+\usepackage{enumitem}
+
+\setlist[itemize,1]{left=10pt}
+\setlist[enumerate,1]{left=10pt}
+\setlist[itemize,2]{left=10pt}
+\setlist[enumerate,2]{left=10pt}
+
+\usepackage{setspace}
+\setstretch{1.25}
+
 \usepackage{fancyvrb,newverbs,xcolor}
 
-%\definecolor{Light}{gray}{.90}
 \definecolor{Light}{HTML}{F4F4F4}
 
 \let\oldtexttt\texttt
 \renewcommand{\texttt}[1]{
-  \colorbox{Light}{\oldtexttt{#1}}
+    \colorbox{Light}{\oldtexttt{#1}}
 }
+
 \usepackage{fvextra}
 \DefineVerbatimEnvironment{Highlighting}{Verbatim}{breaklines,commandchars=\\\{\}}
+
+

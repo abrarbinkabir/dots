@@ -5,7 +5,7 @@ date_today=$(date +%b' '%d', '%Y)
 hour_now=$(date +%H)
 hour_now=${hour_now#0} # remove leading zeros
 
-sleep 3 &&
+sleep 5 &&
     notify-send -u normal -a Today -i calendar "${date_today} ($day_today)" &&
 sleep 4
 

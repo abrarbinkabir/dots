@@ -3,7 +3,7 @@
 # Configuration variables
 theme="$HOME/.config/rofi/config.rasi"
 wikidir="/usr/share/doc/arch-wiki/html/en/"
-browser="qutebrowser"
+browser="firefox"
 
 # Function to display Rofi menu and select ArchWiki article
 rofi_cmd() {

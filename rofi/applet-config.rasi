@@ -15,6 +15,7 @@ window {
     width:                       450px;
     border:                      2px solid;
     border-color:                @blue;
+    border-radius:				 7px;
     cursor:                      "default";
     background-color:            @background;
 }
@@ -36,6 +37,7 @@ message {
     padding:                     10px;
     border:                      0px solid;
     background-color:            @background-alt;
+    border-radius:				 5px;
     text-color:                  @foreground;
 }
 
@@ -86,6 +88,7 @@ element alternate.normal {
 element selected.normal {
     background-color:            @blue;
     text-color:                  @background;
+    border-radius:				 5px;
 }
 
 element normal.urgent,

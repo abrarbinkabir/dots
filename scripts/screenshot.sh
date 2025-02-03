@@ -1,24 +1,20 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 # Specifies Theme
-theme="$HOME/.config/rofi/applet-config.rasi"
-
-# Message
-mesg="Take a screenshot"
+theme="$HOME/.config/rofi/config-3.rasi"
 
 # Options
-option_1="󰎯 Capture Desktop in 5s"
-option_2="󰿫 Capture Desktop in 10s"
-option_3=" Capture Desktop"
-option_4=" Capture Area"
-option_5="󰘔 Capture Window"
+option_1="05"
+option_2="10"
+option_3=""
+option_4=""
+option_5="󰘔"
 
 
 
 # Rofi CMD
 rofi_cmd() {
-	rofi -theme-str 'listview {columns: 1; lines: 5;}' \
-		-dmenu -i \
+	rofi -dmenu -i \
 		-mesg "$mesg" \
 		-markup-rows \
 		-theme "$theme"
@@ -36,7 +32,7 @@ file="${time}.png"  # file name
 
 # Sends notification whether screenshot is taken or not
 notify_view() {
-	notify_cmd_shot='dunstify -u normal -a Screenshot -i screenshot'
+	notify_cmd_shot='notify-send -u normal -a Screenshot -i screenshot'
 	if [[ -e "$dir/$file" ]]; then
 		${notify_cmd_shot} "Saved successfully!"
 	else
@@ -46,13 +42,13 @@ notify_view() {
 
 # Copies the screenshot to clipboard
 copy_shot () {
-	tee "$dir/$file" | xclip -selection clipboard -t image/png
+	wl-copy < "$dir/$file"
 }
 
 # Does countdown and sends notification on countdown
 countdown () {
     for sec in $(seq "$1" -1 1) ; do
-		dunstify -u normal -a Screenshot --replace=701 -i timer -t 1100 "Taking shot in: $sec sec"
+		notify-send -u normal -a Screenshot -r 701 -i timer -t 1100 "Taking shot in: $sec sec"
 		sleep 1
 	done
 }
@@ -60,34 +56,41 @@ countdown () {
 # Takes screenshots
 full () {
 	# Takes full screenshot without the mouse shown and copies to the clipboard
-	maim -u | copy_shot
+	sleep 0.5
+    grim -o HDMI-A-1 "$dir/$file"
+    copy_shot
 	# Sends notification
 	notify_view
 }
 
 area () {
 	# Takes screenshot of selected area without the mouse shown and copies to the clipboard
-	maim -s -u | copy_shot
+    grim -g "$(slurp)" "$dir/$file"
+    copy_shot
 	notify_view
 }
 
 window () {
 	# Takes screenshot of the active window without the mouse shown and copies to the clipboard
-    maim -i "$(xdotool getactivewindow)" -u | copy_shot
+    sleep 0.5
+    grim -g "$(hyprctl clients -j | jq -r '.[] | select(.focusHistoryID == 0) | "\(.at[0]),\(.at[1]) \(.size[0])x\(.size[1])"')" "$dir/$file"
+    copy_shot
 	notify_view
 }
 
 in5sec () {
 	countdown '5'
 	sleep 0.5
-	maim -u | copy_shot
+	grim -o HDMI-A-1 "$dir/$file"
+    copy_shot
 	notify_view
 }
 
 in10sec () {
 	countdown '10'
 	sleep 0.5
-	maim -u | copy_shot
+	grim -o HDMI-A-1 "$dir/$file"
+    copy_shot
 	notify_view
 }
 

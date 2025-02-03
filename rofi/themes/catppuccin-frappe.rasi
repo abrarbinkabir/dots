@@ -7,18 +7,31 @@
     flamingo:       #eebebe;
     pink:           #f4b8e4;
     mauve:          #ca9ee6;
-    red:			#e78284;
+    red:            #e78284;
     maroon:         #ea999c;
     peach:          #ef9f76;
     yellow:         #e5c890;
     green:          #a6d189;
     teal:           #81c8be;
     sky:            #99d1db;
-    sappire:        #85c1dc;
+    sapphire:       #85c1dc;
     blue:           #8caaee;
     lavender:       #babbf1;
-    text:           #c6d0f5;
+    
+    base:           #303446;
+    mantle:         #292c3c;
+    crust:          #232634;
+
+    surface0:       #414559;
+    surface1:       #51576d;
+    surface2:       #626880;
+
+    overlay0:       #737994;
+    overlay1:       #838ba7;
+    overlay2:       #949cbb;
+
+    subtext0:       #b5bfe2;
+    subtext1:       #a5adce;
+
     font: "JetBrainsMono Nerd Font Propo Medium 13";
 }
-
-

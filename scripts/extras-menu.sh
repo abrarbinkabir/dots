@@ -14,7 +14,7 @@ rofi_cmd() {
 # Options
 options=(
         " Count Days" "$HOME/.config/scripts/countdown.sh"
-        " Toggle Redshift" "$HOME/.config/scripts/redshift.sh"
+        " Toggle Nightlight" "$HOME/.config/scripts/nightlight.sh"
         " Browse Archives" "$HOME/.config/scripts/archives.sh"
         " Installed Packages" "$HOME/.config/scripts/pkglist.sh"
         " Kill Processes" "$HOME/.config/scripts/kill.sh"

@@ -10,11 +10,15 @@ options=(
     " Today: $(date '+%B %d, %Y')"
     " Weekday: $(date '+%A')"
     " Week No: $(date '+%U')"
+    " HDate: $(idate --simple | awk -F' - ' '{print $1}')"
+    " Hmonth: $(idate --simple | awk -F' - ' '{print $3}')"
+
+
 )
 
 # Rofi command function
 rofi_cmd() {
-    rofi -theme-str 'listview {columns: 1; lines: 4;}' \
+    rofi -theme-str 'listview {columns: 1; lines: 6;}' \
         -dmenu \
         -mesg "$message" \
         -markup-rows \

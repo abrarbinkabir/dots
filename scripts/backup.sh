@@ -29,7 +29,7 @@ backup() {
         --keep-weekly 4 \
         --keep-monthly 6 \
         --prune &&
-    notify-send -u normal -a Restic -i backup "Backup successful"
+    notify-send -u normal -a Restic -i backup -t 10000 "Backup successful"
 }
 
 # Main function  

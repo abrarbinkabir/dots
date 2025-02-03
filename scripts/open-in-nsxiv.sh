@@ -15,7 +15,7 @@ options=(
         " Shots" "$HOME/Pictures/shots"
         " Screenshots" "$HOME/Pictures/Screenshots"
         " Pictures" "$HOME/Pictures"
-        " camera" "$HOME/camera"
+        " camera" "$HOME/dcim/Camera"
 )
 
 run_rofi() {

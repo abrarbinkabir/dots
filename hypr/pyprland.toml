@@ -1,0 +1,26 @@
+[pyprland]
+plugins = ["scratchpads"]
+
+[scratchpads.alacritty]
+animation = "fromBottom"
+command = "alacritty --class dropterm"
+class = "dropterm"
+size = "60% 70%"
+position = "20% 15%"
+lazy = true
+
+[scratchpads.lf]
+animation = "fromBottom"
+command = "kitty --class tuifm -e lf"
+class = "tuifm"
+size = "60% 70%"
+position = "20% 15%"
+lazy = true
+
+[scratchpads.ncmpcpp]
+animation = "fromBottom"
+command = "alacritty --class mpdclient -e ncmpcpp"
+class = "mpdclient"
+size = "50% 60%"
+position = "25% 20%"
+lazy = true
