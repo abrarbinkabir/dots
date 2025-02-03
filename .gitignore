@@ -2,6 +2,7 @@
 .stignore
 clipse/tmp_files/
 clipse/clipboard_history.json
+geany/session.conf
 gtk-3.0/bookmarks
 misc/backup-logs
 mpd/playlists/
