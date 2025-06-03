@@ -77,7 +77,7 @@ local user_opts = {
     seekbarhandlesize = 0.8,        -- size ratio of the slider handle, range 0 ~ 1
     seekrange = true,               -- show seekrange overlay
     seekrangealpha = 150,           -- transparency of seekranges
-    iconstyle = 'round',            -- icon style, 'solid' or 'round'
+    iconstyle = 'solid',            -- icon style, 'solid' or 'round'
     hovereffect = true,             -- whether buttons have a glowing effect when hovered over
 
     -- button settings --

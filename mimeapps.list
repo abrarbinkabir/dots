@@ -6,7 +6,7 @@ inode/x-empty=nvim.desktop
 application/json=nvim.desktop
 text/x-shellscript=nvim.desktop
 text/vcard=nvim.desktop
-text/x-tex=nvim.desktop
+text/x-tex=texmaker.desktop
 
 application/pdf=org.pwmt.zathura.desktop
 application/epub+zip=org.pwmt.zathura.desktop

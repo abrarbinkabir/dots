@@ -9,6 +9,9 @@ mpd/playlists/
 mpd/database
 mpd/sticker.sql
 obs-studio/logs/
+obs-studio/basic/
+obs-studio/plugin_config/
+obs-studio/profiler_data/
 restic/backup.conf
 restic/passwd
 restic/passwd-file

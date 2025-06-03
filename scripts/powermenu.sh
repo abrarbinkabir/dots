@@ -5,8 +5,8 @@ theme="$HOME/.config/rofi/config-3.rasi"
 
 # Options
 option_1=""
-option_2=""
-option_3=""
+option_2=""
+option_3=""
 option_4=""
 option_5=""
 
@@ -56,14 +56,14 @@ main() {
 			    	systemctl poweroff
 			        ;;
 			    "$option_2")
-			    	notify-send -u normal -a Systemctl -i logout -t 2000 "System will logout now" &&
-			    	sleep 3
-			    	hyprctl dispatch exit
-			        ;;
-			    "$option_3")
 			    	notify-send -u normal -a Systemctl -i restart -t 2000 "System will reboot now" &&
 			    	sleep 3
 			    	systemctl reboot
+			        ;;
+			    "$option_3")
+			    	notify-send -u normal -a Systemctl -i logout -t 2000 "System will logout now" &&
+			    	sleep 3
+			    	hyprctl dispatch exit
 			        ;;
 			    "$option_4")
 					systemctl suspend

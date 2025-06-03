@@ -1,4 +1,4 @@
-#files: 832	version: 5.9
+#files: 842	version: 5.9
 
 _comps=(
 '-' '_precommand'
@@ -89,6 +89,7 @@ _comps=(
 'bibtex' '_bibtex'
 'bindkey' '_bindkey'
 'bison' '_bison'
+'bluetoothctl' '_bluetoothctl'
 'bmake' '_make'
 'bogofilter' '_bogofilter'
 'bogotune' '_bogofilter'
@@ -135,6 +136,7 @@ _comps=(
 'cabal' '_cabal'
 'cal' '_cal'
 'calendar' '_calendar'
+'cargo' '_cargo'
 'cat' '_cat'
 'catchsegv' '_precommand'
 'cc' '_gcc'
@@ -597,6 +599,7 @@ _comps=(
 'iftop' '_iftop'
 'ifup' '_net_interfaces'
 'ijoin' '_ispell'
+'img2sixel' '_img2sixel'
 'import' '_imagemagick'
 'inc' '_mh'
 'includeres' '_psutils'
@@ -604,7 +607,7 @@ _comps=(
 'infocmp' '_terminals'
 'initctl' '_initctl'
 'initdb' '_postgresql'
-'insmod' '_modutils'
+'insmod' '_insmod'
 'install' '_install'
 'install-info' '_texinfo'
 'integer' '_typeset'
@@ -644,6 +647,7 @@ _comps=(
 'jupyter' '_jupyter'
 'kdeconnect-cli' '_kdeconnect'
 'kernel-install' '_kernel-install'
+'keyring' '_keyring'
 'keystone' '_openstack'
 'keytool' '_java'
 'kfmclient' '_kfmclient'
@@ -709,7 +713,7 @@ _comps=(
 'lsblk' '_lsblk'
 'lsdiff' '_patchutils'
 'lsinitcpio' '_mkinitcpio'
-'lsmod' '_modutils'
+'lsmod' '_lsmod'
 'lsns' '_lsns'
 'lsof' '_lsof'
 'lsusb' '_lsusb'
@@ -967,6 +971,7 @@ _comps=(
 'podgrep' '_perl_modules'
 'podpath' '_perl_modules'
 'podtoc' '_perl_modules'
+'poetry' '_poetry'
 'poff' '_pon'
 'policytool' '_java'
 'pon' '_pon'
@@ -1077,7 +1082,7 @@ _comps=(
 'rmid' '_java'
 'rmiregistry' '_java'
 'rmm' '_mh'
-'rmmod' '_modutils'
+'rmmod' '_rmmod'
 'route' '_route'
 'rrdtool' '_rrdtool'
 'rsh' '_rlogin'
@@ -1114,6 +1119,8 @@ _comps=(
 'seaf-cli' '_seafile'
 'sed' '_sed'
 'senlin' '_openstack'
+'sensors' '_sensors'
+'sensors-detect' '_sensors-detect'
 'seq' '_seq'
 'serialver' '_java'
 'service' '_service'
@@ -1683,14 +1690,16 @@ bindkey '^[,' _history-complete-newer
 bindkey '^[/' _history-complete-older
 bindkey '^[~' _bash_complete-word
 
-autoload -Uz _alacritty _bat _bootctl _busctl _bwrap \
-            _coredumpctl _curl _dunst _dunstctl _eza \
-            _hostnamectl _hyprctl _hyprpm _journalctl _jupyter \
-            _kernel-install _kitty _lf _libinput _localectl \
-            _loginctl _machinectl _mkinitcpio _mpv _networkctl \
-            _oomctl _pacman _pip _playerctl _pulseaudio \
-            _pypr _resolvectl _restic _rg _run0 \
-            _sd_hosts_or_user_at_host _sd_machines _sd_outputmodes _sd_unit_files _shtab \
+autoload -Uz _alacritty _bat _bluetoothctl _bootctl _busctl \
+            _bwrap _cargo _coredumpctl _curl _dunst \
+            _dunstctl _eza _hostnamectl _hyprctl _hyprpm \
+            _img2sixel _insmod _journalctl _jupyter _kernel-install \
+            _keyring _kitty _lf _libinput _localectl \
+            _loginctl _lsmod _machinectl _mkinitcpio _mpv \
+            _networkctl _oomctl _pacman _pip _playerctl \
+            _poetry _pulseaudio _pypr _resolvectl _restic \
+            _rg _rmmod _run0 _sd_hosts_or_user_at_host _sd_machines \
+            _sd_outputmodes _sd_unit_files _sensors _sensors-detect _shtab \
             _systemctl _systemd _systemd-analyze _systemd-delta _systemd-inhibit \
             _systemd-nspawn _systemd-path _systemd-run _systemd-tmpfiles _timedatectl \
             _tldr _trash _trash-empty _trash-list _trash-put \
