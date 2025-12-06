@@ -1,6 +1,6 @@
 {
     "DesktopAudioDevice1": {
-        "prev_ver": 520093699,
+        "prev_ver": 536870914,
         "name": "Desktop Audio",
         "uuid": "3c9f0cf6-9ab4-472c-aa14-6500f9d6ada6",
         "id": "pulse_output_capture",
@@ -40,7 +40,7 @@
     "name": "Untitled",
     "sources": [
         {
-            "prev_ver": 520093699,
+            "prev_ver": 536870914,
             "name": "Scene",
             "uuid": "3a938898-7780-4c5a-9d6d-6f530b731f87",
             "id": "scene",
@@ -239,10 +239,11 @@
             "deinterlace_mode": 0,
             "deinterlace_field_order": 0,
             "monitoring_type": 0,
+            "canvas_uuid": "6c69626f-6273-4c00-9d88-c5136d61696e",
             "private_settings": {}
         },
         {
-            "prev_ver": 520093699,
+            "prev_ver": 536870914,
             "name": "Audio Output",
             "uuid": "134471b0-85f3-4a76-90bf-e27bf15145ae",
             "id": "pulse_output_capture",
@@ -271,7 +272,7 @@
             "private_settings": {}
         },
         {
-            "prev_ver": 520093699,
+            "prev_ver": 536870914,
             "name": "Audio Capture Device (ALSA)",
             "uuid": "aabf5983-cd0e-4199-a2c2-e991bb44d700",
             "id": "alsa_input_capture",
@@ -302,7 +303,7 @@
             "private_settings": {}
         },
         {
-            "prev_ver": 520093699,
+            "prev_ver": 536870914,
             "name": "Screen Capture (PipeWire)",
             "uuid": "aebfb61b-63a4-4556-94d1-8ff6ef49196c",
             "id": "pipewire-screen-capture-source",
@@ -354,11 +355,12 @@
     ],
     "transitions": [],
     "saved_projectors": [],
+    "canvases": [],
     "current_transition": "Fade",
     "transition_duration": 200,
     "preview_locked": false,
     "scaling_enabled": false,
-    "scaling_level": 0,
+    "scaling_level": -12,
     "scaling_off_x": 0.0,
     "scaling_off_y": 0.0,
     "modules": {
