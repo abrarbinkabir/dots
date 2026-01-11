@@ -17,7 +17,7 @@ pandoc -H ~/.config/pandoc/quote.tex \
 -V pagestyle=empty \
 -V mainfont="Inter" \
 -V mainfontoptions:BoldFont="Inter Bold" \
--V monofont="JetBrainsMono Nerd Font Propo" \
+-V monofont="BlexMono Nerd Font" \
 -V mathfont="C059 Roman" \
 --from=markdown+lists_without_preceding_blankline \
 --pdf-engine=xelatex \

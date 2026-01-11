@@ -1,5 +1,5 @@
 /home/abrar/archives/.st*
-/home/abrar/camera/.st*
+/home/abrar/dcim/.st*
 /home/abrar/Documents/.st*
 /home/abrar/dots/.st*
 /home/abrar/Downloads/.st*

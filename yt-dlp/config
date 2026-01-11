@@ -2,9 +2,9 @@
 -o ~/nsync/ytdlp/%(title)s.%(ext)s
 --no-part
 --no-mtime
---write-subs
---write-auto-subs
---sub-langs en
+#--write-subs
+#--write-auto-subs
+#--sub-langs en
 --embed-thumbnail
 --convert-thumbnails jpg
 --embed-chapters

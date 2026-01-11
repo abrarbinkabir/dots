@@ -5,7 +5,7 @@ theme="$HOME/.config/rofi/config-4.rasi"
 # Rofi CMD
 rofi_cmd() {
 		rofi -theme-str "entry {placeholder: 'Search manpages...';}" \
-        -theme-str "imagebox {background-image: url('~/dots/images/mars-car.jpg', width);}" \
+        -theme-str "imagebox {background-image: url('~/dots/images/wallpapers/mars-car.jpg', width);}" \
         -dmenu -i \
 		-p "Man Pages" \
 		-sort \

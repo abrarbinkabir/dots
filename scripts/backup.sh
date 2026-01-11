@@ -20,17 +20,36 @@ rofi_cmd() {
 }
 
 backup() {
-    cd "$dir" || { echo "Directory $dir not found"; exit 1; }
-    restic -r . backup \
+    cd "$dir" || { 
+        echo "Directory $dir not found"; 
+        notify-send -u critical -a Restic -i backup "Backup failed: directory not found"
+        exit 1
+    }
+
+    # Clear stale locks
+    restic -r . unlock >/dev/null 2>&1
+
+    # Run backup
+    if ! restic -r . backup \
         --files-from="$HOME/.config/restic/include.txt" \
-        --exclude-file="$HOME/.config/restic/exclude.txt" \ &&
-    restic -r . forget \
-        --keep-daily 3 \
+        --exclude-file="$HOME/.config/restic/exclude.txt"; then
+        notify-send -u critical -a Restic -i backup "Failed during backup step"
+        return 1
+    fi
+
+    # Run forget + prune
+    if ! restic -r . forget \
         --keep-weekly 4 \
-        --keep-monthly 6 \
-        --prune &&
-    notify-send -u normal -a Restic -i backup -t 10000 "Backup successful"
+        --keep-monthly 12 \
+        --prune; then
+        notify-send -u critical -a Restic -i backup "Failed during prune step"
+        return 1
+    fi
+
+    # Success
+    notify-send -u normal -a Restic -i backup -t 0 "Backup on team-c175 successful"
 }
+
 
 # Main function  
 main() {
